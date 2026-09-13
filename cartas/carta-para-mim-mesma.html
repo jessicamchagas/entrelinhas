@@ -14,17 +14,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
 rel="stylesheet"
 >
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
 
@@ -35,20 +45,72 @@ body {
     Helvetica,
     sans-serif;
 
+  color: #f4f0f7;
+
   background:
+
+    radial-gradient(
+      circle at 12% 10%,
+      rgba(168,85,247,0.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 88% 78%,
+      rgba(192,132,252,0.08),
+      transparent 32%
+    ),
+
     linear-gradient(
-      145deg,
-      #d9eef7,
-      #f2fafd,
-      #dceff8
+      135deg,
+      #050507 0%,
+      #08060b 48%,
+      #0d0911 100%
     );
 
-  color: #536f7d;
+  overflow-x: hidden;
 
 }
 
 
-/* TOPO */
+/* =========================
+   PARTÍCULAS
+========================= */
+
+#particles {
+
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+}
+
+
+/* =========================
+   PÁGINA
+========================= */
+
+.page {
+
+  position: relative;
+
+  z-index: 1;
+
+  min-height: 100vh;
+
+}
+
+
+/* =========================
+   TOPO
+========================= */
 
 .top {
 
@@ -56,7 +118,9 @@ body {
 
   margin: auto;
 
-  padding: 32px 0;
+  padding:
+    32px 0
+    24px;
 
   display: flex;
 
@@ -64,7 +128,12 @@ body {
 
   align-items: center;
 
+  border-bottom:
+    1px solid
+    rgba(192,132,252,0.12);
+
 }
+
 
 .logo {
 
@@ -75,87 +144,206 @@ body {
 
   font-style: italic;
 
-  font-size: 24px;
+  font-size: 26px;
 
-  color: #477b95;
+  font-weight: 400;
+
+  color: #c084fc;
 
   text-decoration: none;
 
+  text-shadow:
+    0 0 25px
+    rgba(168,85,247,0.22);
+
 }
+
 
 .back {
 
-  font-size: 10px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
 
   text-transform: uppercase;
 
-  letter-spacing: .13em;
+  letter-spacing: .18em;
 
-  color: #7897a5;
+  color: #827987;
 
   text-decoration: none;
 
+  transition:
+    color .3s ease;
+
 }
 
 
-/* CARTA */
+.back:hover {
+
+  color: #c084fc;
+
+}
+
+
+/* =========================
+   ÁREA DA CARTA
+========================= */
 
 .letter-wrap {
 
-  width: min(720px, 88vw);
+  position: relative;
+
+  width: min(760px, 88vw);
 
   margin:
-    80px auto
-    130px;
+    95px auto
+    150px;
 
 }
 
 
-/* ETIQUETA */
+/* brilho atrás da carta */
+
+.letter-wrap::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+
+  height: 400px;
+
+  border-radius: 50%;
+
+  top: 40px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168,85,247,0.09),
+      transparent 68%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+}
+
+
+/* =========================
+   ETIQUETA
+========================= */
 
 .letter-label {
 
   text-align: center;
 
-  font-size: 10px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
 
   text-transform: uppercase;
 
-  letter-spacing: .2em;
+  letter-spacing: .25em;
 
-  color: #78a5b8;
+  color: #a855f7;
 
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 
 }
 
 
-/* PAPEL */
+/* =========================
+   CARTA
+========================= */
 
 .letter {
 
   position: relative;
 
   background:
-    rgba(255,255,255,.78);
+
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.045),
+      rgba(255,255,255,0.018)
+    );
 
   border:
     1px solid
-    rgba(255,255,255,.9);
-
-  border-radius: 4px;
+    rgba(192,132,252,0.18);
 
   padding:
-    65px
     70px
-    75px;
+    72px
+    80px;
 
   box-shadow:
-    0 25px 70px
-    rgba(67,119,143,.12);
+
+    0 30px 80px
+    rgba(0,0,0,0.38),
+
+    0 0 45px
+    rgba(168,85,247,0.035);
+
+  overflow: hidden;
+
+  transition:
+    border-color .4s ease,
+    box-shadow .4s ease;
 
 }
 
+
+/* brilho interno */
+
+.letter::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+
+  height: 220px;
+
+  border-radius: 50%;
+
+  right: -120px;
+
+  top: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168,85,247,0.13),
+      transparent 68%
+    );
+
+  pointer-events: none;
+
+}
+
+
+/* moldura interna */
 
 .letter::before {
 
@@ -163,28 +351,32 @@ body {
 
   position: absolute;
 
-  left: 45px;
+  left: 38px;
 
-  right: 45px;
+  right: 38px;
 
-  top: 40px;
+  top: 38px;
 
-  bottom: 40px;
+  bottom: 38px;
 
   border:
     1px solid
-    rgba(143,200,227,.18);
+    rgba(192,132,252,0.09);
 
   pointer-events: none;
 
 }
 
 
-/* TÍTULO */
+/* =========================
+   TÍTULO
+========================= */
 
 h1 {
 
   position: relative;
+
+  z-index: 2;
 
   font-family:
     "Playfair Display",
@@ -192,59 +384,129 @@ h1 {
     serif;
 
   font-size:
-    clamp(38px, 5vw, 54px);
+    clamp(40px, 5.5vw, 58px);
 
   font-weight: 400;
 
   font-style: italic;
 
-  color: #477b95;
+  color: #f5f0f7;
 
-  margin-bottom: 55px;
+  line-height: 1.08;
+
+  letter-spacing: -.035em;
+
+  margin-bottom: 58px;
+
+  text-shadow:
+    0 0 30px
+    rgba(168,85,247,0.12);
 
 }
 
 
-/* TEXTO */
+/* =========================
+   TEXTO
+========================= */
 
 .letter-text {
 
   position: relative;
 
+  z-index: 2;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   font-size: 16px;
 
   line-height: 2;
 
-  color: #597582;
+  color: #c5bec9;
 
 }
 
 
 .letter-text p {
 
-  margin-bottom: 30px;
+  margin-bottom: 31px;
 
 }
 
+
+.letter-text p:last-child {
+
+  margin-bottom: 0;
+
+}
+
+
+/* =========================
+   SEPARADOR
+========================= */
 
 .separator {
 
-  width: 35px;
+  position: relative;
+
+  width: 65px;
 
   height: 1px;
 
-  background: #9ac9db;
+  background:
+    linear-gradient(
+      90deg,
+      #a855f7,
+      rgba(168,85,247,0.05)
+    );
 
-  margin: 45px 0;
+  margin:
+    48px 0;
 
 }
 
 
-/* ASSINATURA */
+.separator::after {
+
+  content: "✦";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  font-size: 8px;
+
+  color: #c084fc;
+
+  background: #0b080f;
+
+  padding: 0 6px;
+
+}
+
+
+/* =========================
+   ASSINATURA
+========================= */
 
 .signature {
 
-  margin-top: 45px;
+  position: relative;
+
+  margin-top: 48px;
+
+  padding-left: 22px;
+
+  border-left:
+    1px solid
+    #a855f7;
 
   font-family:
     "Playfair Display",
@@ -253,46 +515,178 @@ h1 {
 
   font-size: 20px;
 
+  line-height: 1.8;
+
   font-style: italic;
 
-  color: #668c9d;
+  color: #d6c6df;
 
 }
 
 
-/* MOBILE */
+.signature::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: -1px;
+
+  top: 0;
+
+  width: 1px;
+
+  height: 28px;
+
+  background: #c084fc;
+
+  box-shadow:
+    0 0 12px
+    rgba(168,85,247,0.5);
+
+}
+
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+.letter-label,
+.letter {
+
+  opacity: 0;
+
+  transform:
+    translateY(24px);
+
+  animation:
+    fadeUp .9s ease forwards;
+
+}
+
+
+.letter-label {
+
+  animation-delay: .1s;
+
+}
+
+
+.letter {
+
+  animation-delay: .25s;
+
+}
+
+
+@keyframes fadeUp {
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
-  .letter-wrap {
-    margin-top: 55px;
+  .top {
+
+    width: 88vw;
+
+    padding:
+      25px 0;
+
   }
+
+
+  .logo {
+
+    font-size: 23px;
+
+  }
+
+
+  .back {
+
+    font-size: 8px;
+
+    letter-spacing: .14em;
+
+  }
+
+
+  .letter-wrap {
+
+    width: 88vw;
+
+    margin:
+      65px auto
+      100px;
+
+  }
+
 
   .letter {
 
     padding:
-      45px 30px
-      55px;
+      52px 30px
+      60px;
 
   }
+
 
   .letter::before {
 
     left: 20px;
+
     right: 20px;
 
     top: 25px;
+
     bottom: 25px;
 
   }
 
+
   h1 {
-    font-size: 40px;
+
+    font-size: 41px;
+
+    margin-bottom: 48px;
+
   }
 
+
   .letter-text {
+
     font-size: 15px;
-    line-height: 1.9;
+
+    line-height: 1.95;
+
+  }
+
+
+  .letter-text p {
+
+    margin-bottom: 29px;
+
+  }
+
+
+  .signature {
+
+    font-size: 18px;
+
   }
 
 }
@@ -305,13 +699,26 @@ h1 {
 <body>
 
 
+<canvas id="particles"></canvas>
+
+
+<div class="page">
+
+
 <header class="top">
 
-<a href="../index.html" class="logo">
+<a
+  href="../index.html"
+  class="logo"
+>
   Entrelinhas
 </a>
 
-<a href="../index.html" class="back">
+
+<a
+  href="../index.html"
+  class="back"
+>
   ← voltar
 </a>
 
@@ -335,6 +742,7 @@ h1 {
 
 
 <div class="letter-text">
+
 
 <p>
 Querida eu,
@@ -397,6 +805,187 @@ eu.
 
 
 </main>
+
+
+</div>
+
+
+<script>
+
+/* =========================
+   PARTÍCULAS
+========================= */
+
+const canvas =
+document.getElementById("particles");
+
+const ctx =
+canvas.getContext("2d");
+
+
+let particles = [];
+
+
+function resize() {
+
+  canvas.width =
+    window.innerWidth;
+
+  canvas.height =
+    window.innerHeight;
+
+}
+
+
+resize();
+
+
+window.addEventListener(
+  "resize",
+  resize
+);
+
+
+/* =========================
+   CRIAÇÃO
+========================= */
+
+for (
+  let i = 0;
+  i < 45;
+  i++
+) {
+
+  particles.push({
+
+    x:
+      Math.random() *
+      innerWidth,
+
+    y:
+      Math.random() *
+      innerHeight,
+
+    r:
+      Math.random() *
+      1.5 + .4,
+
+    vx:
+      (Math.random() - .5)
+      * .15,
+
+    vy:
+      (Math.random() - .5)
+      * .15,
+
+    o:
+      Math.random() *
+      .25 + .05
+
+  });
+
+}
+
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+function animate() {
+
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+
+  particles.forEach(
+    p => {
+
+      p.x += p.vx;
+
+      p.y += p.vy;
+
+
+      if (
+        p.x < 0
+      ) {
+
+        p.x =
+          canvas.width;
+
+      }
+
+
+      if (
+        p.x >
+        canvas.width
+      ) {
+
+        p.x = 0;
+
+      }
+
+
+      if (
+        p.y < 0
+      ) {
+
+        p.y =
+          canvas.height;
+
+      }
+
+
+      if (
+        p.y >
+        canvas.height
+      ) {
+
+        p.y = 0;
+
+      }
+
+
+      ctx.beginPath();
+
+
+      ctx.arc(
+        p.x,
+        p.y,
+        p.r,
+        0,
+        Math.PI * 2
+      );
+
+
+      ctx.fillStyle =
+        `rgba(
+          168,
+          85,
+          247,
+          ${p.o}
+        )`;
+
+
+      ctx.fill();
+
+    }
+  );
+
+
+  requestAnimationFrame(
+    animate
+  );
+
+}
+
+
+animate();
+
+</script>
 
 
 </body>
