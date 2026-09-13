@@ -4,248 +4,271 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A carta que nunca enviei | Entrelinhas</title>
+<title>A carta que nunca enviei — Entrelinhas</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+rel="stylesheet"
+>
 
 <style>
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
 
-    min-height: 100vh;
+  min-height: 100vh;
 
-    background:
-        radial-gradient(
-            circle at 20% 75%,
-            rgba(91,137,166,0.11),
-            transparent 32%
-        ),
-        #0b141c;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-    color: #dce6ec;
+  background:
+    linear-gradient(
+      135deg,
+      #d7edf6,
+      #eef9fc
+    );
 
-    font-family: "Inter", sans-serif;
+  color: #526f7c;
 
-    line-height: 1.9;
 }
 
-header {
 
-    padding: 28px 7%;
+/* TOPO */
 
-    display: flex;
+.top {
 
-    justify-content: space-between;
+  width: min(850px, 88vw);
 
-    align-items: center;
+  margin: auto;
 
-    border-bottom: 1px solid rgba(210,225,235,0.06);
+  padding: 35px 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
 }
 
 .logo {
 
-    color: #e8f0f4;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
 
-    text-decoration: none;
+  font-style: italic;
 
-    font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
 
-    font-size: 21px;
+  color: #477b95;
 
-    letter-spacing: 5px;
+  text-decoration: none;
 
-    font-weight: 600;
 }
 
 .back {
 
-    color: #82939e;
+  font-size: 10px;
 
-    text-decoration: none;
+  text-transform: uppercase;
 
-    font-size: 12px;
+  letter-spacing: .13em;
 
-    letter-spacing: 1px;
+  color: #7897a5;
+
+  text-decoration: none;
+
 }
 
-main {
 
-    width: min(720px, calc(100% - 44px));
+/* CARTA */
 
-    margin: auto;
+.page {
 
-    padding: 120px 0 100px;
+  width: min(680px, 86vw);
+
+  margin:
+    90px auto
+    150px;
+
 }
 
-.label {
 
-    color: #829cab;
+/* ABERTURA */
 
-    font-size: 10px;
+.intro {
 
-    letter-spacing: 4px;
+  margin-bottom: 70px;
 
-    text-transform: uppercase;
-
-    margin-bottom: 25px;
 }
+
+
+.number {
+
+  font-size: 10px;
+
+  letter-spacing: .2em;
+
+  text-transform: uppercase;
+
+  color: #7ba8ba;
+
+  margin-bottom: 25px;
+
+}
+
 
 h1 {
 
-    max-width: 650px;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
 
-    font-family: "Cormorant Garamond", serif;
+  font-size:
+    clamp(42px, 6vw, 65px);
 
-    font-size: clamp(52px, 8vw, 78px);
+  line-height: 1.08;
 
-    font-weight: 500;
+  font-weight: 400;
 
-    line-height: 1;
+  font-style: italic;
 
-    color: #edf4f7;
+  color: #477b95;
 
-    margin-bottom: 20px;
 }
+
 
 .subtitle {
 
-    font-family: "Cormorant Garamond", serif;
+  margin-top: 20px;
 
-    font-size: 19px;
+  font-size: 13px;
 
-    font-style: italic;
+  line-height: 1.7;
 
-    color: #778995;
+  color: #819aa6;
 
-    margin-bottom: 60px;
 }
 
-.divider {
 
-    width: 45px;
+/* LINHA */
 
-    height: 1px;
+.line {
 
-    background: #91adbc;
+  width: 45px;
 
-    opacity: 0.5;
+  height: 1px;
 
-    margin-bottom: 55px;
+  background: #95c6d8;
+
+  margin-top: 35px;
+
 }
 
-.letter {
 
-    font-family: "Cormorant Garamond", serif;
+/* TEXTO */
 
-    font-size: 25px;
+.text {
 
-    color: #d2dde3;
+  font-size: 16px;
 
-    line-height: 1.9;
+  line-height: 2.05;
+
+  color: #597681;
+
 }
 
-.letter p {
 
-    margin-bottom: 30px;
+.text p {
+
+  margin-bottom: 32px;
+
 }
 
-.letter .pause {
 
-    margin: 55px 0;
+.text .pause {
 
-    width: 35px;
+  margin:
+    55px 0;
 
-    height: 1px;
+  padding-left: 22px;
 
-    background: #718b9a;
+  border-left:
+    1px solid #9bcadb;
 
-    opacity: 0.5;
+  color: #678896;
+
 }
 
-.final {
 
-    margin-top: 55px;
+/* FINAL */
 
-    color: #b8c9d2;
+.end {
 
-    font-style: italic;
+  margin-top: 70px;
+
+  padding-top: 40px;
+
+  border-top:
+    1px solid
+    rgba(126,176,196,.3);
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 19px;
+
+  line-height: 1.8;
+
+  font-style: italic;
+
+  color: #668c9c;
+
 }
 
-.navigation {
 
-    margin-top: 100px;
-
-    padding-top: 30px;
-
-    border-top: 1px solid rgba(210,225,235,0.08);
-
-    display: flex;
-
-    justify-content: space-between;
-}
-
-.navigation a {
-
-    color: #82939e;
-
-    text-decoration: none;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-}
-
-footer {
-
-    text-align: center;
-
-    padding: 30px;
-
-    color: #4f5c65;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-}
+/* MOBILE */
 
 @media (max-width: 600px) {
 
-    header {
+  .page {
 
-        padding: 22px;
+    margin-top: 60px;
 
-    }
+  }
 
-    main {
+  .text {
 
-        padding-top: 90px;
+    font-size: 15px;
 
-    }
+    line-height: 1.95;
 
-    .letter {
+  }
 
-        font-size: 22px;
+  h1 {
 
-    }
+    font-size: 44px;
 
-    .navigation {
-
-        flex-direction: column;
-
-        gap: 20px;
-
-    }
+  }
 
 }
 
@@ -257,41 +280,46 @@ footer {
 <body>
 
 
-<header>
+<header class="top">
 
 <a href="../index.html" class="logo">
-ENTRELINHAS
+  Entrelinhas
 </a>
 
 <a href="../index.html" class="back">
-← voltar
+  ← voltar
 </a>
 
 </header>
 
 
-<main>
+<main class="page">
 
 
-<div class="label">
-uma carta que ficou
+<section class="intro">
+
+<div class="number">
+  Carta 02
 </div>
 
 
 <h1>
-A carta que nunca enviei
+  A carta que nunca enviei
 </h1>
 
 
-<div class="subtitle">
-Talvez algumas cartas nunca tenham sido feitas para chegar.
-</div>
+<p class="subtitle">
+  Talvez algumas cartas nunca tenham sido feitas
+  para chegar.
+</p>
 
 
-<div class="divider"></div>
+<div class="line"></div>
+
+</section>
 
 
-<article class="letter">
+<article class="text">
 
 
 <p>
@@ -325,22 +353,23 @@ Apaguei outra vez.
 
 
 <p>
-No fim, deixei tudo guardado dentro de mim, como tantas outras coisas que eu não soube dizer.
+No fim, deixei tudo guardado dentro de mim,
+como tantas outras coisas que eu não soube dizer.
 </p>
 
 
-<p>
+<p class="pause">
 Eu queria te contar que senti sua falta.
-</p>
-
-
-<p>
+<br>
 Mesmo quando fingi que não.
 </p>
 
 
 <p>
-Queria dizer que algumas lembranças ainda aparecem sem pedir licença. Uma música, um lugar, uma frase qualquer… e, de repente, alguma parte de mim volta para aquele tempo.
+Queria dizer que algumas lembranças ainda
+aparecem sem pedir licença. Uma música, um
+lugar, uma frase qualquer… e, de repente,
+alguma parte de mim volta para aquele tempo.
 </p>
 
 
@@ -355,7 +384,8 @@ Talvez tenha sido diferente para você.
 
 
 <p>
-Talvez eu tenha dado importância demais a coisas que, para você, foram apenas momentos.
+Talvez eu tenha dado importância demais a coisas
+que, para você, foram apenas momentos.
 </p>
 
 
@@ -369,11 +399,9 @@ Nunca saber.
 </p>
 
 
-<div class="pause"></div>
-
-
 <p>
-Eu também queria te dizer que fiquei esperando algumas palavras que nunca chegaram.
+Eu também queria te dizer que fiquei esperando
+algumas palavras que nunca chegaram.
 </p>
 
 
@@ -393,7 +421,8 @@ Um “eu também”.
 
 
 <p>
-Qualquer coisa que me fizesse acreditar que aquilo tudo não existiu apenas dentro de mim.
+Qualquer coisa que me fizesse acreditar que aquilo
+tudo não existiu apenas dentro de mim.
 </p>
 
 
@@ -418,7 +447,8 @@ Algumas histórias terminam sem a última página.
 
 
 <p>
-Por muito tempo achei que precisava te esquecer para seguir em frente.
+Por muito tempo achei que precisava te esquecer
+para seguir em frente.
 </p>
 
 
@@ -433,7 +463,8 @@ Talvez eu não precise esquecer.
 
 
 <p>
-Talvez eu só precise aceitar que você fez parte de uma versão minha que já não existe mais.
+Talvez eu só precise aceitar que você fez parte
+de uma versão minha que já não existe mais.
 </p>
 
 
@@ -453,7 +484,8 @@ Ainda existem perguntas.
 
 
 <p>
-Ainda existe uma pequena parte de mim que gostaria de saber como você está.
+Ainda existe uma pequena parte de mim que
+gostaria de saber como você está.
 </p>
 
 
@@ -462,16 +494,15 @@ Mas já não espero uma resposta.
 </p>
 
 
-<div class="pause"></div>
-
-
 <p>
 Essa carta também não precisa chegar até você.
 </p>
 
 
 <p>
-Talvez eu esteja escrevendo apenas para finalmente conseguir dizer aquilo que passei tanto tempo tentando calar.
+Talvez eu esteja escrevendo apenas para finalmente
+conseguir dizer aquilo que passei tanto tempo
+tentando calar.
 </p>
 
 
@@ -516,62 +547,43 @@ Sem esperar que você volte.
 
 
 <p>
-Só levando comigo aquilo que foi bonito e deixando para trás o que doeu demais.
+Só levando comigo aquilo que foi bonito e deixando
+para trás o que doeu demais.
 </p>
 
 
-<p>
+<div class="end">
+
 Essa é a carta que eu nunca te enviei.
-</p>
 
+<br><br>
 
-<p>
-Talvez porque, no fundo, ela nunca tenha sido para você.
-</p>
+Talvez porque, no fundo, ela nunca tenha
+sido para você.
 
+<br><br>
 
-<p>
 Era para mim.
-</p>
 
+<br><br>
 
-<p>
-Para a parte de mim que precisava colocar um ponto final em uma história que nunca teve coragem de terminar.
-</p>
+Para a parte de mim que precisava colocar
+um ponto final em uma história que nunca
+teve coragem de terminar.
 
-
-<p class="final">
+<br><br>
 
 Com carinho,<br>
+
 de alguém que finalmente aprendeu a deixar ir.
 
-</p>
+</div>
 
 
 </article>
 
 
-<nav class="navigation">
-
-<a href="carta-para-mim-mesma.html">
-← carta anterior
-</a>
-
-<a href="../fragmentos/fragmentos.html">
-próxima leitura →
-</a>
-
-</nav>
-
-
 </main>
-
-
-<footer>
-
-ENTRELINHAS · 2026
-
-</footer>
 
 
 </body>
