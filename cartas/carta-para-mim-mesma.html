@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -21,54 +21,28 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background:
-        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.08), transparent 35%),
-        radial-gradient(circle at 80% 70%, rgba(192, 132, 252, 0.05), transparent 35%),
-        #0b0a0d;
-
-    color: #e8e4ea;
-
-    font-family: "Inter", sans-serif;
 
     min-height: 100vh;
 
-    line-height: 1.8;
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(91,137,166,0.12),
+            transparent 30%
+        ),
+        #0b141c;
+
+    color: #dce6ec;
+
+    font-family: "Inter", sans-serif;
+
+    line-height: 1.9;
 }
-
-/* GRANULAÇÃO */
-
-body::before {
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    opacity: 0.035;
-
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-
-    z-index: -1;
-}
-
-/* HEADER */
 
 header {
-    position: fixed;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    padding: 24px 7%;
+    padding: 28px 7%;
 
     display: flex;
 
@@ -76,23 +50,18 @@ header {
 
     align-items: center;
 
-    z-index: 100;
-
-    background: rgba(11, 10, 13, 0.72);
-
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(210,225,235,0.06);
 }
 
 .logo {
-    color: #f1edf3;
+
+    color: #e8f0f4;
 
     text-decoration: none;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 22px;
+    font-size: 21px;
 
     letter-spacing: 5px;
 
@@ -100,217 +69,174 @@ header {
 }
 
 .back {
-    color: #aaa4ae;
+
+    color: #82939e;
 
     text-decoration: none;
 
     font-size: 12px;
 
     letter-spacing: 1px;
-
-    transition: 0.3s ease;
 }
-
-.back:hover {
-    color: #c084fc;
-}
-
-/* CONTEÚDO */
 
 main {
-    max-width: 820px;
 
-    margin: 0 auto;
+    width: min(700px, calc(100% - 44px));
 
-    padding: 170px 30px 120px;
+    margin: auto;
+
+    padding: 120px 0 100px;
 }
 
-/* CABEÇALHO */
+.label {
 
-.letter-header {
-    text-align: center;
+    color: #829cab;
 
-    margin-bottom: 70px;
-}
+    font-size: 10px;
 
-.letter-symbol {
-    display: block;
+    letter-spacing: 4px;
 
-    color: #c084fc;
+    text-transform: uppercase;
 
-    font-size: 22px;
-
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 h1 {
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(45px, 8vw, 76px);
+    font-size: clamp(52px, 8vw, 76px);
 
     font-weight: 500;
 
     line-height: 1;
 
-    color: #f4eff5;
+    color: #edf4f7;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .subtitle {
-    color: #77717c;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 18px;
+    font-size: 19px;
 
     font-style: italic;
+
+    color: #778995;
+
+    margin-bottom: 60px;
 }
 
-/* LINHA */
-
 .divider {
-    width: 60px;
+
+    width: 45px;
 
     height: 1px;
 
-    background: #a855f7;
+    background: #91adbc;
 
     opacity: 0.5;
 
-    margin: 0 auto 55px;
+    margin-bottom: 55px;
 }
 
-/* CARTA */
-
 .letter {
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 23px;
+    font-size: 25px;
 
-    font-weight: 400;
-
-    color: #d8d2da;
+    color: #d2dde3;
 
     line-height: 1.9;
 }
 
 .letter p {
+
     margin-bottom: 30px;
 }
 
 .greeting {
-    margin-bottom: 35px !important;
 
-    color: #f0eaf2;
+    margin-bottom: 40px;
 
-    font-size: 27px;
+    color: #e2ebef;
 }
 
 .signature {
+
     margin-top: 50px;
 
-    color: #f0eaf2;
-
     font-style: italic;
+
+    color: #aebdc5;
 }
 
-/* NAVEGAÇÃO */
-
 .navigation {
+
     margin-top: 100px;
 
-    padding-top: 35px;
+    padding-top: 30px;
 
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(210,225,235,0.08);
 
     display: flex;
 
     justify-content: space-between;
-
-    align-items: center;
 }
 
 .navigation a {
-    color: #8f8992;
+
+    color: #82939e;
 
     text-decoration: none;
 
     font-size: 12px;
 
     letter-spacing: 1px;
-
-    transition: 0.3s ease;
 }
-
-.navigation a:hover {
-    color: #c084fc;
-}
-
-/* FOOTER */
 
 footer {
+
     text-align: center;
 
     padding: 30px;
 
-    color: #55515a;
+    color: #4f5c65;
 
-    font-size: 11px;
+    font-size: 10px;
 
     letter-spacing: 2px;
 }
 
-/* ANIMAÇÃO */
-
-.fade {
-    opacity: 0;
-
-    transform: translateY(20px);
-
-    animation: aparecer 1s ease forwards;
-}
-
-.fade:nth-child(2) {
-    animation-delay: 0.15s;
-}
-
-.fade:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-@keyframes aparecer {
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-
-}
-
-/* MOBILE */
-
 @media (max-width: 600px) {
 
     header {
-        padding: 20px;
+
+        padding: 22px;
+
     }
 
     main {
-        padding: 140px 22px 80px;
-    }
 
-    h1 {
-        font-size: 50px;
+        padding-top: 90px;
+
     }
 
     .letter {
-        font-size: 21px;
+
+        font-size: 22px;
+
     }
 
     .navigation {
+
+        flex-direction: column;
+
         gap: 20px;
+
     }
 
 }
@@ -319,7 +245,9 @@ footer {
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -336,21 +264,20 @@ ENTRELINHAS
 
 <main>
 
-<section class="letter-header">
 
-<span class="letter-symbol fade">
-✦
-</span>
+<div class="label">
+uma carta
+</div>
 
-<h1 class="fade">
+
+<h1>
 Carta para mim mesma
 </h1>
 
-<div class="subtitle fade">
+
+<div class="subtitle">
 Uma carta que eu escrevo sem saber exatamente por quê.
 </div>
-
-</section>
 
 
 <div class="divider"></div>
@@ -358,42 +285,51 @@ Uma carta que eu escrevo sem saber exatamente por quê.
 
 <article class="letter">
 
+
 <p class="greeting">
 Querida eu,
 </p>
+
 
 <p>
 não sei muito bem por onde começar.
 </p>
 
+
 <p>
 Talvez eu tenha passado tanto tempo tentando explicar
-<br>
 o que sinto para outras pessoas que esqueci de tentar
-<br>
 explicar para mim mesma.
 </p>
+
 
 <p>
 Então, hoje, eu só quero escrever.
 </p>
 
+
 <p>
 Sem julgamentos.
 </p>
+
 
 <p>
 Sem precisar ter respostas.
 </p>
 
+
 <p>
 Sem precisar saber como tudo vai terminar.
 </p>
 
+
 <p class="signature">
+
 Com carinho,<br>
 eu.
+
 </p>
+
 
 </article>
 
@@ -404,11 +340,12 @@ eu.
 ← capítulo anterior
 </a>
 
-<a href="carta-que-nunca-enviei.html">
+<a href="../cartas/carta-que-nunca-enviei.html">
 próxima carta →
 </a>
 
 </nav>
+
 
 </main>
 
@@ -418,6 +355,7 @@ próxima carta →
 ENTRELINHAS · 2026
 
 </footer>
+
 
 </body>
 
