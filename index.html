@@ -3,613 +3,430 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Entrelinhas</title>
+<title>Entrelinhas | Um livro sem pressa</title>
 
-    <meta
-        name="description"
-        content="Entrelinhas — pensamentos, sentimentos, memórias e palavras que ficaram por dizer."
-    >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
 
-        html {
-            scroll-behavior: smooth;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
+html {
+    scroll-behavior: smooth;
+}
 
-            background:
-                linear-gradient(
-                    180deg,
-                    #101c2c 0%,
-                    #122235 45%,
-                    #0e1b2b 100%
-                );
+body {
 
-            color: #e8edf3;
+    min-height: 100vh;
 
-            min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(91, 137, 166, 0.14),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(72, 108, 135, 0.10),
+            transparent 35%
+        ),
+        #0b141c;
 
-            line-height: 1.8;
-        }
+    color: #dce6ec;
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+    font-family: "Inter", sans-serif;
 
+    line-height: 1.8;
+}
 
-        /* =========================
-           DETALHE DE LUZ
-        ========================= */
 
-        body::before {
-            content: "";
+/* TEXTURA */
 
-            position: fixed;
+body::before {
 
-            width: 500px;
-            height: 500px;
+    content: "";
 
-            top: -250px;
-            right: -150px;
+    position: fixed;
 
-            background: rgba(130, 190, 225, 0.07);
+    inset: 0;
 
-            border-radius: 50%;
+    pointer-events: none;
 
-            filter: blur(80px);
+    opacity: 0.025;
 
-            pointer-events: none;
-        }
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
 
+    z-index: -1;
+}
 
-        /* =========================
-           NAVEGAÇÃO
-        ========================= */
 
-        header {
-            width: 100%;
+/* NAVEGAÇÃO */
 
-            padding: 28px 8%;
+header {
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+    width: 100%;
 
-            position: relative;
-            z-index: 10;
-        }
+    padding: 28px 7%;
 
-        .logo {
-            font-size: 15px;
+    display: flex;
 
-            letter-spacing: 3px;
+    justify-content: space-between;
 
-            color: #c7dbea;
+    align-items: center;
 
-            font-weight: bold;
-        }
+    position: absolute;
 
-        nav {
-            display: flex;
+    top: 0;
+    left: 0;
 
-            gap: 28px;
-        }
+    z-index: 10;
+}
 
-        nav a {
-            font-size: 13px;
+.logo {
 
-            color: #9daebe;
+    color: #e8f0f4;
 
-            transition: color 0.3s ease;
-        }
+    text-decoration: none;
 
-        nav a:hover {
-            color: #d9ecfa;
-        }
+    font-family: "Cormorant Garamond", serif;
 
+    font-size: 21px;
 
-        /* =========================
-           HERO
-        ========================= */
+    letter-spacing: 5px;
 
-        .hero {
-            min-height: 82vh;
+    font-weight: 600;
+}
 
-            display: flex;
+.header-note {
 
-            align-items: center;
-            justify-content: center;
+    color: #718490;
 
-            text-align: center;
+    font-size: 11px;
 
-            padding: 70px 25px 120px;
-        }
+    letter-spacing: 1px;
+}
 
-        .hero-content {
-            max-width: 760px;
-        }
 
-        .eyebrow {
-            display: inline-block;
+/* CAPA */
 
-            margin-bottom: 28px;
+.hero {
 
-            color: #8fb9d5;
+    min-height: 100vh;
 
-            font-size: 12px;
+    display: flex;
 
-            letter-spacing: 4px;
+    align-items: center;
 
-            text-transform: uppercase;
-        }
+    justify-content: center;
 
-        .hero h1 {
-            font-size: clamp(65px, 12vw, 130px);
+    text-align: center;
 
-            font-weight: normal;
+    padding: 120px 25px 100px;
 
-            letter-spacing: -5px;
+    position: relative;
+}
 
-            color: #edf4f8;
+.hero-content {
 
-            line-height: 0.95;
+    max-width: 850px;
 
-            margin-bottom: 35px;
-        }
+    opacity: 0;
 
-        .hero h1 span {
-            color: #9ac8e3;
-        }
+    transform: translateY(20px);
 
-        .hero-text {
-            max-width: 570px;
+    animation: aparecer 1.2s ease forwards;
+}
 
-            margin: auto;
+.eyebrow {
 
-            color: #aebdca;
+    color: #91adbc;
 
-            font-size: 17px;
+    font-size: 11px;
 
-            line-height: 1.9;
-        }
+    letter-spacing: 4px;
 
-        .hero-line {
-            width: 55px;
+    text-transform: uppercase;
 
-            height: 1px;
+    margin-bottom: 30px;
+}
 
-            background: #7faeca;
+h1 {
 
-            margin: 45px auto 0;
+    font-family: "Cormorant Garamond", serif;
 
-            opacity: 0.7;
-        }
+    font-size: clamp(75px, 14vw, 150px);
 
+    font-weight: 500;
 
-        /* =========================
-           INTRODUÇÃO
-        ========================= */
+    line-height: 0.8;
 
-        .intro {
-            max-width: 780px;
+    letter-spacing: -2px;
 
-            margin: 0 auto;
+    color: #edf4f7;
 
-            padding: 0 25px 120px;
+    margin-bottom: 38px;
+}
 
-            text-align: center;
-        }
+.hero-text {
 
-        .intro p {
-            color: #b8c5d0;
+    max-width: 590px;
 
-            font-size: 17px;
+    margin: auto;
 
-            line-height: 2;
+    font-family: "Cormorant Garamond", serif;
 
-            margin-bottom: 22px;
-        }
+    font-size: 23px;
 
-        .intro .highlight {
-            color: #dceaf3;
+    color: #aebdc5;
 
-            font-size: 21px;
+    line-height: 1.7;
+}
 
-            font-style: italic;
+.hero-line {
 
-            margin-top: 40px;
-        }
+    width: 45px;
 
+    height: 1px;
 
-        /* =========================
-           SEÇÕES
-        ========================= */
+    background: #91adbc;
 
-        main {
-            width: 100%;
-        }
+    margin: 40px auto;
+}
 
-        .section {
-            max-width: 1050px;
+.scroll {
 
-            margin: auto;
+    color: #62727c;
 
-            padding: 90px 25px;
-        }
+    font-size: 10px;
 
-        .section-heading {
-            text-align: center;
+    letter-spacing: 3px;
 
-            margin-bottom: 55px;
-        }
+    text-transform: uppercase;
+}
 
-        .section-heading small {
-            display: block;
 
-            color: #7faeca;
+/* CONTEÚDO */
 
-            font-size: 11px;
+.content {
 
-            letter-spacing: 4px;
+    width: min(820px, calc(100% - 44px));
 
-            text-transform: uppercase;
+    margin: auto;
 
-            margin-bottom: 13px;
-        }
+    padding: 90px 0 120px;
+}
 
-        .section-heading h2 {
-            font-size: 32px;
+.intro {
 
-            font-weight: normal;
+    text-align: center;
 
-            color: #e5edf3;
-        }
+    margin-bottom: 100px;
+}
 
+.intro p {
 
-        /* =========================
-           TEXTOS
-        ========================= */
+    font-family: "Cormorant Garamond", serif;
 
-        .reading-list {
-            max-width: 760px;
+    font-size: 25px;
 
-            margin: auto;
-        }
+    color: #cbd7dd;
 
-        .reading-item {
-            display: grid;
+    line-height: 1.8;
+}
 
-            grid-template-columns: 70px 1fr auto;
 
-            align-items: center;
+/* LEITURAS */
 
-            gap: 25px;
+.section-label {
 
-            padding: 30px 10px;
+    color: #718894;
 
-            border-bottom: 1px solid rgba(190, 215, 230, 0.12);
+    font-size: 10px;
 
-            transition:
-                padding 0.3s ease,
-                background 0.3s ease;
-        }
+    letter-spacing: 3px;
 
-        .reading-item:first-child {
-            border-top: 1px solid rgba(190, 215, 230, 0.12);
-        }
+    text-transform: uppercase;
 
-        .reading-item:hover {
-            padding-left: 18px;
-            padding-right: 18px;
+    margin-bottom: 25px;
+}
 
-            background: rgba(180, 210, 230, 0.035);
-        }
+.reading-list {
 
-        .item-number {
-            color: #7298b1;
+    border-top: 1px solid rgba(210,225,235,0.08);
+}
 
-            font-size: 12px;
+.reading {
 
-            letter-spacing: 2px;
-        }
+    display: flex;
 
-        .item-content h3 {
-            font-size: 20px;
+    justify-content: space-between;
 
-            font-weight: normal;
+    align-items: center;
 
-            color: #e4edf3;
+    gap: 30px;
 
-            margin-bottom: 5px;
-        }
+    padding: 27px 0;
 
-        .item-content p {
-            color: #94a6b5;
+    border-bottom: 1px solid rgba(210,225,235,0.08);
 
-            font-size: 14px;
-        }
+    text-decoration: none;
 
-        .read-link {
-            color: #9bc8e2;
+    transition: 0.3s ease;
+}
 
-            font-size: 13px;
+.reading:hover {
 
-            white-space: nowrap;
+    padding-left: 10px;
 
-            transition:
-                color 0.3s ease,
-                transform 0.3s ease;
-        }
+    padding-right: 10px;
+}
 
-        .reading-item:hover .read-link {
-            color: #d2eaf7;
+.reading-title {
 
-            transform: translateX(4px);
-        }
+    font-family: "Cormorant Garamond", serif;
 
+    font-size: 25px;
 
-        /* =========================
-           FRAGMENTOS
-        ========================= */
+    color: #e0e9ed;
+}
 
-        .fragment-section {
-            max-width: 850px;
+.reading-description {
 
-            margin: auto;
+    color: #71818b;
 
-            padding: 110px 25px;
-        }
+    font-size: 11px;
 
-        .fragment {
-            text-align: center;
+    margin-top: 4px;
+}
 
-            padding: 75px 35px;
+.arrow {
 
-            position: relative;
-        }
+    color: #728d9c;
 
-        .fragment::before,
-        .fragment::after {
-            content: "“";
+    font-size: 18px;
+}
 
-            position: absolute;
 
-            font-size: 80px;
+/* FRAGMENTO */
 
-            line-height: 1;
+.fragment {
 
-            color: rgba(145, 190, 215, 0.18);
-        }
+    margin-top: 110px;
 
-        .fragment::before {
-            top: 5px;
-            left: 20px;
-        }
+    padding: 50px 30px;
 
-        .fragment::after {
-            content: "”";
+    text-align: center;
 
-            bottom: -10px;
-            right: 20px;
-        }
+    border-top: 1px solid rgba(210,225,235,0.08);
 
-        .fragment p {
-            max-width: 650px;
+    border-bottom: 1px solid rgba(210,225,235,0.08);
+}
 
-            margin: auto;
+.fragment p {
 
-            font-size: 25px;
+    font-family: "Cormorant Garamond", serif;
 
-            font-style: italic;
+    font-size: 27px;
 
-            color: #c7d8e4;
+    font-style: italic;
 
-            line-height: 1.8;
-        }
+    color: #c6d5dc;
 
-        .fragment-link {
-            display: inline-block;
+    line-height: 1.6;
+}
 
-            margin-top: 35px;
 
-            color: #8fbdd8;
+/* RODAPÉ */
 
-            font-size: 13px;
+footer {
 
-            border-bottom: 1px solid rgba(143, 189, 216, 0.4);
+    text-align: center;
 
-            padding-bottom: 3px;
+    padding: 30px;
 
-            transition:
-                color 0.3s ease,
-                border-color 0.3s ease;
-        }
+    color: #4f5c65;
 
-        .fragment-link:hover {
-            color: #d7edf9;
+    font-size: 10px;
 
-            border-color: #d7edf9;
-        }
+    letter-spacing: 2px;
+}
 
 
-        /* =========================
-           FRASE FINAL
-        ========================= */
+/* ANIMAÇÃO */
 
-        .closing {
-            max-width: 700px;
+@keyframes aparecer {
 
-            margin: auto;
+    to {
 
-            text-align: center;
+        opacity: 1;
 
-            padding: 130px 25px 150px;
-        }
+        transform: translateY(0);
 
-        .closing-line {
-            width: 35px;
+    }
 
-            height: 1px;
+}
 
-            background: #789cb3;
 
-            margin: 0 auto 40px;
-        }
+/* MOBILE */
 
-        .closing p {
-            font-size: 20px;
+@media (max-width: 600px) {
 
-            font-style: italic;
+    header {
 
-            color: #b5c7d4;
+        padding: 22px;
 
-            line-height: 1.9;
-        }
+    }
 
-        .closing small {
-            display: block;
+    .header-note {
 
-            margin-top: 25px;
+        display: none;
 
-            color: #718493;
+    }
 
-            font-size: 12px;
-        }
+    h1 {
 
+        font-size: 78px;
 
-        /* =========================
-           FOOTER
-        ========================= */
+    }
 
-        footer {
-            padding: 35px 20px;
+    .hero-text {
 
-            text-align: center;
+        font-size: 21px;
 
-            border-top: 1px solid rgba(190, 215, 230, 0.09);
+    }
 
-            color: #657887;
+    .reading-title {
 
-            font-size: 12px;
-        }
+        font-size: 22px;
 
-        footer p + p {
-            margin-top: 5px;
-        }
+    }
 
+    .reading-description {
 
-        /* =========================
-           RESPONSIVO
-        ========================= */
+        font-size: 10px;
 
-        @media (max-width: 700px) {
+    }
 
-            header {
-                padding: 24px 20px;
-            }
+    .fragment p {
 
-            nav {
-                gap: 15px;
-            }
+        font-size: 23px;
 
-            nav a {
-                font-size: 11px;
-            }
+    }
 
-            .hero {
-                min-height: 75vh;
+}
 
-                padding: 60px 22px 90px;
-            }
-
-            .hero h1 {
-                font-size: clamp(58px, 18vw, 90px);
-
-                letter-spacing: -4px;
-            }
-
-            .hero-text {
-                font-size: 15px;
-            }
-
-            .intro {
-                padding-bottom: 80px;
-            }
-
-            .intro p {
-                font-size: 16px;
-            }
-
-            .intro .highlight {
-                font-size: 19px;
-            }
-
-            .section {
-                padding: 75px 20px;
-            }
-
-            .section-heading {
-                margin-bottom: 40px;
-            }
-
-            .section-heading h2 {
-                font-size: 28px;
-            }
-
-            .reading-item {
-                grid-template-columns: 45px 1fr;
-
-                gap: 15px;
-
-                padding: 25px 5px;
-            }
-
-            .read-link {
-                grid-column: 2;
-
-                margin-top: -5px;
-            }
-
-            .reading-item:hover {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-
-            .fragment-section {
-                padding: 80px 20px;
-            }
-
-            .fragment {
-                padding: 60px 20px;
-            }
-
-            .fragment p {
-                font-size: 21px;
-            }
-
-            .closing {
-                padding: 100px 20px 120px;
-            }
-
-            .closing p {
-                font-size: 18px;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -617,301 +434,186 @@
 <body>
 
 
-    <!-- =========================
-         CABEÇALHO
-    ========================= -->
+<header>
 
-    <header>
+<a href="index.html" class="logo">
+ENTRELINHAS
+</a>
 
-        <a href="index.html" class="logo">
-            ENTRELINHAS
-        </a>
+<div class="header-note">
+um lugar para escrever
+</div>
 
-        <nav>
+</header>
 
-            <a href="#textos">
-                textos
-            </a>
 
-            <a href="#fragmentos">
-                fragmentos
-            </a>
+<section class="hero">
 
-        </nav>
+<div class="hero-content">
 
-    </header>
+<div class="eyebrow">
+entre pensamentos e silêncios
+</div>
 
+<h1>
+Entrelinhas
+</h1>
 
+<p class="hero-text">
 
-    <!-- =========================
-         ABERTURA
-    ========================= -->
+Um lugar para aquilo que nem sempre consegue ser dito em voz alta.
 
-    <section class="hero">
+Pensamentos, sentimentos, memórias e palavras que ficaram pelo caminho.
 
-        <div class="hero-content">
+</p>
 
-            <span class="eyebrow">
-                um lugar para deixar palavras
-            </span>
+<div class="hero-line"></div>
 
-            <h1>
-                Entre<span>linhas</span>
-            </h1>
+<div class="scroll">
+comece a ler
+</div>
 
-            <p class="hero-text">
-                Pensamentos que chegaram tarde.
-                Sentimentos que não encontraram palavras.
-                Memórias que permaneceram.
-                Coisas que talvez nunca tenham sido ditas.
-            </p>
+</div>
 
-            <div class="hero-line"></div>
+</section>
 
-        </div>
 
-    </section>
+<main class="content">
 
 
+<section class="intro">
 
-    <main>
+<p>
 
+Talvez algumas coisas não precisem ser explicadas.
 
-        <!-- =========================
-             INTRODUÇÃO
-        ========================= -->
+Talvez só precisem encontrar um lugar para existir.
 
-        <section class="intro">
+</p>
 
-            <p>
-                Talvez todo livro comece antes da primeira palavra.
-            </p>
+</section>
 
-            <p>
-                Talvez este também.
-            </p>
 
-            <p>
-                O Entrelinhas é um pequeno espaço para escrever
-                aquilo que nem sempre encontra lugar para ser dito.
-            </p>
+<section>
 
-            <p>
-                Não há obrigação de organizar sentimentos,
-                encontrar respostas ou terminar histórias.
-            </p>
+<div class="section-label">
+leituras
+</div>
 
-            <p class="highlight">
-                Algumas coisas só precisam ser colocadas no papel.
-            </p>
 
-        </section>
+<div class="reading-list">
 
 
+<a href="capitulos/01-o-comeco.html" class="reading">
 
-        <!-- =========================
-             TEXTOS
-        ========================= -->
+<div>
 
-        <section class="section" id="textos">
+<div class="reading-title">
+01 — O começo
+</div>
 
-            <div class="section-heading">
+<div class="reading-description">
+onde algumas palavras começam a existir
+</div>
 
-                <small>
-                    páginas
-                </small>
+</div>
 
-                <h2>
-                    Para ler devagar
-                </h2>
+<div class="arrow">
+→
+</div>
 
-            </div>
+</a>
 
 
-            <div class="reading-list">
+<a href="cartas/carta-para-mim-mesma.html" class="reading">
 
+<div>
 
-                <!-- O COMEÇO -->
+<div class="reading-title">
+Carta para mim mesma
+</div>
 
-                <a
-                    href="capitulos/01-o-comeco.html"
-                    class="reading-item"
-                >
+<div class="reading-description">
+algumas palavras que eu precisava ouvir
+</div>
 
-                    <div class="item-number">
-                        01
-                    </div>
+</div>
 
-                    <div class="item-content">
+<div class="arrow">
+→
+</div>
 
-                        <h3>
-                            O começo
-                        </h3>
+</a>
 
-                        <p>
-                            Talvez todo livro comece antes da primeira palavra.
-                        </p>
 
-                    </div>
+<a href="cartas/carta-que-nunca-enviei.html" class="reading">
 
-                    <div class="read-link">
-                        ler →
-                    </div>
+<div>
 
-                </a>
+<div class="reading-title">
+A carta que nunca enviei
+</div>
 
+<div class="reading-description">
+aquilo que ficou guardado por tempo demais
+</div>
 
+</div>
 
-                <!-- CARTA PARA MIM MESMA -->
+<div class="arrow">
+→
+</div>
 
-                <a
-                    href="cartas/carta-para-mim-mesma.html"
-                    class="reading-item"
-                >
+</a>
 
-                    <div class="item-number">
-                        02
-                    </div>
 
-                    <div class="item-content">
+<a href="fragmentos/fragmentos.html" class="reading">
 
-                        <h3>
-                            Carta para mim mesma
-                        </h3>
+<div>
 
-                        <p>
-                            Uma carta escrita sem respostas e sem julgamentos.
-                        </p>
+<div class="reading-title">
+Fragmentos
+</div>
 
-                    </div>
+<div class="reading-description">
+pequenos pedaços que não precisaram virar capítulos
+</div>
 
-                    <div class="read-link">
-                        ler →
-                    </div>
+</div>
 
-                </a>
+<div class="arrow">
+→
+</div>
 
+</a>
 
 
-                <!-- CARTA QUE NUNCA ENVIEI -->
+</div>
 
-                <a
-                    href="cartas/carta-que-nunca-enviei.html"
-                    class="reading-item"
-                >
+</section>
 
-                    <div class="item-number">
-                        03
-                    </div>
 
-                    <div class="item-content">
+<section class="fragment">
 
-                        <h3>
-                            A carta que nunca enviei
-                        </h3>
+<p>
 
-                        <p>
-                            Algumas palavras foram escritas,
-                            mas nunca chegaram ao seu destino.
-                        </p>
+“Algumas histórias não terminam.
 
-                    </div>
+Elas apenas aprendem a morar em outro lugar.”
 
-                    <div class="read-link">
-                        ler →
-                    </div>
+</p>
 
-                </a>
+</section>
 
 
-            </div>
+</main>
 
-        </section>
 
+<footer>
 
+ENTRELINHAS · 2026
 
-        <!-- =========================
-             FRAGMENTOS
-        ========================= -->
-
-        <section
-            class="fragment-section"
-            id="fragmentos"
-        >
-
-            <div class="section-heading">
-
-                <small>
-                    entre uma página e outra
-                </small>
-
-                <h2>
-                    Fragmentos
-                </h2>
-
-            </div>
-
-
-            <div class="fragment">
-
-                <p>
-                    Algumas coisas existem apenas
-                    para serem sentidas.
-                </p>
-
-                <a
-                    href="fragmentos/fragmentos.html"
-                    class="fragment-link"
-                >
-                    entrar nos fragmentos →
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             ENCERRAMENTO
-        ========================= -->
-
-        <section class="closing">
-
-            <div class="closing-line"></div>
-
-            <p>
-                “Nem tudo precisa ser dito em voz alta.
-                Algumas coisas encontram seu lugar
-                nas entrelinhas.”
-            </p>
-
-            <small>
-                — Entrelinhas
-            </small>
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- =========================
-         RODAPÉ
-    ========================= -->
-
-    <footer>
-
-        <p>
-            Entrelinhas
-        </p>
-
-        <p>
-            pensamentos, sentimentos e palavras que ficaram.
-        </p>
-
-    </footer>
+</footer>
 
 
 </body>
