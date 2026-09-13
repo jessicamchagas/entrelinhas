@@ -6,423 +6,528 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Entrelinhas | Um livro sem pressa</title>
+<title>Entrelinhas</title>
+
+<meta
+  name="description"
+  content="Um livro feito de pensamentos, sentimentos, memórias e palavras que ficaram por dizer."
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+  rel="stylesheet"
+>
 
 <style>
 
+:root {
+  --bg: #0b1118;
+  --bg-soft: #101923;
+  --text: #e7ebef;
+  --muted: #8d9aa7;
+  --line: rgba(231, 235, 239, 0.12);
+  --accent: #a9bbca;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-
-    min-height: 100vh;
-
-    background:
-        radial-gradient(
-            circle at 15% 10%,
-            rgba(91, 137, 166, 0.14),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(72, 108, 135, 0.10),
-            transparent 35%
-        ),
-        #0b141c;
-
-    color: #dce6ec;
-
-    font-family: "Inter", sans-serif;
-
-    line-height: 1.8;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
 }
 
-
-/* TEXTURA */
+/* =========================
+   FUNDO
+========================= */
 
 body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
 
-    content: "";
+  background:
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(119, 145, 166, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(80, 105, 125, 0.05),
+      transparent 30%
+    );
 
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    opacity: 0.025;
-
-    background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
-
-    z-index: -1;
+  z-index: -1;
 }
 
-
-/* NAVEGAÇÃO */
+/* =========================
+   HEADER
+========================= */
 
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 
-    width: 100%;
+  padding: 34px 7vw;
 
-    padding: 28px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    z-index: 10;
+  z-index: 10;
 }
 
 .logo {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
 
-    color: #e8f0f4;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
 
-    text-decoration: none;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 21px;
-
-    letter-spacing: 5px;
-
-    font-weight: 600;
+  color: var(--muted);
 }
 
 .header-note {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 
-    color: #718490;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
+  color: #657381;
 }
 
+/* =========================
+   CAPA
+========================= */
 
-/* CAPA */
+.cover {
+  min-height: 100vh;
 
-.hero {
+  padding: 150px 7vw 90px;
 
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 120px 25px 100px;
-
-    position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.hero-content {
+.cover-inner {
+  width: min(100%, 1080px);
+  margin: auto;
 
-    max-width: 850px;
+  display: grid;
+  grid-template-columns: 1fr 0.55fr;
 
-    opacity: 0;
-
-    transform: translateY(20px);
-
-    animation: aparecer 1.2s ease forwards;
+  gap: 80px;
+  align-items: end;
 }
 
-.eyebrow {
+/* número */
 
-    color: #91adbc;
+.book-number {
+  font-family: "Playfair Display", serif;
 
-    font-size: 11px;
+  font-size: 15px;
+  font-style: italic;
 
-    letter-spacing: 4px;
+  color: var(--muted);
 
-    text-transform: uppercase;
-
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
-h1 {
+/* título */
 
-    font-family: "Cormorant Garamond", serif;
+.title {
+  font-family: "Playfair Display", serif;
 
-    font-size: clamp(75px, 14vw, 150px);
+  font-size: clamp(70px, 10vw, 150px);
 
-    font-weight: 500;
+  font-weight: 400;
+  line-height: 0.9;
 
-    line-height: 0.8;
+  letter-spacing: -0.055em;
 
-    letter-spacing: -2px;
-
-    color: #edf4f7;
-
-    margin-bottom: 38px;
+  margin-left: -7px;
 }
 
-.hero-text {
-
-    max-width: 590px;
-
-    margin: auto;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 23px;
-
-    color: #aebdc5;
-
-    line-height: 1.7;
+.title span {
+  display: block;
 }
 
-.hero-line {
-
-    width: 45px;
-
-    height: 1px;
-
-    background: #91adbc;
-
-    margin: 40px auto;
+.title .italic {
+  font-style: italic;
+  margin-left: 0.28em;
 }
 
-.scroll {
+/* linha */
 
-    color: #62727c;
+.cover-line {
+  width: 100%;
+  max-width: 520px;
 
-    font-size: 10px;
+  height: 1px;
 
-    letter-spacing: 3px;
+  background: var(--line);
 
-    text-transform: uppercase;
+  margin: 48px 0 25px;
 }
 
+/* descrição */
 
-/* CONTEÚDO */
+.description {
+  max-width: 440px;
 
-.content {
+  font-family: "Playfair Display", serif;
 
-    width: min(820px, calc(100% - 44px));
+  font-size: 18px;
+  line-height: 1.75;
 
-    margin: auto;
-
-    padding: 90px 0 120px;
+  color: #aeb8c1;
 }
 
-.intro {
+/* lateral */
 
-    text-align: center;
-
-    margin-bottom: 100px;
+.cover-side {
+  padding-bottom: 10px;
 }
 
-.intro p {
+.side-label {
+  font-size: 10px;
 
-    font-family: "Cormorant Garamond", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
 
-    font-size: 25px;
+  color: #657381;
 
-    color: #cbd7dd;
-
-    line-height: 1.8;
+  margin-bottom: 18px;
 }
 
+.side-text {
+  font-family: "Playfair Display", serif;
 
-/* LEITURAS */
+  font-size: 21px;
+  line-height: 1.65;
 
-.section-label {
-
-    color: #718894;
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 25px;
+  color: #c6cdd3;
 }
 
-.reading-list {
-
-    border-top: 1px solid rgba(210,225,235,0.08);
+.side-text em {
+  color: var(--accent);
 }
 
-.reading {
+/* botão */
 
-    display: flex;
+.enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
 
-    justify-content: space-between;
+  margin-top: 38px;
 
-    align-items: center;
+  color: var(--text);
 
-    gap: 30px;
+  text-decoration: none;
 
-    padding: 27px 0;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 
-    border-bottom: 1px solid rgba(210,225,235,0.08);
-
-    text-decoration: none;
-
-    transition: 0.3s ease;
+  transition: gap 0.4s ease;
 }
 
-.reading:hover {
+.enter::after {
+  content: "→";
 
-    padding-left: 10px;
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
 
-    padding-right: 10px;
+  transition: transform 0.4s ease;
 }
 
-.reading-title {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 25px;
-
-    color: #e0e9ed;
+.enter:hover {
+  gap: 26px;
 }
 
-.reading-description {
-
-    color: #71818b;
-
-    font-size: 11px;
-
-    margin-top: 4px;
+.enter:hover::after {
+  transform: translateX(4px);
 }
 
-.arrow {
+/* =========================
+   ÍNDICE
+========================= */
 
-    color: #728d9c;
+.index {
+  width: min(100%, 1080px);
 
-    font-size: 18px;
+  margin: auto;
+
+  padding: 120px 7vw 150px;
 }
 
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 
-/* FRAGMENTO */
+  padding-bottom: 22px;
 
-.fragment {
+  border-bottom: 1px solid var(--line);
 
-    margin-top: 110px;
-
-    padding: 50px 30px;
-
-    text-align: center;
-
-    border-top: 1px solid rgba(210,225,235,0.08);
-
-    border-bottom: 1px solid rgba(210,225,235,0.08);
+  margin-bottom: 20px;
 }
 
-.fragment p {
+.section-title {
+  font-family: "Playfair Display", serif;
 
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 27px;
-
-    font-style: italic;
-
-    color: #c6d5dc;
-
-    line-height: 1.6;
+  font-size: 32px;
+  font-weight: 400;
 }
 
+.section-number {
+  font-size: 10px;
 
-/* RODAPÉ */
+  letter-spacing: 0.2em;
+
+  color: #657381;
+}
+
+/* itens */
+
+.entry {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 70px 1fr 35px;
+
+  align-items: center;
+
+  padding: 28px 0;
+
+  border-bottom: 1px solid var(--line);
+
+  text-decoration: none;
+
+  color: var(--text);
+
+  transition: padding 0.35s ease;
+}
+
+.entry:hover {
+  padding-left: 12px;
+}
+
+.entry-number {
+  font-family: "Playfair Display", serif;
+
+  font-size: 14px;
+  font-style: italic;
+
+  color: #697784;
+}
+
+.entry-name {
+  font-family: "Playfair Display", serif;
+
+  font-size: 25px;
+
+  transition: color 0.3s ease;
+}
+
+.entry:hover .entry-name {
+  color: #cbd7df;
+}
+
+.entry-type {
+  font-size: 9px;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  color: #62707d;
+
+  text-align: right;
+}
+
+/* =========================
+   FRASE
+========================= */
+
+.quote {
+  min-height: 70vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 100px 7vw;
+}
+
+.quote-inner {
+  width: min(800px, 100%);
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.quote-mark {
+  font-family: "Playfair Display", serif;
+
+  font-size: 70px;
+
+  color: #536473;
+
+  line-height: 0.5;
+
+  margin-bottom: 30px;
+}
+
+.quote-text {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(28px, 4vw, 48px);
+
+  line-height: 1.35;
+
+  font-style: italic;
+
+  color: #cbd2d8;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
+  padding: 35px 7vw;
 
-    text-align: center;
+  border-top: 1px solid var(--line);
 
-    padding: 30px;
+  display: flex;
+  justify-content: space-between;
 
-    color: #4f5c65;
+  color: #596773;
 
-    font-size: 10px;
+  font-size: 10px;
 
-    letter-spacing: 2px;
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
 }
 
+/* =========================
+   ANIMAÇÃO
+========================= */
 
-/* ANIMAÇÃO */
+.cover-inner > * {
+  animation: appear 1.2s ease both;
+}
 
-@keyframes aparecer {
+.cover-side {
+  animation-delay: 0.25s !important;
+}
 
-    to {
+@keyframes appear {
 
-        opacity: 1;
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-        transform: translateY(0);
-
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 }
 
+/* =========================
+   MOBILE
+========================= */
 
-/* MOBILE */
+@media (max-width: 760px) {
 
-@media (max-width: 600px) {
+  header {
+    padding: 25px 24px;
+  }
 
-    header {
+  .header-note {
+    display: none;
+  }
 
-        padding: 22px;
+  .cover {
+    padding: 125px 24px 80px;
 
-    }
+    min-height: auto;
+  }
 
-    .header-note {
+  .cover-inner {
+    display: block;
+  }
 
-        display: none;
+  .title {
+    font-size: clamp(65px, 20vw, 105px);
+  }
 
-    }
+  .description {
+    font-size: 17px;
+  }
 
-    h1 {
+  .cover-side {
+    margin-top: 80px;
 
-        font-size: 78px;
+    max-width: 380px;
+  }
 
-    }
+  .index {
+    padding: 80px 24px 110px;
+  }
 
-    .hero-text {
+  .entry {
+    grid-template-columns: 48px 1fr 20px;
+  }
 
-        font-size: 21px;
+  .entry-name {
+    font-size: 21px;
+  }
 
-    }
+  .entry-type {
+    font-size: 8px;
+  }
 
-    .reading-title {
+  .quote {
+    min-height: 60vh;
 
-        font-size: 22px;
+    padding: 80px 24px;
+  }
 
-    }
+  .quote-text {
+    font-size: 30px;
+  }
 
-    .reading-description {
+  footer {
+    padding: 28px 24px;
 
-        font-size: 10px;
+    flex-direction: column;
 
-    }
-
-    .fragment p {
-
-        font-size: 23px;
-
-    }
+    gap: 10px;
+  }
 
 }
 
@@ -433,185 +538,207 @@ footer {
 
 <body>
 
-
 <header>
 
-<a href="index.html" class="logo">
-ENTRELINHAS
-</a>
+  <div class="logo">
+    Entrelinhas
+  </div>
 
-<div class="header-note">
-um lugar para escrever
-</div>
+  <div class="header-note">
+    um livro sem pressa
+  </div>
 
 </header>
 
 
-<section class="hero">
+<main>
 
-<div class="hero-content">
+  <!-- CAPA -->
 
-<div class="eyebrow">
-entre pensamentos e silêncios
-</div>
+  <section class="cover">
 
-<h1>
-Entrelinhas
-</h1>
+    <div class="cover-inner">
 
-<p class="hero-text">
+      <div>
 
-Um lugar para aquilo que nem sempre consegue ser dito em voz alta.
+        <div class="book-number">
+          volume I · 2026
+        </div>
 
-Pensamentos, sentimentos, memórias e palavras que ficaram pelo caminho.
+        <h1 class="title">
+          Entre
+          <span class="italic">linhas.</span>
+        </h1>
 
-</p>
+        <div class="cover-line"></div>
 
-<div class="hero-line"></div>
+        <p class="description">
+          Um lugar para colocar em palavras aquilo
+          que às vezes não encontra espaço em nenhum outro lugar.
+        </p>
 
-<div class="scroll">
-comece a ler
-</div>
+        <a href="#indice" class="enter">
+          começar a ler
+        </a>
 
-</div>
+      </div>
 
-</section>
 
+      <div class="cover-side">
 
-<main class="content">
+        <div class="side-label">
+          uma coleção de coisas
+        </div>
 
+        <p class="side-text">
+          Pensamentos que ficaram.
+          <br>
+          Memórias que voltam.
+          <br>
+          Cartas que nunca chegaram.
+          <br><br>
+          E algumas palavras que
+          <em>precisavam existir.</em>
+        </p>
 
-<section class="intro">
+      </div>
 
-<p>
+    </div>
 
-Talvez algumas coisas não precisem ser explicadas.
+  </section>
 
-Talvez só precisem encontrar um lugar para existir.
 
-</p>
+  <!-- ÍNDICE -->
 
-</section>
+  <section class="index" id="indice">
 
+    <div class="section-top">
 
-<section>
+      <h2 class="section-title">
+        Índice
+      </h2>
 
-<div class="section-label">
-leituras
-</div>
+      <span class="section-number">
+        conteúdo
+      </span>
 
+    </div>
 
-<div class="reading-list">
 
+    <a
+      href="capitulos/01-o-comeco.html"
+      class="entry"
+    >
 
-<a href="capitulos/01-o-comeco.html" class="reading">
+      <span class="entry-number">
+        01
+      </span>
 
-<div>
+      <span class="entry-name">
+        O começo
+      </span>
 
-<div class="reading-title">
-01 — O começo
-</div>
+      <span class="entry-type">
+        capítulo
+      </span>
 
-<div class="reading-description">
-onde algumas palavras começam a existir
-</div>
+    </a>
 
-</div>
 
-<div class="arrow">
-→
-</div>
+    <a
+      href="cartas/carta-para-mim-mesma.html"
+      class="entry"
+    >
 
-</a>
+      <span class="entry-number">
+        02
+      </span>
 
+      <span class="entry-name">
+        Carta para mim mesma
+      </span>
 
-<a href="cartas/carta-para-mim-mesma.html" class="reading">
+      <span class="entry-type">
+        carta
+      </span>
 
-<div>
+    </a>
 
-<div class="reading-title">
-Carta para mim mesma
-</div>
 
-<div class="reading-description">
-algumas palavras que eu precisava ouvir
-</div>
+    <a
+      href="cartas/carta-que-nunca-enviei.html"
+      class="entry"
+    >
 
-</div>
+      <span class="entry-number">
+        03
+      </span>
 
-<div class="arrow">
-→
-</div>
+      <span class="entry-name">
+        A carta que nunca enviei
+      </span>
 
-</a>
+      <span class="entry-type">
+        carta
+      </span>
 
+    </a>
 
-<a href="cartas/carta-que-nunca-enviei.html" class="reading">
 
-<div>
+    <a
+      href="fragmentos/fragmentos.html"
+      class="entry"
+    >
 
-<div class="reading-title">
-A carta que nunca enviei
-</div>
+      <span class="entry-number">
+        04
+      </span>
 
-<div class="reading-description">
-aquilo que ficou guardado por tempo demais
-</div>
+      <span class="entry-name">
+        Fragmentos
+      </span>
 
-</div>
+      <span class="entry-type">
+        fragmentos
+      </span>
 
-<div class="arrow">
-→
-</div>
+    </a>
 
-</a>
+  </section>
 
 
-<a href="fragmentos/fragmentos.html" class="reading">
+  <!-- FRASE -->
 
-<div>
+  <section class="quote">
 
-<div class="reading-title">
-Fragmentos
-</div>
+    <div class="quote-inner">
 
-<div class="reading-description">
-pequenos pedaços que não precisaram virar capítulos
-</div>
+      <div class="quote-mark">
+        “
+      </div>
 
-</div>
+      <p class="quote-text">
+        Talvez algumas coisas só precisem
+        ser escritas para finalmente
+        deixarem de pesar.
+      </p>
 
-<div class="arrow">
-→
-</div>
+    </div>
 
-</a>
-
-
-</div>
-
-</section>
-
-
-<section class="fragment">
-
-<p>
-
-“Algumas histórias não terminam.
-
-Elas apenas aprendem a morar em outro lugar.”
-
-</p>
-
-</section>
-
+  </section>
 
 </main>
 
 
 <footer>
 
-ENTRELINHAS · 2026
+  <span>
+    Entrelinhas
+  </span>
+
+  <span>
+    escrito aos poucos
+  </span>
 
 </footer>
 
