@@ -1,14 +1,26 @@
-# 💌 Cartas
+# 💌 Carta para mim mesma
 
-Algumas coisas são difíceis de dizer olhando nos olhos.
-
-Algumas nunca serão ditas.
-
-Aqui ficam as cartas que eu escrevo sem necessariamente saber se algum dia serão lidas.
+*Uma carta que eu escrevo sem saber exatamente por quê.*
 
 ---
 
-### Cartas
+Querida eu,
 
-* [Carta para mim mesma](carta-para-mim-mesma.md)
-* [Carta que nunca enviei](carta-que-nunca-enviei.md)
+não sei muito bem por onde começar.
+
+Talvez eu tenha passado tanto tempo tentando explicar
+o que sinto para outras pessoas que esqueci de tentar
+explicar para mim mesma.
+
+Então, hoje, eu só quero escrever.
+
+Sem julgamentos.
+
+Sem precisar ter respostas.
+
+Sem precisar saber como tudo vai terminar.
+
+---
+
+*Com carinho,  
+eu.*
