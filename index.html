@@ -2,14 +2,15 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Entrelinhas | Pensamentos que ficaram</title>
+    <title>Entrelinhas</title>
 
     <meta
         name="description"
-        content="Entrelinhas — um livro feito de pensamentos, sentimentos, memórias e palavras que ficaram por dizer."
+        content="Entrelinhas — pensamentos, sentimentos, memórias e palavras que ficaram por dizer."
     >
 
     <style>
@@ -26,8 +27,19 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #07111F;
-            color: #E8F1F8;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #101c2c 0%,
+                    #122235 45%,
+                    #0e1b2b 100%
+                );
+
+            color: #e8edf3;
+
+            min-height: 100vh;
+
             line-height: 1.8;
         }
 
@@ -36,30 +48,31 @@
             text-decoration: none;
         }
 
+
         /* =========================
-           FUNDO
+           DETALHE DE LUZ
         ========================= */
 
         body::before {
             content: "";
+
             position: fixed;
-            inset: 0;
+
+            width: 500px;
+            height: 500px;
+
+            top: -250px;
+            right: -150px;
+
+            background: rgba(130, 190, 225, 0.07);
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
             pointer-events: none;
-
-            background:
-                radial-gradient(
-                    circle at 20% 10%,
-                    rgba(93, 183, 255, 0.12),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at 80% 70%,
-                    rgba(140, 207, 255, 0.07),
-                    transparent 35%
-                );
-
-            z-index: -1;
         }
+
 
         /* =========================
            NAVEGAÇÃO
@@ -67,308 +80,435 @@
 
         header {
             width: 100%;
-            padding: 25px 7%;
+
+            padding: 28px 8%;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
 
-            border-bottom: 1px solid rgba(140, 207, 255, 0.10);
-
-            background: rgba(7, 17, 31, 0.88);
-            backdrop-filter: blur(10px);
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            position: relative;
+            z-index: 10;
         }
 
         .logo {
-            font-size: 20px;
+            font-size: 15px;
+
+            letter-spacing: 3px;
+
+            color: #c7dbea;
+
             font-weight: bold;
-            letter-spacing: 2px;
-            color: #8CCFFF;
         }
 
         nav {
             display: flex;
+
             gap: 28px;
         }
 
         nav a {
-            color: #9DB0C0;
-            font-size: 14px;
+            font-size: 13px;
 
-            transition:
-                color 0.3s ease,
-                transform 0.3s ease;
+            color: #9daebe;
+
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #5DB7FF;
-            transform: translateY(-2px);
+            color: #d9ecfa;
         }
+
 
         /* =========================
            HERO
         ========================= */
 
         .hero {
-            min-height: 85vh;
+            min-height: 82vh;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             text-align: center;
 
-            padding: 80px 20px;
+            padding: 70px 25px 120px;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 760px;
         }
 
-        .small-title {
-            color: #5DB7FF;
-            font-size: 14px;
+        .eyebrow {
+            display: inline-block;
+
+            margin-bottom: 28px;
+
+            color: #8fb9d5;
+
+            font-size: 12px;
+
             letter-spacing: 4px;
+
             text-transform: uppercase;
-            margin-bottom: 25px;
         }
 
         .hero h1 {
-            font-size: clamp(60px, 11vw, 130px);
-            font-weight: 700;
+            font-size: clamp(65px, 12vw, 130px);
+
+            font-weight: normal;
+
             letter-spacing: -5px;
 
-            color: #F2F8FC;
+            color: #edf4f8;
 
-            margin-bottom: 25px;
+            line-height: 0.95;
+
+            margin-bottom: 35px;
         }
 
         .hero h1 span {
-            color: #5DB7FF;
+            color: #9ac8e3;
         }
 
-        .hero p {
-            max-width: 620px;
-            margin: 0 auto;
+        .hero-text {
+            max-width: 570px;
 
-            color: #9DB0C0;
-            font-size: 18px;
+            margin: auto;
+
+            color: #aebdca;
+
+            font-size: 17px;
+
+            line-height: 1.9;
         }
 
-        .scroll {
-            margin-top: 55px;
+        .hero-line {
+            width: 55px;
 
-            display: inline-block;
+            height: 1px;
 
-            color: #8CCFFF;
-            font-size: 13px;
-            letter-spacing: 2px;
+            background: #7faeca;
 
-            animation: floating 2.5s ease-in-out infinite;
+            margin: 45px auto 0;
+
+            opacity: 0.7;
         }
 
-        @keyframes floating {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(7px);
-            }
-        }
 
         /* =========================
-           CONTEÚDO
+           INTRODUÇÃO
+        ========================= */
+
+        .intro {
+            max-width: 780px;
+
+            margin: 0 auto;
+
+            padding: 0 25px 120px;
+
+            text-align: center;
+        }
+
+        .intro p {
+            color: #b8c5d0;
+
+            font-size: 17px;
+
+            line-height: 2;
+
+            margin-bottom: 22px;
+        }
+
+        .intro .highlight {
+            color: #dceaf3;
+
+            font-size: 21px;
+
+            font-style: italic;
+
+            margin-top: 40px;
+        }
+
+
+        /* =========================
+           SEÇÕES
         ========================= */
 
         main {
+            width: 100%;
+        }
+
+        .section {
             max-width: 1050px;
+
             margin: auto;
-            padding: 0 25px;
+
+            padding: 90px 25px;
         }
 
-        section {
-            padding: 100px 0;
+        .section-heading {
+            text-align: center;
+
+            margin-bottom: 55px;
         }
 
-        .section-title {
-            margin-bottom: 45px;
-        }
-
-        .section-title span {
+        .section-heading small {
             display: block;
 
-            color: #5DB7FF;
+            color: #7faeca;
 
-            font-size: 13px;
-            letter-spacing: 3px;
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
             text-transform: uppercase;
 
-            margin-bottom: 10px;
+            margin-bottom: 13px;
         }
 
-        .section-title h2 {
-            font-size: 36px;
-            color: #F2F8FC;
+        .section-heading h2 {
+            font-size: 32px;
+
+            font-weight: normal;
+
+            color: #e5edf3;
         }
 
-        .intro {
-            max-width: 720px;
-
-            font-size: 18px;
-            color: #B7C7D4;
-        }
-
-        .intro p + p {
-            margin-top: 22px;
-        }
 
         /* =========================
-           CARDS
+           TEXTOS
         ========================= */
 
-        .cards {
+        .reading-list {
+            max-width: 760px;
+
+            margin: auto;
+        }
+
+        .reading-item {
             display: grid;
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 70px 1fr auto;
 
-            gap: 22px;
-        }
+            align-items: center;
 
-        .card {
-            background: #0D1B2A;
+            gap: 25px;
 
-            border: 1px solid rgba(140, 207, 255, 0.12);
+            padding: 30px 10px;
 
-            border-radius: 18px;
-
-            padding: 32px;
-
-            min-height: 260px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            border-bottom: 1px solid rgba(190, 215, 230, 0.12);
 
             transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                box-shadow 0.3s ease;
+                padding 0.3s ease,
+                background 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-
-            border-color: rgba(93, 183, 255, 0.45);
-
-            box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.25);
+        .reading-item:first-child {
+            border-top: 1px solid rgba(190, 215, 230, 0.12);
         }
 
-        .card-number {
-            color: #5DB7FF;
+        .reading-item:hover {
+            padding-left: 18px;
+            padding-right: 18px;
 
-            font-size: 13px;
+            background: rgba(180, 210, 230, 0.035);
+        }
+
+        .item-number {
+            color: #7298b1;
+
+            font-size: 12px;
+
             letter-spacing: 2px;
         }
 
-        .card h3 {
-            font-size: 23px;
-            margin: 18px 0 10px;
+        .item-content h3 {
+            font-size: 20px;
 
-            color: #F2F8FC;
+            font-weight: normal;
+
+            color: #e4edf3;
+
+            margin-bottom: 5px;
         }
 
-        .card p {
-            color: #9DB0C0;
-            font-size: 15px;
-        }
-
-        .card-link {
-            margin-top: 25px;
-
-            color: #8CCFFF;
+        .item-content p {
+            color: #94a6b5;
 
             font-size: 14px;
-            font-weight: bold;
-
-            display: inline-block;
-
-            transition: transform 0.3s ease;
         }
 
-        .card:hover .card-link {
-            transform: translateX(5px);
+        .read-link {
+            color: #9bc8e2;
+
+            font-size: 13px;
+
+            white-space: nowrap;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
         }
+
+        .reading-item:hover .read-link {
+            color: #d2eaf7;
+
+            transform: translateX(4px);
+        }
+
 
         /* =========================
-           FRAGMENTO
+           FRAGMENTOS
         ========================= */
 
-        .fragmento {
-            margin: 40px auto 0;
+        .fragment-section {
+            max-width: 850px;
 
-            max-width: 750px;
+            margin: auto;
 
-            padding: 55px 40px;
-
-            text-align: center;
-
-            border-top: 1px solid rgba(140, 207, 255, 0.15);
-            border-bottom: 1px solid rgba(140, 207, 255, 0.15);
+            padding: 110px 25px;
         }
 
-        .fragmento p {
+        .fragment {
+            text-align: center;
+
+            padding: 75px 35px;
+
+            position: relative;
+        }
+
+        .fragment::before,
+        .fragment::after {
+            content: "“";
+
+            position: absolute;
+
+            font-size: 80px;
+
+            line-height: 1;
+
+            color: rgba(145, 190, 215, 0.18);
+        }
+
+        .fragment::before {
+            top: 5px;
+            left: 20px;
+        }
+
+        .fragment::after {
+            content: "”";
+
+            bottom: -10px;
+            right: 20px;
+        }
+
+        .fragment p {
+            max-width: 650px;
+
+            margin: auto;
+
             font-size: 25px;
 
             font-style: italic;
 
-            color: #C7DCEB;
+            color: #c7d8e4;
+
+            line-height: 1.8;
         }
+
+        .fragment-link {
+            display: inline-block;
+
+            margin-top: 35px;
+
+            color: #8fbdd8;
+
+            font-size: 13px;
+
+            border-bottom: 1px solid rgba(143, 189, 216, 0.4);
+
+            padding-bottom: 3px;
+
+            transition:
+                color 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .fragment-link:hover {
+            color: #d7edf9;
+
+            border-color: #d7edf9;
+        }
+
 
         /* =========================
-           FINAL
+           FRASE FINAL
         ========================= */
 
-        .final {
+        .closing {
+            max-width: 700px;
+
+            margin: auto;
+
             text-align: center;
 
-            padding: 130px 20px;
+            padding: 130px 25px 150px;
         }
 
-        .final h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
+        .closing-line {
+            width: 35px;
+
+            height: 1px;
+
+            background: #789cb3;
+
+            margin: 0 auto 40px;
         }
 
-        .final p {
-            color: #9DB0C0;
-            max-width: 600px;
-            margin: auto;
+        .closing p {
+            font-size: 20px;
+
+            font-style: italic;
+
+            color: #b5c7d4;
+
+            line-height: 1.9;
         }
+
+        .closing small {
+            display: block;
+
+            margin-top: 25px;
+
+            color: #718493;
+
+            font-size: 12px;
+        }
+
 
         /* =========================
            FOOTER
         ========================= */
 
         footer {
-            text-align: center;
-
             padding: 35px 20px;
 
-            border-top: 1px solid rgba(140, 207, 255, 0.10);
+            text-align: center;
 
-            color: #6F8495;
+            border-top: 1px solid rgba(190, 215, 230, 0.09);
 
-            font-size: 13px;
+            color: #657887;
+
+            font-size: 12px;
         }
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
 
         /* =========================
            RESPONSIVO
@@ -377,63 +517,108 @@
         @media (max-width: 700px) {
 
             header {
-                padding: 20px;
+                padding: 24px 20px;
             }
 
             nav {
-                gap: 14px;
+                gap: 15px;
             }
 
             nav a {
-                font-size: 12px;
+                font-size: 11px;
             }
 
             .hero {
                 min-height: 75vh;
-                padding: 70px 20px;
+
+                padding: 60px 22px 90px;
             }
 
             .hero h1 {
-                letter-spacing: -3px;
+                font-size: clamp(58px, 18vw, 90px);
+
+                letter-spacing: -4px;
             }
 
-            .hero p {
+            .hero-text {
+                font-size: 15px;
+            }
+
+            .intro {
+                padding-bottom: 80px;
+            }
+
+            .intro p {
                 font-size: 16px;
             }
 
-            section {
-                padding: 75px 0;
+            .intro .highlight {
+                font-size: 19px;
             }
 
-            .section-title h2 {
-                font-size: 30px;
+            .section {
+                padding: 75px 20px;
             }
 
-            .card {
-                padding: 26px;
+            .section-heading {
+                margin-bottom: 40px;
             }
 
-            .fragmento {
-                padding: 40px 20px;
+            .section-heading h2 {
+                font-size: 28px;
             }
 
-            .fragmento p {
+            .reading-item {
+                grid-template-columns: 45px 1fr;
+
+                gap: 15px;
+
+                padding: 25px 5px;
+            }
+
+            .read-link {
+                grid-column: 2;
+
+                margin-top: -5px;
+            }
+
+            .reading-item:hover {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .fragment-section {
+                padding: 80px 20px;
+            }
+
+            .fragment {
+                padding: 60px 20px;
+            }
+
+            .fragment p {
                 font-size: 21px;
             }
 
-            .final h2 {
-                font-size: 32px;
+            .closing {
+                padding: 100px 20px 120px;
             }
+
+            .closing p {
+                font-size: 18px;
+            }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
 
+
     <!-- =========================
-         NAVEGAÇÃO
+         CABEÇALHO
     ========================= -->
 
     <header>
@@ -444,16 +629,12 @@
 
         <nav>
 
-            <a href="#sobre">
-                Sobre
-            </a>
-
             <a href="#textos">
-                Textos
+                textos
             </a>
 
             <a href="#fragmentos">
-                Fragmentos
+                fragmentos
             </a>
 
         </nav>
@@ -461,178 +642,169 @@
     </header>
 
 
+
     <!-- =========================
-         HERO
+         ABERTURA
     ========================= -->
 
     <section class="hero">
 
         <div class="hero-content">
 
-            <div class="small-title">
-                um lugar para escrever
-            </div>
+            <span class="eyebrow">
+                um lugar para deixar palavras
+            </span>
 
             <h1>
                 Entre<span>linhas</span>
             </h1>
 
-            <p>
+            <p class="hero-text">
                 Pensamentos que chegaram tarde.
                 Sentimentos que não encontraram palavras.
-                Memórias que ainda permanecem.
+                Memórias que permaneceram.
+                Coisas que talvez nunca tenham sido ditas.
             </p>
 
-            <div class="scroll">
-                ↓ continue lendo
-            </div>
+            <div class="hero-line"></div>
 
         </div>
 
     </section>
 
 
+
     <main>
 
+
         <!-- =========================
-             SOBRE
+             INTRODUÇÃO
         ========================= -->
 
-        <section id="sobre">
+        <section class="intro">
 
-            <div class="section-title">
+            <p>
+                Talvez todo livro comece antes da primeira palavra.
+            </p>
 
-                <span>
-                    01
-                </span>
+            <p>
+                Talvez este também.
+            </p>
 
-                <h2>
-                    Sobre este lugar
-                </h2>
+            <p>
+                O Entrelinhas é um pequeno espaço para escrever
+                aquilo que nem sempre encontra lugar para ser dito.
+            </p>
 
-            </div>
+            <p>
+                Não há obrigação de organizar sentimentos,
+                encontrar respostas ou terminar histórias.
+            </p>
 
-            <div class="intro">
-
-                <p>
-                    Talvez todo livro comece antes da primeira palavra.
-                </p>
-
-                <p>
-                    O Entrelinhas nasceu como um espaço para colocar
-                    em palavras aquilo que nem sempre consegue ser dito.
-                </p>
-
-                <p>
-                    Não existe uma ordem perfeita por aqui.
-                    Alguns textos serão histórias.
-                    Outros serão apenas pensamentos.
-                    Alguns talvez nunca tenham um final.
-                </p>
-
-                <p>
-                    E tudo bem.
-                </p>
-
-            </div>
+            <p class="highlight">
+                Algumas coisas só precisam ser colocadas no papel.
+            </p>
 
         </section>
+
 
 
         <!-- =========================
              TEXTOS
         ========================= -->
 
-        <section id="textos">
+        <section class="section" id="textos">
 
-            <div class="section-title">
+            <div class="section-heading">
 
-                <span>
-                    02
-                </span>
+                <small>
+                    páginas
+                </small>
 
                 <h2>
-                    Textos
+                    Para ler devagar
                 </h2>
 
             </div>
 
-            <div class="cards">
+
+            <div class="reading-list">
 
 
-                <!-- CAPÍTULO 01 -->
+                <!-- O COMEÇO -->
 
-                <article class="card">
+                <a
+                    href="capitulos/01-o-comeco.html"
+                    class="reading-item"
+                >
 
-                    <div>
+                    <div class="item-number">
+                        01
+                    </div>
 
-                        <div class="card-number">
-                            CAPÍTULO 01
-                        </div>
+                    <div class="item-content">
 
                         <h3>
                             O começo
                         </h3>
 
                         <p>
-                            Talvez este seja apenas o começo
-                            de um lugar onde algumas coisas
-                            finalmente podem ser escritas.
+                            Talvez todo livro comece antes da primeira palavra.
                         </p>
 
                     </div>
 
-                    <a
-                        href="capitulos/01-o-comeco.html"
-                        class="card-link"
-                    >
-                        Ler capítulo →
-                    </a>
+                    <div class="read-link">
+                        ler →
+                    </div>
 
-                </article>
+                </a>
+
 
 
                 <!-- CARTA PARA MIM MESMA -->
 
-                <article class="card">
+                <a
+                    href="cartas/carta-para-mim-mesma.html"
+                    class="reading-item"
+                >
 
-                    <div>
+                    <div class="item-number">
+                        02
+                    </div>
 
-                        <div class="card-number">
-                            CARTA
-                        </div>
+                    <div class="item-content">
 
                         <h3>
-                            Para mim mesma
+                            Carta para mim mesma
                         </h3>
 
                         <p>
-                            Uma carta escrita sem respostas,
-                            sem julgamentos e sem a obrigação
-                            de saber como tudo vai terminar.
+                            Uma carta escrita sem respostas e sem julgamentos.
                         </p>
 
                     </div>
 
-                    <a
-                        href="cartas/carta-para-mim-mesma.html"
-                        class="card-link"
-                    >
-                        Ler carta →
-                    </a>
+                    <div class="read-link">
+                        ler →
+                    </div>
 
-                </article>
+                </a>
+
 
 
                 <!-- CARTA QUE NUNCA ENVIEI -->
 
-                <article class="card">
+                <a
+                    href="cartas/carta-que-nunca-enviei.html"
+                    class="reading-item"
+                >
 
-                    <div>
+                    <div class="item-number">
+                        03
+                    </div>
 
-                        <div class="card-number">
-                            CARTA
-                        </div>
+                    <div class="item-content">
 
                         <h3>
                             A carta que nunca enviei
@@ -645,14 +817,11 @@
 
                     </div>
 
-                    <a
-                        href="cartas/carta-que-nunca-enviei.html"
-                        class="card-link"
-                    >
-                        Ler carta →
-                    </a>
+                    <div class="read-link">
+                        ler →
+                    </div>
 
-                </article>
+                </a>
 
 
             </div>
@@ -660,17 +829,21 @@
         </section>
 
 
+
         <!-- =========================
              FRAGMENTOS
         ========================= -->
 
-        <section id="fragmentos">
+        <section
+            class="fragment-section"
+            id="fragmentos"
+        >
 
-            <div class="section-title">
+            <div class="section-heading">
 
-                <span>
-                    03
-                </span>
+                <small>
+                    entre uma página e outra
+                </small>
 
                 <h2>
                     Fragmentos
@@ -678,38 +851,19 @@
 
             </div>
 
-            <div class="intro">
+
+            <div class="fragment">
 
                 <p>
-                    Nem todo sentimento precisa de um capítulo.
-                </p>
-
-                <p>
-                    Às vezes são apenas algumas palavras.
-                    Uma frase.
-                    Uma lembrança.
-                    Uma noite difícil.
-                    Uma coisa bonita que aconteceu durante o dia.
-                </p>
-
-                <p>
-                    Pequenos pedaços de mim que não precisam
-                    fazer parte de uma história maior.
-                </p>
-
-            </div>
-
-            <div class="fragmento">
-
-                <p>
-                    “Algumas coisas existem apenas para serem sentidas.”
+                    Algumas coisas existem apenas
+                    para serem sentidas.
                 </p>
 
                 <a
                     href="fragmentos/fragmentos.html"
-                    class="card-link"
+                    class="fragment-link"
                 >
-                    Ler fragmentos →
+                    entrar nos fragmentos →
                 </a>
 
             </div>
@@ -717,35 +871,40 @@
         </section>
 
 
+
         <!-- =========================
-             FINAL
+             ENCERRAMENTO
         ========================= -->
 
-        <section class="final">
+        <section class="closing">
 
-            <h2>
-                Talvez você também tenha algo
-                nas entrelinhas.
-            </h2>
+            <div class="closing-line"></div>
 
             <p>
-                Este espaço não precisa ter todas as respostas.
-                Às vezes, escrever já é uma forma de continuar.
+                “Nem tudo precisa ser dito em voz alta.
+                Algumas coisas encontram seu lugar
+                nas entrelinhas.”
             </p>
 
+            <small>
+                — Entrelinhas
+            </small>
+
         </section>
+
 
     </main>
 
 
+
     <!-- =========================
-         FOOTER
+         RODAPÉ
     ========================= -->
 
     <footer>
 
         <p>
-            Entrelinhas © 2026
+            Entrelinhas
         </p>
 
         <p>
