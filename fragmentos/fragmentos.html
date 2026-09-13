@@ -5,26 +5,44 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>Fragmentos — Entrelinhas</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link
-href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
-rel="stylesheet"
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
 >
 
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+  rel="stylesheet"
+>
+
+
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
 
@@ -35,22 +53,37 @@ body {
     Helvetica,
     sans-serif;
 
+  color: #f4f0f7;
+
   background:
+
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(168,85,247,0.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(192,132,252,0.08),
+      transparent 32%
+    ),
+
     linear-gradient(
       135deg,
-      #d8eef7,
-      #eef9fc,
-      #dceff8
+      #050507 0%,
+      #08060b 48%,
+      #0d0911 100%
     );
-
-  color: #536f7d;
 
   overflow-x: hidden;
 
 }
 
 
-/* PARTÍCULAS */
+/* =========================
+   PARTÍCULAS
+========================= */
 
 #particles {
 
@@ -68,7 +101,9 @@ body {
 }
 
 
-/* PÁGINA */
+/* =========================
+   PÁGINA
+========================= */
 
 .page {
 
@@ -81,7 +116,9 @@ body {
 }
 
 
-/* TOPO */
+/* =========================
+   TOPO
+========================= */
 
 .top {
 
@@ -89,7 +126,9 @@ body {
 
   margin: auto;
 
-  padding: 35px 0;
+  padding:
+    32px 0
+    24px;
 
   display: flex;
 
@@ -97,7 +136,12 @@ body {
 
   align-items: center;
 
+  border-bottom:
+    1px solid
+    rgba(192,132,252,0.12);
+
 }
+
 
 .logo {
 
@@ -106,57 +150,125 @@ body {
     Georgia,
     serif;
 
-  font-size: 24px;
+  font-size: 26px;
 
   font-style: italic;
 
-  color: #477b95;
+  font-weight: 400;
+
+  color: #c084fc;
 
   text-decoration: none;
 
+  text-shadow:
+    0 0 25px
+    rgba(168,85,247,0.22);
+
 }
+
 
 .back {
 
-  font-size: 10px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  letter-spacing: .13em;
+  font-size: 9px;
+
+  letter-spacing: .18em;
 
   text-transform: uppercase;
 
-  color: #7897a5;
+  color: #827987;
 
   text-decoration: none;
+
+  transition:
+    color .3s ease;
 
 }
 
 
-/* INTRO */
+.back:hover {
+
+  color: #c084fc;
+
+}
+
+
+/* =========================
+   INTRO
+========================= */
 
 .intro {
+
+  position: relative;
 
   width: min(800px, 88vw);
 
   margin:
     100px auto
-    50px;
+    45px;
 
   text-align: center;
 
 }
 
 
+.intro::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 380px;
+
+  height: 380px;
+
+  border-radius: 50%;
+
+  left: 50%;
+
+  top: -130px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168,85,247,0.09),
+      transparent 68%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+}
+
+
 .intro-small {
 
-  font-size: 10px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  letter-spacing: .2em;
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: .25em;
 
   text-transform: uppercase;
 
-  color: #78a5b8;
+  color: #a855f7;
 
-  margin-bottom: 22px;
+  margin-bottom: 23px;
 
 }
 
@@ -169,41 +281,87 @@ h1 {
     serif;
 
   font-size:
-    clamp(50px, 8vw, 82px);
+    clamp(58px, 9vw, 92px);
 
   font-style: italic;
 
   font-weight: 400;
 
-  color: #477b95;
+  line-height: 1;
+
+  letter-spacing: -.045em;
+
+  color: #f5f0f7;
+
+  text-shadow:
+    0 0 35px
+    rgba(168,85,247,0.13);
 
 }
 
 
 .intro p {
 
-  margin-top: 18px;
+  margin-top: 20px;
 
-  font-size: 14px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  color: #809aa6;
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  color: #8d8593;
 
 }
 
 
-/* ÁREA DOS FRAGMENTOS */
+/* =========================
+   LINHA CENTRAL
+========================= */
+
+.intro::after {
+
+  content: "";
+
+  display: block;
+
+  width: 65px;
+
+  height: 1px;
+
+  margin:
+    35px auto
+    0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #a855f7,
+      transparent
+    );
+
+}
+
+
+/* =========================
+   ÁREA DOS FRAGMENTOS
+========================= */
 
 .fragments {
 
-  width: min(900px, 90vw);
+  position: relative;
 
-  min-height: 500px;
+  width: min(950px, 90vw);
+
+  min-height: 530px;
 
   margin:
-    40px auto
+    35px auto
     100px;
-
-  position: relative;
 
   display: flex;
 
@@ -213,16 +371,55 @@ h1 {
 
   align-content: center;
 
-  gap: 14px;
+  gap: 15px;
 
 }
 
 
-/* PALAVRAS */
+/* brilho central */
+
+.fragments::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+
+  height: 280px;
+
+  border-radius: 50%;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168,85,247,0.07),
+      transparent 68%
+    );
+
+  filter: blur(15px);
+
+  pointer-events: none;
+
+}
+
+
+/* =========================
+   FRAGMENTOS
+========================= */
 
 .fragment {
 
   position: relative;
+
+  z-index: 2;
 
   display: inline-flex;
 
@@ -231,35 +428,85 @@ h1 {
   justify-content: center;
 
   padding:
-    13px 20px;
-
-  border-radius: 30px;
+    12px 20px;
 
   background:
-    rgba(255,255,255,.58);
+
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.045),
+      rgba(255,255,255,0.015)
+    );
 
   border:
     1px solid
-    rgba(255,255,255,.8);
+    rgba(192,132,252,0.16);
+
+  color: #c8becd;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  letter-spacing: .01em;
 
   box-shadow:
-    0 8px 25px
-    rgba(79,148,184,.08);
-
-  color: #557886;
-
-  font-size: 15px;
-
-  transition:
-    transform 1.3s cubic-bezier(.2,.8,.2,1),
-    opacity .8s ease;
+    0 12px 30px
+    rgba(0,0,0,0.25);
 
   opacity: 0;
+
+  transition:
+
+    transform 1.35s
+    cubic-bezier(.2,.8,.2,1),
+
+    opacity .8s ease,
+
+    border-color .35s ease,
+
+    background .35s ease,
+
+    color .35s ease;
 
 }
 
 
-/* POSIÇÕES INICIAIS */
+/* pequeno brilho */
+
+.fragment::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  left: 8px;
+
+  top: 8px;
+
+  background: #a855f7;
+
+  opacity: .45;
+
+  box-shadow:
+    0 0 8px
+    rgba(168,85,247,0.6);
+
+}
+
+
+/* =========================
+   POSIÇÕES INICIAIS
+========================= */
 
 .fragment:nth-child(1) {
   transform:
@@ -322,7 +569,9 @@ h1 {
 }
 
 
-/* ESTADO FINAL */
+/* =========================
+   ESTADO FINAL
+========================= */
 
 .fragments.show .fragment {
 
@@ -335,7 +584,9 @@ h1 {
 }
 
 
-/* ATRASOS */
+/* =========================
+   ATRASOS
+========================= */
 
 .fragment:nth-child(1) {
   transition-delay: .1s;
@@ -378,15 +629,54 @@ h1 {
 }
 
 
-/* FRASE */
+/* =========================
+   HOVER
+========================= */
+
+.fragment:hover {
+
+  color: #eee8f1;
+
+  border-color:
+    rgba(192,132,252,0.38);
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(168,85,247,0.08),
+      rgba(255,255,255,0.025)
+    );
+
+  box-shadow:
+
+    0 15px 35px
+    rgba(0,0,0,0.35),
+
+    0 0 25px
+    rgba(168,85,247,0.07);
+
+  transform:
+    translateY(-4px) !important;
+
+}
+
+
+/* =========================
+   FRASE
+========================= */
 
 .quote {
+
+  position: relative;
 
   width: min(650px, 88vw);
 
   margin:
     0 auto
-    130px;
+    140px;
+
+  padding-top: 38px;
 
   text-align: center;
 
@@ -396,7 +686,8 @@ h1 {
     translateY(20px);
 
   transition:
-    1s ease;
+    opacity 1s ease,
+    transform 1s ease;
 
 }
 
@@ -417,15 +708,45 @@ h1 {
 
   display: block;
 
-  width: 40px;
+  width: 55px;
 
   height: 1px;
-
-  background: #98c9da;
 
   margin:
     0 auto
     30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #a855f7,
+      transparent
+    );
+
+}
+
+
+.quote::after {
+
+  content: "✦";
+
+  position: absolute;
+
+  top: 32px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 8px;
+
+  color: #c084fc;
+
+  background: #08060b;
+
+  padding: 0 7px;
 
 }
 
@@ -441,39 +762,124 @@ h1 {
 
   font-style: italic;
 
-  line-height: 1.7;
+  line-height: 1.8;
 
-  color: #648897;
+  color: #d0c2d8;
 
 }
 
 
-/* MOBILE */
+/* =========================
+   ANIMAÇÃO INICIAL
+========================= */
 
-@media (max-width: 600px) {
+.intro {
 
-  .intro {
+  opacity: 0;
 
-    margin-top: 65px;
+  transform:
+    translateY(20px);
+
+  animation:
+    fadeUp .9s ease forwards;
+
+  animation-delay: .1s;
+
+}
+
+
+@keyframes fadeUp {
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
 
   }
 
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .top {
+
+    width: 88vw;
+
+    padding:
+      25px 0;
+
+  }
+
+
+  .logo {
+
+    font-size: 23px;
+
+  }
+
+
+  .back {
+
+    font-size: 8px;
+
+    letter-spacing: .14em;
+
+  }
+
+
+  .intro {
+
+    width: 88vw;
+
+    margin:
+      70px auto
+      30px;
+
+  }
+
+
+  h1 {
+
+    font-size:
+      clamp(58px, 18vw, 80px);
+
+  }
+
+
+  .intro p {
+
+    font-size: 12px;
+
+  }
+
+
   .fragments {
 
-    min-height: 600px;
+    width: 88vw;
+
+    min-height: 620px;
 
     gap: 10px;
 
   }
 
+
   .fragment {
 
-    font-size: 13px;
+    font-size: 12px;
 
     padding:
-      11px 15px;
+      10px 15px;
 
   }
+
 
   .fragment:nth-child(1) {
     transform:
@@ -535,6 +941,22 @@ h1 {
       rotate(-10deg);
   }
 
+
+  .quote {
+
+    width: 88vw;
+
+    margin-bottom: 100px;
+
+  }
+
+
+  .quote p {
+
+    font-size: 18px;
+
+  }
+
 }
 
 </style>
@@ -544,73 +966,142 @@ h1 {
 
 <body>
 
+
 <canvas id="particles"></canvas>
 
 
 <div class="page">
 
 
+<!-- =========================
+     TOPO
+========================= -->
+
 <header class="top">
 
-<a href="../index.html" class="logo">
+
+<a
+  href="../index.html"
+  class="logo"
+>
   Entrelinhas
 </a>
 
-<a href="../index.html" class="back">
+
+<a
+  href="../index.html"
+  class="back"
+>
   ← voltar
 </a>
+
 
 </header>
 
 
+<!-- =========================
+     INTRO
+========================= -->
+
 <section class="intro">
+
 
 <div class="intro-small">
   pequenos pedaços
 </div>
 
+
 <h1>
   Fragmentos
 </h1>
+
 
 <p>
 Algumas coisas não precisam de uma história inteira.
 </p>
 
-</section>
-
-
-<section class="fragments" id="fragments">
-
-<span class="fragment">uma lembrança</span>
-
-<span class="fragment">uma noite</span>
-
-<span class="fragment">um silêncio</span>
-
-<span class="fragment">uma saudade</span>
-
-<span class="fragment">uma música</span>
-
-<span class="fragment">uma palavra</span>
-
-<span class="fragment">um sentimento</span>
-
-<span class="fragment">uma pergunta</span>
-
-<span class="fragment">um instante</span>
-
-<span class="fragment">eu</span>
 
 </section>
 
 
-<section class="quote" id="quote">
+<!-- =========================
+     FRAGMENTOS
+========================= -->
+
+<section
+  class="fragments"
+  id="fragments"
+>
+
+
+<span class="fragment">
+  uma lembrança
+</span>
+
+
+<span class="fragment">
+  uma noite
+</span>
+
+
+<span class="fragment">
+  um silêncio
+</span>
+
+
+<span class="fragment">
+  uma saudade
+</span>
+
+
+<span class="fragment">
+  uma música
+</span>
+
+
+<span class="fragment">
+  uma palavra
+</span>
+
+
+<span class="fragment">
+  um sentimento
+</span>
+
+
+<span class="fragment">
+  uma pergunta
+</span>
+
+
+<span class="fragment">
+  um instante
+</span>
+
+
+<span class="fragment">
+  eu
+</span>
+
+
+</section>
+
+
+<!-- =========================
+     FRASE
+========================= -->
+
+<section
+  class="quote"
+  id="quote"
+>
+
 
 <p>
 “Algumas coisas existem apenas
 para serem sentidas.”
 </p>
+
 
 </section>
 
@@ -620,7 +1111,9 @@ para serem sentidas.”
 
 <script>
 
-/* PARTÍCULAS */
+/* =========================
+   PARTÍCULAS
+========================= */
 
 const canvas =
 document.getElementById("particles");
@@ -628,125 +1121,204 @@ document.getElementById("particles");
 const ctx =
 canvas.getContext("2d");
 
+
 let particles = [];
 
 
 function resize() {
 
-canvas.width =
-window.innerWidth;
+  canvas.width =
+    window.innerWidth;
 
-canvas.height =
-window.innerHeight;
+  canvas.height =
+    window.innerHeight;
 
 }
+
 
 resize();
 
+
 window.addEventListener(
-"resize",
-resize
+  "resize",
+  resize
 );
 
 
+/* =========================
+   CRIAÇÃO
+========================= */
+
 for (
-let i = 0;
-i < 50;
-i++
+  let i = 0;
+  i < 50;
+  i++
 ) {
 
-particles.push({
+  particles.push({
 
-x: Math.random() * innerWidth,
+    x:
+      Math.random() *
+      innerWidth,
 
-y: Math.random() * innerHeight,
+    y:
+      Math.random() *
+      innerHeight,
 
-r: Math.random() * 1.5 + .4,
+    r:
+      Math.random() *
+      1.5 + .4,
 
-vx: (Math.random() - .5) * .16,
+    vx:
+      (Math.random() - .5)
+      * .16,
 
-vy: (Math.random() - .5) * .16,
+    vy:
+      (Math.random() - .5)
+      * .16,
 
-o: Math.random() * .25 + .05
+    o:
+      Math.random() *
+      .25 + .05
 
-});
+  });
 
 }
 
+
+/* =========================
+   ANIMAÇÃO
+========================= */
 
 function animate() {
 
-ctx.clearRect(
-0,
-0,
-canvas.width,
-canvas.height
-);
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
 
-particles.forEach(p => {
 
-p.x += p.vx;
-p.y += p.vy;
+  particles.forEach(
+    p => {
 
-if (p.x < 0) p.x = canvas.width;
-if (p.x > canvas.width) p.x = 0;
+      p.x += p.vx;
 
-if (p.y < 0) p.y = canvas.height;
-if (p.y > canvas.height) p.y = 0;
+      p.y += p.vy;
 
-ctx.beginPath();
 
-ctx.arc(
-p.x,
-p.y,
-p.r,
-0,
-Math.PI * 2
-);
+      if (
+        p.x < 0
+      ) {
 
-ctx.fillStyle =
-`rgba(112,178,207,${p.o})`;
+        p.x =
+          canvas.width;
 
-ctx.fill();
+      }
 
-});
 
-requestAnimationFrame(animate);
+      if (
+        p.x >
+        canvas.width
+      ) {
+
+        p.x = 0;
+
+      }
+
+
+      if (
+        p.y < 0
+      ) {
+
+        p.y =
+          canvas.height;
+
+      }
+
+
+      if (
+        p.y >
+        canvas.height
+      ) {
+
+        p.y = 0;
+
+      }
+
+
+      ctx.beginPath();
+
+
+      ctx.arc(
+        p.x,
+        p.y,
+        p.r,
+        0,
+        Math.PI * 2
+      );
+
+
+      ctx.fillStyle =
+        `rgba(
+          168,
+          85,
+          247,
+          ${p.o}
+        )`;
+
+
+      ctx.fill();
+
+    }
+  );
+
+
+  requestAnimationFrame(
+    animate
+  );
 
 }
+
 
 animate();
 
 
-/* FRAGMENTOS */
+/* =========================
+   FRAGMENTOS
+========================= */
 
 window.addEventListener(
-"load",
-() => {
+  "load",
+  () => {
 
-setTimeout(
-() => {
+    setTimeout(
+      () => {
 
-document
-.getElementById("fragments")
-.classList.add("show");
+        document
+          .getElementById("fragments")
+          .classList.add("show");
 
-setTimeout(
-() => {
 
-document
-.getElementById("quote")
-.classList.add("show");
+        setTimeout(
+          () => {
 
-},
-1800
+            document
+              .getElementById("quote")
+              .classList.add("show");
+
+          },
+          1800
+        );
+
+
+      },
+      300
+    );
+
+  }
 );
-
-},
-300
-);
-
-});
 
 </script>
 
