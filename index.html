@@ -3,729 +3,859 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>Fragmentos — Entrelinhas</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<meta
-  name="description"
-  content="Pequenos pedaços de pensamentos, sentimentos e memórias."
->
+  <title>Entrelinhas</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta
+    name="description"
+    content="Um livro feito de pensamentos, sentimentos, memórias e palavras que ficaram por dizer."
+  >
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
-  rel="stylesheet"
->
+  <!-- Fonte apenas para o nome Entrelinhas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-<style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet"
+  >
 
-/* =========================================================
-   CONFIGURAÇÕES
-========================================================= */
 
-:root {
+  <style>
 
-  --blue-bg: #dceff8;
-  --blue-soft: #eaf7fc;
-  --blue-light: #f4fbfe;
+    /* =========================
+       RESET
+    ========================= */
 
-  --blue: #8fc8e3;
-  --blue-medium: #72b8d8;
-  --blue-dark: #4f94b8;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  --text: #3f5663;
-  --text-soft: #6d8795;
 
-  --white: rgba(255, 255, 255, 0.72);
+    html {
+      scroll-behavior: smooth;
+    }
 
-  --shadow:
-    0 10px 30px rgba(79, 148, 184, 0.10);
 
-}
+    body {
 
+      min-height: 100vh;
 
-/* =========================================================
-   RESET
-========================================================= */
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      color: #456d81;
 
+      background:
 
-html {
-  scroll-behavior: smooth;
-}
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(255,255,255,0.75),
+          transparent 30%
+        ),
 
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(143,200,227,0.28),
+          transparent 32%
+        ),
 
-body {
+        linear-gradient(
+          135deg,
+          #dceff8 0%,
+          #eaf7fc 45%,
+          #d8edf7 100%
+        );
 
-  min-height: 100vh;
+      overflow-x: hidden;
 
-  background:
-    linear-gradient(
-      135deg,
-      #d9edf7 0%,
-      #eaf7fc 45%,
-      #d5ebf6 100%
-    );
+    }
 
-  color: var(--text);
 
-  font-family: Arial, Helvetica, sans-serif;
+    /* =========================
+       PARTÍCULAS
+    ========================= */
 
-  overflow-x: hidden;
+    #particles {
 
-}
+      position: fixed;
 
+      inset: 0;
 
-/* =========================================================
-   PARTÍCULAS
-========================================================= */
+      width: 100%;
+      height: 100%;
 
-#particles {
+      pointer-events: none;
 
-  position: fixed;
+      z-index: 0;
 
-  inset: 0;
+    }
 
-  width: 100%;
-  height: 100%;
 
-  pointer-events: none;
+    /* =========================
+       CONTEÚDO
+    ========================= */
 
-  z-index: 0;
+    .page {
 
-}
+      position: relative;
 
+      z-index: 1;
 
-/* =========================================================
-   CONTEÚDO
-========================================================= */
+      min-height: 100vh;
 
-.page {
+    }
 
-  position: relative;
 
-  z-index: 2;
+    /* =========================
+       CABEÇALHO
+    ========================= */
 
-  min-height: 100vh;
+    header {
 
-}
+      width: min(1100px, 90vw);
 
+      margin: auto;
 
-/* =========================================================
-   CABEÇALHO
-========================================================= */
+      padding:
+        35px 0
+        25px;
 
-header {
+      display: flex;
 
-  width: 100%;
+      align-items: center;
 
-  padding: 28px 6vw;
+      justify-content: space-between;
 
-  display: flex;
+    }
 
-  justify-content: space-between;
 
-  align-items: center;
+    .logo {
 
-  position: relative;
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
 
-  z-index: 20;
+      font-size: 25px;
 
-}
+      font-style: italic;
 
+      font-weight: 400;
 
-.logo {
+      color: #477b95;
 
-  font-family: "Playfair Display", serif;
+      text-decoration: none;
 
-  font-size: 22px;
+    }
 
-  font-style: italic;
 
-  color: #477b95;
+    .header-note {
 
-}
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
+      font-size: 10px;
 
-.back {
+      letter-spacing: .14em;
 
-  text-decoration: none;
+      text-transform: uppercase;
 
-  color: var(--text-soft);
+      color: #7195a6;
 
-  font-family: Arial, Helvetica, sans-serif;
+    }
 
-  font-size: 12px;
 
-  font-weight: bold;
+    /* =========================
+       HERO
+    ========================= */
 
-  letter-spacing: 0.05em;
+    .hero {
 
-  padding: 10px 16px;
+      width: min(900px, 90vw);
 
-  border-radius: 30px;
+      min-height: 62vh;
 
-  background: rgba(255,255,255,0.45);
+      margin: auto;
 
-  border: 1px solid rgba(255,255,255,0.7);
+      display: flex;
 
-  transition:
-    0.3s ease;
+      flex-direction: column;
 
-}
+      align-items: center;
 
+      justify-content: center;
 
-.back:hover {
+      text-align: center;
 
-  background: white;
+      padding:
+        80px 0
+        90px;
 
-  color: var(--blue-dark);
+    }
 
-  transform: translateY(-2px);
 
-}
+    .hero-small {
 
+      margin-bottom: 20px;
 
-/* =========================================================
-   INTRODUÇÃO
-========================================================= */
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-.intro {
+      font-size: 10px;
 
-  text-align: center;
+      font-weight: bold;
 
-  padding:
+      letter-spacing: .22em;
 
-    45px
+      text-transform: uppercase;
 
-    20px
+      color: #6e9caf;
 
-    30px;
+    }
 
-  transition:
 
-    opacity 1s ease,
+    .hero-title {
 
-    transform 1s ease;
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
 
-}
+      font-size:
+        clamp(60px, 9vw, 105px);
 
+      line-height: .95;
 
-.intro.hidden {
+      font-style: italic;
 
-  opacity: 0;
+      font-weight: 400;
 
-  transform: translateY(-15px);
+      color: #477b95;
 
-}
+      letter-spacing: -.04em;
 
+    }
 
-.eyebrow {
 
-  font-family: Arial, Helvetica, sans-serif;
+    .hero-line {
 
-  font-size: 11px;
+      width: 55px;
 
-  font-weight: bold;
+      height: 1px;
 
-  text-transform: uppercase;
+      margin: 32px auto;
 
-  letter-spacing: 0.15em;
+      background: #8fc8e3;
 
-  color: #6e9caf;
+      opacity: .8;
 
-  margin-bottom: 15px;
+    }
 
-}
 
+    .hero-text {
 
-h1 {
+      max-width: 570px;
 
-  font-family: "Playfair Display", serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  font-weight: 400;
+      font-size: 16px;
 
-  font-size: clamp(55px, 8vw, 95px);
+      line-height: 1.9;
 
-  font-style: italic;
+      color: #668594;
 
-  color: #477b95;
+    }
 
-  line-height: 1;
 
-}
+    .hero-text strong {
 
+      font-weight: normal;
 
-.subtitle {
+      color: #527e94;
 
-  margin-top: 15px;
+    }
 
-  font-family: Arial, Helvetica, sans-serif;
 
-  font-size: 14px;
+    .scroll-note {
 
-  color: var(--text-soft);
+      margin-top: 55px;
 
-}
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
+      font-size: 9px;
 
-/* =========================================================
-   ÁREA DOS FRAGMENTOS
-========================================================= */
+      letter-spacing: .18em;
 
-.fragment-area {
+      text-transform: uppercase;
 
-  width: min(1050px, 92vw);
+      color: #89a7b5;
 
-  min-height: 540px;
+      animation:
+        breathing 3s ease-in-out infinite;
 
-  margin: 20px auto 0;
+    }
 
-  padding: 45px;
 
-  display: flex;
+    @keyframes breathing {
 
-  align-items: center;
+      0%,
+      100% {
+        opacity: .45;
+      }
 
-  justify-content: center;
+      50% {
+        opacity: 1;
+      }
 
-}
+    }
 
 
-/* =========================================================
-   CONTAINER DAS CAIXAS
-========================================================= */
+    /* =========================
+       ÍNDICE EM CAIXAS
+    ========================= */
 
-.fragments {
+    .index {
 
-  width: 100%;
+      width: min(1100px, 90vw);
 
-  display: flex;
+      margin: auto;
 
-  flex-wrap: wrap;
+      padding:
+        70px 0
+        150px;
 
-  justify-content: center;
+    }
 
-  align-items: center;
 
-  gap: 13px;
+    .index-header {
 
-  opacity: 0;
+      text-align: center;
 
-  transform: translateY(20px);
+      margin-bottom: 50px;
 
-  transition:
+    }
 
-    opacity 1s ease,
 
-    transform 1s ease;
+    .index-label {
 
-}
+      display: block;
 
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-.fragments.visible {
+      font-size: 10px;
 
-  opacity: 1;
+      font-weight: bold;
 
-  transform: translateY(0);
+      letter-spacing: .18em;
 
-}
+      text-transform: uppercase;
 
+      color: #6e9caf;
 
-/* =========================================================
-   CADA FRAGMENTO
-========================================================= */
+      margin-bottom: 12px;
 
-.fragment {
+    }
 
-  position: relative;
 
-  display: inline-flex;
+    .index-header h2 {
 
-  align-items: center;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  justify-content: center;
+      font-size: 30px;
 
-  min-height: 48px;
+      font-weight: normal;
 
-  padding: 11px 17px;
+      color: #527e94;
 
-  border-radius: 12px;
+    }
 
-  background: var(--white);
 
-  border: 1px solid rgba(255,255,255,0.85);
+    .index-header p {
 
-  box-shadow: var(--shadow);
+      margin-top: 10px;
 
-  color: var(--text);
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
 
-  font-size: 16px;
+      color: #718996;
 
-  line-height: 1.35;
+    }
 
-  cursor: pointer;
 
-  user-select: none;
+    /* =========================
+       CAIXAS
+    ========================= */
 
-  opacity: 0;
+    .index-boxes {
 
-  filter: blur(5px);
+      display: grid;
 
-  transform:
+      grid-template-columns:
+        repeat(2, 1fr);
 
-    translate(
+      gap: 18px;
 
-      var(--x),
+    }
 
-      var(--y)
 
-    )
+    .index-box {
 
-    rotate(var(--rotate))
+      position: relative;
 
-    scale(.75);
+      min-height: 190px;
 
-  transition:
+      padding: 28px;
 
-    transform 1.3s cubic-bezier(.22,1,.36,1),
+      border-radius: 20px;
 
-    opacity .8s ease,
+      background:
+        rgba(255,255,255,0.58);
 
-    filter 1s ease,
+      border:
+        1px solid
+        rgba(255,255,255,0.8);
 
-    background .3s ease,
+      box-shadow:
+        0 10px 30px
+        rgba(79,148,184,0.08);
 
-    color .3s ease,
+      text-decoration: none;
 
-    box-shadow .3s ease,
+      display: flex;
 
-    border-color .3s ease;
+      flex-direction: column;
 
-  transition-delay: var(--delay);
+      justify-content: space-between;
 
-}
+      overflow: hidden;
 
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
 
-/* palavra chegando ao lugar */
+    }
 
-.fragment.join {
 
-  opacity: 1;
+    .index-box::before {
 
-  filter: blur(0);
+      content: "";
 
-  transform:
+      position: absolute;
 
-    translate(0,0)
+      width: 120px;
 
-    rotate(0)
+      height: 120px;
 
-    scale(1);
+      border-radius: 50%;
 
-}
+      background:
+        rgba(143,200,227,0.16);
 
+      right: -45px;
 
-/* =========================================================
-   FRAGMENTO SELECIONADO
-========================================================= */
+      top: -45px;
 
-.fragment.selected {
+      transition:
+        transform .5s ease;
 
-  background: #ffffff;
+    }
 
-  color: var(--blue-dark);
 
-  border-color: var(--blue);
+    .index-box:hover {
 
-  box-shadow:
+      transform:
+        translateY(-7px);
 
-    0 8px 28px rgba(79,148,184,.20),
+      background:
+        rgba(255,255,255,0.85);
 
-    0 0 0 3px rgba(143,200,227,.18);
+      box-shadow:
+        0 18px 40px
+        rgba(79,148,184,0.15);
 
-  transform:
+    }
 
-    translateY(-5px)
 
-    scale(1.04);
+    .index-box:hover::before {
 
-}
+      transform:
+        scale(1.5);
 
+    }
 
-/* =========================================================
-   EFEITO HOVER
-========================================================= */
 
-.fragment:hover {
+    .box-number {
 
-  background: rgba(255,255,255,.95);
+      position: relative;
 
-  color: var(--blue-dark);
+      z-index: 2;
 
-  box-shadow:
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    0 8px 25px rgba(79,148,184,.16);
+      font-size: 11px;
 
-}
+      font-weight: bold;
 
+      letter-spacing: .12em;
 
-/* =========================================================
-   FRASE FINAL
-========================================================= */
+      color: #79a9bd;
 
-.final-message {
+    }
 
-  width: min(650px, 88vw);
 
-  margin: 20px auto 0;
+    .box-title {
 
-  padding: 25px 20px;
+      position: relative;
 
-  text-align: center;
+      z-index: 2;
 
-  border-top: 1px solid rgba(79,148,184,.15);
+      margin-top: auto;
 
-  opacity: 0;
+      margin-bottom: 12px;
 
-  transform: translateY(15px);
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  transition:
+      font-size: 25px;
 
-    opacity 1.2s ease,
+      line-height: 1.25;
 
-    transform 1.2s ease;
+      font-weight: normal;
 
-}
+      color: #456d81;
 
+      max-width: 80%;
 
-.final-message.visible {
+    }
 
-  opacity: 1;
 
-  transform: translateY(0);
+    .box-type {
 
-}
+      position: relative;
 
+      z-index: 2;
 
-.final-message p {
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
 
-  font-size: 15px;
+      text-transform: uppercase;
 
-  line-height: 1.7;
+      letter-spacing: .14em;
 
-  color: var(--text-soft);
+      color: #89a1ad;
 
-}
+    }
 
 
-/* =========================================================
-   BOTÃO INÍCIO
-========================================================= */
+    .box-arrow {
 
-.home-button {
+      position: absolute;
 
-  display: block;
+      right: 25px;
 
-  width: fit-content;
+      bottom: 23px;
 
-  margin: 30px auto 70px;
+      z-index: 2;
 
-  padding: 13px 25px;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  border-radius: 30px;
+      font-size: 20px;
 
-  text-decoration: none;
+      color: #73abc5;
 
-  font-family: Arial, Helvetica, sans-serif;
+      transition:
+        transform .3s ease;
 
-  font-size: 12px;
+    }
 
-  font-weight: bold;
 
-  color: white;
+    .index-box:hover .box-arrow {
 
-  background: var(--blue-medium);
+      transform:
+        translateX(5px);
 
-  box-shadow:
+    }
 
-    0 8px 22px rgba(79,148,184,.18);
 
-  opacity: 0;
+    /* =========================
+       RODAPÉ
+    ========================= */
 
-  transform: translateY(15px);
+    footer {
 
-  transition:
+      width: min(1100px, 90vw);
 
-    opacity 1s ease,
+      margin: auto;
 
-    transform 1s ease,
+      padding:
+        0 0
+        45px;
 
-    background .3s ease,
+      text-align: center;
 
-    box-shadow .3s ease;
+    }
 
-}
 
+    .footer-line {
 
-.home-button.visible {
+      width: 40px;
 
-  opacity: 1;
+      height: 1px;
 
-  transform: translateY(0);
+      margin: 0 auto 22px;
 
-}
+      background: #9ccbdd;
 
+    }
 
-.home-button:hover {
 
-  background: var(--blue-dark);
+    footer p {
 
-  box-shadow:
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    0 10px 28px rgba(79,148,184,.25);
+      font-size: 11px;
 
-}
+      line-height: 1.7;
 
+      color: #87a1ad;
 
-/* =========================================================
-   PEQUENOS DETALHES
-========================================================= */
+    }
 
-.info {
 
-  text-align: center;
+    footer .footer-brand {
 
-  margin-top: -30px;
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
 
-  margin-bottom: 50px;
+      font-style: italic;
 
-  color: #86a6b5;
+      color: #6f9aae;
 
-  font-size: 11px;
+    }
 
-}
 
+    /* =========================
+       ANIMAÇÕES DE ENTRADA
+    ========================= */
 
-/* =========================================================
-   MOBILE
-========================================================= */
+    .fade {
 
-@media (max-width: 700px) {
+      opacity: 0;
 
-  header {
+      transform:
+        translateY(20px);
 
-    padding: 22px 20px;
+      animation:
+        fadeUp .9s ease forwards;
 
-  }
+    }
 
 
-  .logo {
+    .fade-1 {
+      animation-delay: .15s;
+    }
 
-    font-size: 20px;
 
-  }
+    .fade-2 {
+      animation-delay: .3s;
+    }
 
 
-  .intro {
+    .fade-3 {
+      animation-delay: .45s;
+    }
 
-    padding-top: 35px;
 
-  }
+    .fade-4 {
+      animation-delay: .6s;
+    }
 
 
-  h1 {
+    @keyframes fadeUp {
 
-    font-size: 60px;
+      to {
 
-  }
+        opacity: 1;
 
+        transform:
+          translateY(0);
 
-  .fragment-area {
+      }
 
-    width: 94vw;
+    }
 
-    padding: 20px 5px;
 
-    min-height: 480px;
+    /* =========================
+       MOBILE
+    ========================= */
 
-  }
+    @media (max-width: 700px) {
 
+      header {
 
-  .fragments {
+        width: 88vw;
 
-    gap: 9px;
+        padding:
+          25px 0;
 
-  }
+      }
 
 
-  .fragment {
+      .logo {
 
-    min-height: 42px;
+        font-size: 22px;
 
-    padding: 9px 12px;
+      }
 
-    font-size: 14px;
 
-    border-radius: 10px;
+      .header-note {
 
-  }
+        font-size: 8px;
 
+      }
 
-  .final-message {
 
-    margin-top: 10px;
+      .hero {
 
-  }
+        width: 88vw;
 
+        min-height: 65vh;
 
-  .home-button {
+        padding:
+          60px 0
+          70px;
 
-    margin-bottom: 45px;
+      }
 
-  }
 
-}
+      .hero-title {
 
+        font-size:
+          clamp(55px, 18vw, 82px);
 
-/* =========================================================
-   REDUZIR ANIMAÇÕES
-========================================================= */
+      }
 
-@media (prefers-reduced-motion: reduce) {
 
-  .fragment {
+      .hero-text {
 
-    transition: none;
+        font-size: 14px;
 
-  }
+        line-height: 1.85;
 
-  .intro,
-  .fragments,
-  .final-message,
-  .home-button {
+      }
 
-    transition: none;
 
-  }
+      .index {
 
-}
+        width: 88vw;
 
-</style>
+        padding:
+          60px 0
+          100px;
+
+      }
+
+
+      .index-header {
+
+        margin-bottom: 35px;
+
+      }
+
+
+      .index-header h2 {
+
+        font-size: 26px;
+
+      }
+
+
+      .index-boxes {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .index-box {
+
+        min-height: 160px;
+
+        padding: 25px;
+
+      }
+
+
+      .box-title {
+
+        font-size: 23px;
+
+      }
+
+
+      footer {
+
+        width: 88vw;
+
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -733,738 +863,470 @@ h1 {
 <body>
 
 
-<!-- =====================================================
-     PARTÍCULAS
-====================================================== -->
+  <!-- =========================
+       PARTÍCULAS
+  ========================== -->
 
-<canvas id="particles"></canvas>
-
-
-<div class="page">
+  <canvas id="particles"></canvas>
 
 
-<!-- =====================================================
-     CABEÇALHO
-====================================================== -->
+  <div class="page">
 
-<header>
 
-  <div class="logo">
-    Entrelinhas
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header>
+
+      <a
+        href="index.html"
+        class="logo"
+      >
+        Entrelinhas
+      </a>
+
+
+      <span class="header-note">
+        um lugar para escrever
+      </span>
+
+    </header>
+
+
+    <!-- =========================
+         ABERTURA
+    ========================== -->
+
+    <main>
+
+      <section class="hero">
+
+
+        <span
+          class="hero-small fade fade-1"
+        >
+          um livro sem pressa
+        </span>
+
+
+        <h1
+          class="hero-title fade fade-2"
+        >
+          Entrelinhas
+        </h1>
+
+
+        <div
+          class="hero-line fade fade-3"
+        ></div>
+
+
+        <p
+          class="hero-text fade fade-3"
+        >
+
+          Pensamentos que não encontraram
+          lugar para ficar.<br>
+
+          Sentimentos que talvez nunca tenham
+          sido ditos.<br>
+
+          Memórias, cartas e pequenos pedaços
+          de quem eu sou.
+
+          <br><br>
+
+          <strong>
+            Algumas coisas simplesmente precisam
+            ser escritas.
+          </strong>
+
+        </p>
+
+
+        <span
+          class="scroll-note fade fade-4"
+        >
+          escolha uma página
+        </span>
+
+
+      </section>
+
+
+      <!-- =========================
+           ÍNDICE
+      ========================== -->
+
+      <section
+        class="index"
+        id="indice"
+      >
+
+
+        <div class="index-header">
+
+          <span class="index-label">
+            Entrelinhas
+          </span>
+
+
+          <h2>
+            Por onde começar?
+          </h2>
+
+
+          <p>
+            Escolha uma página para ler.
+          </p>
+
+        </div>
+
+
+        <div class="index-boxes">
+
+
+          <!-- 01 -->
+
+          <a
+            href="capitulos/01-o-comeco.html"
+            class="index-box"
+          >
+
+            <span class="box-number">
+              01
+            </span>
+
+
+            <span class="box-title">
+              O começo
+            </span>
+
+
+            <span class="box-type">
+              Capítulo
+            </span>
+
+
+            <span class="box-arrow">
+              →
+            </span>
+
+          </a>
+
+
+          <!-- 02 -->
+
+          <a
+            href="cartas/carta-para-mim-mesma.html"
+            class="index-box"
+          >
+
+            <span class="box-number">
+              02
+            </span>
+
+
+            <span class="box-title">
+              Carta para mim mesma
+            </span>
+
+
+            <span class="box-type">
+              Carta
+            </span>
+
+
+            <span class="box-arrow">
+              →
+            </span>
+
+          </a>
+
+
+          <!-- 03 -->
+
+          <a
+            href="cartas/carta-que-nunca-enviei.html"
+            class="index-box"
+          >
+
+            <span class="box-number">
+              03
+            </span>
+
+
+            <span class="box-title">
+              A carta que nunca enviei
+            </span>
+
+
+            <span class="box-type">
+              Carta
+            </span>
+
+
+            <span class="box-arrow">
+              →
+            </span>
+
+          </a>
+
+
+          <!-- 04 -->
+
+          <a
+            href="fragmentos/fragmentos.html"
+            class="index-box"
+          >
+
+            <span class="box-number">
+              04
+            </span>
+
+
+            <span class="box-title">
+              Fragmentos
+            </span>
+
+
+            <span class="box-type">
+              Fragmentos
+            </span>
+
+
+            <span class="box-arrow">
+              →
+            </span>
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+      <div class="footer-line"></div>
+
+
+      <p>
+
+        Algumas palavras ficam entre o que
+        sentimos e o que conseguimos dizer.
+
+        <br>
+
+        <span class="footer-brand">
+          Entrelinhas
+        </span>
+
+      </p>
+
+    </footer>
+
+
   </div>
 
 
-  <a
-    href="../index.html"
-    class="back"
-  >
-    ← voltar
-  </a>
+  <!-- =========================
+       PARTÍCULAS — JAVASCRIPT
+  ========================== -->
 
-</header>
+  <script>
 
+    const canvas =
+      document.getElementById("particles");
 
+    const ctx =
+      canvas.getContext("2d");
 
-<!-- =====================================================
-     INTRODUÇÃO
-====================================================== -->
 
-<section class="intro" id="intro">
+    let particles = [];
 
-  <div class="eyebrow">
-    entrelinhas · 04
-  </div>
 
+    function resizeCanvas() {
 
-  <h1>
-    Fragmentos
-  </h1>
+      canvas.width =
+        window.innerWidth;
 
+      canvas.height =
+        window.innerHeight;
 
-  <div class="subtitle">
-    pequenos pedaços que ficaram
-  </div>
+    }
 
-</section>
-
-
-
-<!-- =====================================================
-     FRAGMENTOS
-====================================================== -->
-
-<section class="fragment-area">
-
-
-<div
-  class="fragments"
-  id="fragments"
->
-
-
-  <span
-    class="fragment"
-    style="--x:-35vw;--y:-30vh;--rotate:-12deg;--delay:.1s;"
-  >
-    Nem
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:32vw;--y:-25vh;--rotate:10deg;--delay:.18s;"
-  >
-    todo
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-28vw;--y:25vh;--rotate:7deg;--delay:.26s;"
-  >
-    sentimento
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:30vw;--y:20vh;--rotate:-8deg;--delay:.34s;"
-  >
-    precisa
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-20vw;--y:-35vh;--rotate:13deg;--delay:.42s;"
-  >
-    de
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:25vw;--y:30vh;--rotate:-13deg;--delay:.50s;"
-  >
-    um
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-36vw;--y:-5vh;--rotate:8deg;--delay:.58s;"
-  >
-    capítulo.
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:30vw;--y:-20vh;--rotate:-10deg;--delay:.66s;"
-  >
-    Às
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-32vw;--y:28vh;--rotate:12deg;--delay:.74s;"
-  >
-    vezes
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:35vw;--y:3vh;--rotate:-7deg;--delay:.82s;"
-  >
-    são
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-28vw;--y:-25vh;--rotate:11deg;--delay:.90s;"
-  >
-    apenas
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:22vw;--y:27vh;--rotate:-13deg;--delay:.98s;"
-  >
-    algumas
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-37vw;--y:7vh;--rotate:9deg;--delay:1.06s;"
-  >
-    palavras.
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:34vw;--y:-32vh;--rotate:12deg;--delay:1.14s;"
-  >
-    Uma
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-25vw;--y:31vh;--rotate:-12deg;--delay:1.22s;"
-  >
-    frase.
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-35vw;--y:-17vh;--rotate:10deg;--delay:1.30s;"
-  >
-    Uma
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:32vw;--y:24vh;--rotate:-10deg;--delay:1.38s;"
-  >
-    lembrança.
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:25vw;--y:-27vh;--rotate:13deg;--delay:1.46s;"
-  >
-    Uma
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-30vw;--y:32vh;--rotate:-14deg;--delay:1.54s;"
-  >
-    noite
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:36vw;--y:-7vh;--rotate:9deg;--delay:1.62s;"
-  >
-    difícil.
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-22vw;--y:-32vh;--rotate:-13deg;--delay:1.70s;"
-  >
-    Uma
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:28vw;--y:32vh;--rotate:11deg;--delay:1.78s;"
-  >
-    coisa
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-37vw;--y:-2vh;--rotate:-8deg;--delay:1.86s;"
-  >
-    bonita
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:34vw;--y:-23vh;--rotate:13deg;--delay:1.94s;"
-  >
-    que
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-27vw;--y:26vh;--rotate:-11deg;--delay:2.02s;"
-  >
-    aconteceu
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:21vw;--y:-35vh;--rotate:8deg;--delay:2.10s;"
-  >
-    durante
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-34vw;--y:12vh;--rotate:-14deg;--delay:2.18s;"
-  >
-    o
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:36vw;--y:14vh;--rotate:12deg;--delay:2.26s;"
-  >
-    dia.
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-32vw;--y:-28vh;--rotate:10deg;--delay:2.34s;"
-  >
-    Pequenos
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:29vw;--y:21vh;--rotate:-12deg;--delay:2.42s;"
-  >
-    pedaços
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-23vw;--y:34vh;--rotate:8deg;--delay:2.50s;"
-  >
-    de
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:37vw;--y:-15vh;--rotate:-15deg;--delay:2.58s;"
-  >
-    mim
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-36vw;--y:-6vh;--rotate:13deg;--delay:2.66s;"
-  >
-    que
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:24vw;--y:-31vh;--rotate:-8deg;--delay:2.74s;"
-  >
-    não
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-29vw;--y:16vh;--rotate:14deg;--delay:2.82s;"
-  >
-    precisam
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:33vw;--y:30vh;--rotate:-10deg;--delay:2.90s;"
-  >
-    fazer
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-20vw;--y:-20vh;--rotate:9deg;--delay:2.98s;"
-  >
-    parte
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:38vw;--y:5vh;--rotate:-13deg;--delay:3.06s;"
-  >
-    de
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-33vw;--y:35vh;--rotate:7deg;--delay:3.14s;"
-  >
-    uma
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:22vw;--y:17vh;--rotate:-9deg;--delay:3.22s;"
-  >
-    história
-  </span>
-
-
-  <span
-    class="fragment"
-    style="--x:-37vw;--y:-22vh;--rotate:12deg;--delay:3.30s;"
-  >
-    maior.
-  </span>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     MENSAGEM FINAL
-====================================================== -->
-
-<section
-  class="final-message"
-  id="finalMessage"
->
-
-  <p>
-    Algumas coisas existem apenas
-    para serem sentidas.
-  </p>
-
-</section>
-
-
-
-<div
-  class="info"
-  id="info"
->
-  selecione os fragmentos que quiser guardar
-</div>
-
-
-
-<!-- =====================================================
-     BOTÃO
-====================================================== -->
-
-<a
-  href="../index.html"
-  class="home-button"
-  id="homeButton"
->
-  ← Voltar ao início
-</a>
-
-
-</div>
-
-
-
-<script>
-
-/* =========================================================
-   FRAGMENTOS
-========================================================= */
-
-const fragments =
-  document.querySelectorAll(".fragment");
-
-const fragmentContainer =
-  document.getElementById("fragments");
-
-const intro =
-  document.getElementById("intro");
-
-const finalMessage =
-  document.getElementById("finalMessage");
-
-const homeButton =
-  document.getElementById("homeButton");
-
-
-/* =========================================================
-   ENTRADA
-========================================================= */
-
-window.addEventListener("load", () => {
-
-
-  setTimeout(() => {
-
-    fragmentContainer.classList.add("visible");
-
-  }, 500);
-
-
-  setTimeout(() => {
-
-    fragments.forEach(fragment => {
-
-      fragment.classList.add("join");
-
-    });
-
-  }, 750);
-
-
-  setTimeout(() => {
-
-    intro.classList.add("hidden");
-
-  }, 4700);
-
-
-  setTimeout(() => {
-
-    finalMessage.classList.add("visible");
-
-  }, 5200);
-
-
-  setTimeout(() => {
-
-    homeButton.classList.add("visible");
-
-  }, 5600);
-
-});
-
-
-
-/* =========================================================
-   SELECIONAR FRAGMENTOS
-========================================================= */
-
-fragments.forEach(fragment => {
-
-  fragment.addEventListener("click", () => {
-
-    fragment.classList.toggle("selected");
-
-  });
-
-});
-
-
-
-/* =========================================================
-   PARTÍCULAS
-========================================================= */
-
-const canvas =
-  document.getElementById("particles");
-
-const ctx =
-  canvas.getContext("2d");
-
-
-let particles = [];
-
-
-
-function resizeCanvas() {
-
-  canvas.width =
-    window.innerWidth *
-    window.devicePixelRatio;
-
-  canvas.height =
-    window.innerHeight *
-    window.devicePixelRatio;
-
-  canvas.style.width =
-    window.innerWidth + "px";
-
-  canvas.style.height =
-    window.innerHeight + "px";
-
-  ctx.scale(
-    window.devicePixelRatio,
-    window.devicePixelRatio
-  );
-
-}
-
-
-resizeCanvas();
-
-
-
-window.addEventListener(
-  "resize",
-  () => {
 
     resizeCanvas();
 
+
+    window.addEventListener(
+      "resize",
+      resizeCanvas
+    );
+
+
+    function createParticles() {
+
+      particles = [];
+
+
+      const amount =
+        Math.min(
+          55,
+          Math.floor(
+            window.innerWidth / 25
+          )
+        );
+
+
+      for (
+        let i = 0;
+        i < amount;
+        i++
+      ) {
+
+        particles.push({
+
+          x:
+            Math.random() *
+            canvas.width,
+
+          y:
+            Math.random() *
+            canvas.height,
+
+          radius:
+            Math.random() *
+            1.7 + 0.4,
+
+          speedX:
+            (Math.random() - 0.5)
+            * 0.18,
+
+          speedY:
+            (Math.random() - 0.5)
+            * 0.18,
+
+          opacity:
+            Math.random() *
+            0.35 + 0.08
+
+        });
+
+      }
+
+    }
+
+
     createParticles();
 
-  }
-);
+
+    function animateParticles() {
+
+      ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
 
 
+      particles.forEach(
+        particle => {
 
-function createParticles() {
+          particle.x +=
+            particle.speedX;
 
-  particles = [];
-
-  const amount =
-    Math.min(
-      75,
-      Math.floor(
-        window.innerWidth / 18
-      )
-    );
+          particle.y +=
+            particle.speedY;
 
 
-  for (
-    let i = 0;
-    i < amount;
-    i++
-  ) {
+          if (
+            particle.x < -10
+          ) {
 
-    particles.push({
+            particle.x =
+              canvas.width + 10;
 
-      x:
-        Math.random() *
-        window.innerWidth,
-
-      y:
-        Math.random() *
-        window.innerHeight,
-
-      size:
-        Math.random() *
-        2.2 + 0.5,
-
-      speed:
-        Math.random() *
-        0.25 + 0.08,
-
-      drift:
-        Math.random() *
-        0.5 - 0.25,
-
-      opacity:
-        Math.random() *
-        0.35 + 0.08
-
-    });
-
-  }
-
-}
+          }
 
 
-createParticles();
+          if (
+            particle.x >
+            canvas.width + 10
+          ) {
+
+            particle.x = -10;
+
+          }
 
 
+          if (
+            particle.y < -10
+          ) {
 
-function animateParticles() {
+            particle.y =
+              canvas.height + 10;
 
-  ctx.clearRect(
-    0,
-    0,
-    window.innerWidth,
-    window.innerHeight
-  );
-
-
-  particles.forEach(particle => {
+          }
 
 
-    particle.y -=
-      particle.speed;
+          if (
+            particle.y >
+            canvas.height + 10
+          ) {
+
+            particle.y = -10;
+
+          }
 
 
-    particle.x +=
-      particle.drift;
+          ctx.beginPath();
 
 
-    if (
-      particle.y < -10
-    ) {
-
-      particle.y =
-        window.innerHeight + 10;
-
-      particle.x =
-        Math.random() *
-        window.innerWidth;
-
-    }
+          ctx.arc(
+            particle.x,
+            particle.y,
+            particle.radius,
+            0,
+            Math.PI * 2
+          );
 
 
-    if (
-      particle.x < -10
-    ) {
+          ctx.fillStyle =
+            `rgba(
+              112,
+              178,
+              207,
+              ${particle.opacity}
+            )`;
 
-      particle.x =
-        window.innerWidth + 10;
+
+          ctx.fill();
+
+        }
+      );
+
+
+      requestAnimationFrame(
+        animateParticles
+      );
 
     }
 
 
-    if (
-      particle.x >
-      window.innerWidth + 10
-    ) {
+    animateParticles();
 
-      particle.x = -10;
-
-    }
-
-
-    ctx.beginPath();
-
-
-    ctx.arc(
-      particle.x,
-      particle.y,
-      particle.size,
-      0,
-      Math.PI * 2
-    );
-
-
-    ctx.fillStyle =
-      `rgba(90, 157, 187, ${particle.opacity})`;
-
-
-    ctx.fill();
-
-  });
-
-
-  requestAnimationFrame(
-    animateParticles
-  );
-
-}
-
-
-animateParticles();
-
-</script>
+  </script>
 
 
 </body>
