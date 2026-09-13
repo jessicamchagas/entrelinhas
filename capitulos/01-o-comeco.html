@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
 rel="stylesheet"
 >
 
@@ -26,9 +26,11 @@ rel="stylesheet"
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
+
 
 body {
 
@@ -39,21 +41,37 @@ body {
     Helvetica,
     sans-serif;
 
+  color: #f4f0f7;
+
   background:
+
+    radial-gradient(
+      circle at 12% 10%,
+      rgba(168,85,247,0.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 88% 75%,
+      rgba(192,132,252,0.08),
+      transparent 32%
+    ),
+
     linear-gradient(
       135deg,
-      #dceff8,
-      #edf8fc,
-      #d9eef7
+      #050507 0%,
+      #08060b 48%,
+      #0d0911 100%
     );
 
-  color: #4f6f7e;
-
   overflow-x: hidden;
+
 }
 
 
-/* PARTÍCULAS */
+/* =========================
+   PARTÍCULAS
+========================= */
 
 #particles {
 
@@ -67,10 +85,13 @@ body {
   pointer-events: none;
 
   z-index: 0;
+
 }
 
 
-/* PÁGINA */
+/* =========================
+   PÁGINA
+========================= */
 
 .page {
 
@@ -83,7 +104,9 @@ body {
 }
 
 
-/* TOPO */
+/* =========================
+   TOPO
+========================= */
 
 .top {
 
@@ -91,7 +114,9 @@ body {
 
   margin: auto;
 
-  padding: 35px 0;
+  padding:
+    32px 0
+    24px;
 
   display: flex;
 
@@ -99,7 +124,12 @@ body {
 
   align-items: center;
 
+  border-bottom:
+    1px solid
+    rgba(192,132,252,0.12);
+
 }
+
 
 .logo {
 
@@ -110,68 +140,133 @@ body {
 
   font-style: italic;
 
-  font-size: 24px;
+  font-size: 26px;
 
-  color: #477b95;
+  font-weight: 400;
+
+  color: #c084fc;
 
   text-decoration: none;
 
+  text-shadow:
+    0 0 25px
+    rgba(168,85,247,0.22);
+
 }
+
 
 .back {
 
-  font-size: 10px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  letter-spacing: .13em;
+  font-size: 9px;
+
+  letter-spacing: .18em;
 
   text-transform: uppercase;
 
-  color: #7295a5;
+  color: #827987;
 
   text-decoration: none;
 
-  transition: .3s ease;
+  transition:
+    color .3s ease;
 
 }
+
 
 .back:hover {
-  color: #477b95;
+
+  color: #c084fc;
+
 }
 
 
-/* CAPÍTULO */
+/* =========================
+   CAPÍTULO
+========================= */
 
 .chapter {
+
+  position: relative;
 
   width: min(760px, 88vw);
 
   margin: auto;
 
   padding:
-    100px 0
-    140px;
+    110px 0
+    150px;
 
 }
 
 
-/* NÚMERO */
+/* brilho */
+
+.chapter::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+
+  height: 350px;
+
+  border-radius: 50%;
+
+  top: 70px;
+
+  right: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168,85,247,0.08),
+      transparent 68%
+    );
+
+  filter: blur(15px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+}
+
+
+/* =========================
+   NÚMERO
+========================= */
 
 .chapter-number {
 
-  font-size: 10px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  letter-spacing: .2em;
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: .24em;
 
   text-transform: uppercase;
 
-  color: #79a8bb;
+  color: #a855f7;
 
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 
 }
 
 
-/* TÍTULO */
+/* =========================
+   TÍTULO
+========================= */
 
 h1 {
 
@@ -181,112 +276,330 @@ h1 {
     serif;
 
   font-size:
-    clamp(48px, 7vw, 76px);
+    clamp(58px, 8vw, 88px);
 
   font-weight: 400;
 
   font-style: italic;
 
-  color: #477b95;
+  color: #f5f0f7;
 
-  line-height: 1.05;
+  line-height: 1;
 
-  margin-bottom: 20px;
+  letter-spacing: -.04em;
+
+  margin-bottom: 22px;
+
+  text-shadow:
+    0 0 35px
+    rgba(168,85,247,0.12);
 
 }
 
 
-/* DATA */
+/* =========================
+   DATA
+========================= */
 
 .date {
 
-  font-size: 11px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  color: #8aa4af;
+  font-size: 10px;
 
-  letter-spacing: .05em;
+  color: #817987;
+
+  letter-spacing: .08em;
 
 }
 
 
-/* LINHA */
+/* =========================
+   LINHA
+========================= */
 
 .divider {
 
-  width: 55px;
+  position: relative;
+
+  width: 75px;
 
   height: 1px;
 
-  background: #91c6dc;
+  background:
+    linear-gradient(
+      90deg,
+      #a855f7,
+      rgba(168,85,247,0.05)
+    );
 
-  margin: 55px 0;
+  margin:
+    58px 0;
 
 }
 
 
-/* TEXTO */
+.divider::after {
+
+  content: "✦";
+
+  position: absolute;
+
+  left: -3px;
+
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  font-size: 8px;
+
+  color: #c084fc;
+
+  background: #08060b;
+
+  padding: 0 5px;
+
+}
+
+
+/* =========================
+   TEXTO
+========================= */
 
 .text {
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
   font-size: 17px;
 
   line-height: 2;
 
-  color: #577583;
+  color: #c5bec9;
 
 }
 
 
 .text p {
 
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 
 }
 
 
 .text p:last-child {
+
   margin-bottom: 0;
+
 }
 
 
-/* FRASE FINAL */
+/* =========================
+   FRASE FINAL
+========================= */
 
 .final {
 
-  margin-top: 70px;
+  position: relative;
 
-  padding-left: 25px;
+  margin-top: 75px;
 
-  border-left: 1px solid #9bcadd;
+  padding:
+    28px 0
+    28px
+    30px;
+
+  border-left:
+    1px solid
+    #a855f7;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 18px;
+
+  line-height: 1.9;
 
   font-style: italic;
 
-  color: #688c9c;
+  color: #e4d9eb;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(168,85,247,0.055),
+      transparent
+    );
 
 }
 
 
-/* MOBILE */
+.final::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: -1px;
+
+  top: 0;
+
+  width: 1px;
+
+  height: 55px;
+
+  background:
+    #c084fc;
+
+  box-shadow:
+    0 0 12px
+    rgba(168,85,247,0.5);
+
+}
+
+
+/* =========================
+   ANIMAÇÃO DE ENTRADA
+========================= */
+
+.chapter-number,
+h1,
+.date,
+.divider,
+.text {
+
+  opacity: 0;
+
+  transform:
+    translateY(20px);
+
+  animation:
+    fadeUp .9s ease forwards;
+
+}
+
+
+.chapter-number {
+
+  animation-delay: .1s;
+
+}
+
+
+h1 {
+
+  animation-delay: .2s;
+
+}
+
+
+.date {
+
+  animation-delay: .3s;
+
+}
+
+
+.divider {
+
+  animation-delay: .4s;
+
+}
+
+
+.text {
+
+  animation-delay: .5s;
+
+}
+
+
+@keyframes fadeUp {
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
   .top {
-    padding: 25px 0;
+
+    width: 88vw;
+
+    padding:
+      25px 0;
+
   }
+
+
+  .logo {
+
+    font-size: 23px;
+
+  }
+
+
+  .back {
+
+    font-size: 8px;
+
+  }
+
 
   .chapter {
+
+    width: 88vw;
+
     padding:
-      70px 0
+      75px 0
       100px;
+
   }
+
 
   h1 {
-    font-size: 48px;
+
+    font-size:
+      clamp(52px, 16vw, 72px);
+
   }
 
+
   .text {
+
     font-size: 16px;
-    line-height: 1.9;
+
+    line-height: 1.95;
+
+  }
+
+
+  .final {
+
+    font-size: 17px;
+
+    padding-left: 22px;
+
   }
 
 }
@@ -306,11 +619,18 @@ h1 {
 
 <header class="top">
 
-<a href="../index.html" class="logo">
+<a
+  href="../index.html"
+  class="logo"
+>
   Entrelinhas
 </a>
 
-<a href="../index.html" class="back">
+
+<a
+  href="../index.html"
+  class="back"
+>
   ← voltar
 </a>
 
@@ -318,6 +638,7 @@ h1 {
 
 
 <main class="chapter">
+
 
 <div class="chapter-number">
   Capítulo 01
@@ -339,47 +660,63 @@ h1 {
 
 <div class="text">
 
+
 <p>
 Talvez todo livro comece antes da primeira palavra.
 </p>
 
+
 <p>
 Talvez este também.
 </p>
+
 
 <p>
 Não sei exatamente onde essa história começa,
 nem onde ela vai terminar.
 </p>
 
+
 <p>
 Só sei que, em algum momento,
 senti vontade de escrever.
 </p>
 
+
 <p>
 Sem precisar organizar tudo.
 </p>
 
+
 <p>
 Sem precisar encontrar as palavras certas.
 </p>
+
 
 <p>
 Sem precisar fingir que está tudo bem
 quando não estiver.
 </p>
 
+
 <p class="final">
+
 Então este é o começo.
+
 <br><br>
+
 Não necessariamente da minha história.
+
 <br><br>
+
 Mas do lugar onde decidi começar
 a colocá-la em palavras.
+
 </p>
 
+
 </div>
+
 
 </main>
 
@@ -395,91 +732,158 @@ document.getElementById("particles");
 const ctx =
 canvas.getContext("2d");
 
+
 let particles = [];
+
 
 function resize() {
 
-canvas.width =
-window.innerWidth;
+  canvas.width =
+    window.innerWidth;
 
-canvas.height =
-window.innerHeight;
+  canvas.height =
+    window.innerHeight;
 
 }
 
+
 resize();
 
+
 window.addEventListener(
-"resize",
-resize
+  "resize",
+  resize
 );
 
 
 for (
-let i = 0;
-i < 45;
-i++
+  let i = 0;
+  i < 45;
+  i++
 ) {
 
-particles.push({
+  particles.push({
 
-x: Math.random() * innerWidth,
+    x:
+      Math.random() *
+      innerWidth,
 
-y: Math.random() * innerHeight,
+    y:
+      Math.random() *
+      innerHeight,
 
-r: Math.random() * 1.5 + .4,
+    r:
+      Math.random() *
+      1.5 + .4,
 
-vx: (Math.random() - .5) * .15,
+    vx:
+      (Math.random() - .5)
+      * .15,
 
-vy: (Math.random() - .5) * .15,
+    vy:
+      (Math.random() - .5)
+      * .15,
 
-o: Math.random() * .25 + .05
+    o:
+      Math.random() *
+      .25 + .05
 
-});
+  });
 
 }
 
 
 function animate() {
 
-ctx.clearRect(
-0,
-0,
-canvas.width,
-canvas.height
-);
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
 
-particles.forEach(p => {
 
-p.x += p.vx;
-p.y += p.vy;
+  particles.forEach(
+    p => {
 
-if (p.x < 0) p.x = canvas.width;
-if (p.x > canvas.width) p.x = 0;
+      p.x += p.vx;
 
-if (p.y < 0) p.y = canvas.height;
-if (p.y > canvas.height) p.y = 0;
+      p.y += p.vy;
 
-ctx.beginPath();
 
-ctx.arc(
-p.x,
-p.y,
-p.r,
-0,
-Math.PI * 2
-);
+      if (
+        p.x < 0
+      ) {
 
-ctx.fillStyle =
-`rgba(112,178,207,${p.o})`;
+        p.x =
+          canvas.width;
 
-ctx.fill();
+      }
 
-});
 
-requestAnimationFrame(animate);
+      if (
+        p.x >
+        canvas.width
+      ) {
+
+        p.x = 0;
+
+      }
+
+
+      if (
+        p.y < 0
+      ) {
+
+        p.y =
+          canvas.height;
+
+      }
+
+
+      if (
+        p.y >
+        canvas.height
+      ) {
+
+        p.y = 0;
+
+      }
+
+
+      ctx.beginPath();
+
+
+      ctx.arc(
+        p.x,
+        p.y,
+        p.r,
+        0,
+        Math.PI * 2
+      );
+
+
+      ctx.fillStyle =
+        `rgba(
+          168,
+          85,
+          247,
+          ${p.o}
+        )`;
+
+
+      ctx.fill();
+
+    }
+  );
+
+
+  requestAnimationFrame(
+    animate
+  );
 
 }
+
 
 animate();
 
