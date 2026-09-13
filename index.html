@@ -17,7 +17,7 @@
     content="Um livro feito de pensamentos, sentimentos, memórias e palavras que ficaram por dizer."
   >
 
-  <!-- Fonte apenas para o nome Entrelinhas -->
+  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -27,7 +27,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
     rel="stylesheet"
   >
 
@@ -59,27 +59,27 @@
         Helvetica,
         sans-serif;
 
-      color: #3f3937;
+      color: #292525;
 
       background:
 
         radial-gradient(
-          circle at 12% 15%,
-          rgba(255,255,255,0.95),
-          transparent 32%
+          circle at 10% 10%,
+          rgba(255,255,255,0.9),
+          transparent 30%
         ),
 
         radial-gradient(
-          circle at 88% 78%,
-          rgba(190,150,151,0.13),
-          transparent 30%
+          circle at 90% 75%,
+          rgba(139,104,105,0.08),
+          transparent 32%
         ),
 
         linear-gradient(
           135deg,
-          #f6f1eb 0%,
+          #f4eee8 0%,
           #faf7f3 48%,
-          #f1e8e3 100%
+          #eee5df 100%
         );
 
       overflow-x: hidden;
@@ -128,12 +128,12 @@
 
     header {
 
-      width: min(1100px, 90vw);
+      width: min(1100px, 88vw);
 
       margin: auto;
 
       padding:
-        35px 0
+        34px 0
         25px;
 
       display: flex;
@@ -141,6 +141,10 @@
       align-items: center;
 
       justify-content: space-between;
+
+      border-bottom:
+        1px solid
+        rgba(70,55,53,0.12);
 
     }
 
@@ -152,15 +156,17 @@
         Georgia,
         serif;
 
-      font-size: 25px;
+      font-size: 27px;
 
       font-style: italic;
 
       font-weight: 400;
 
-      color: #8d6869;
+      color: #3b292b;
 
       text-decoration: none;
+
+      letter-spacing: -.02em;
 
     }
 
@@ -172,13 +178,13 @@
         Helvetica,
         sans-serif;
 
-      font-size: 10px;
+      font-size: 9px;
 
-      letter-spacing: .14em;
+      letter-spacing: .18em;
 
       text-transform: uppercase;
 
-      color: #8d817d;
+      color: #665a57;
 
     }
 
@@ -189,9 +195,9 @@
 
     .hero {
 
-      width: min(900px, 90vw);
+      width: min(940px, 88vw);
 
-      min-height: 62vh;
+      min-height: 68vh;
 
       margin: auto;
 
@@ -206,102 +212,15 @@
       text-align: center;
 
       padding:
-        80px 0
-        90px;
+        100px 0
+        110px;
 
     }
 
 
     .hero-small {
 
-      margin-bottom: 20px;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 10px;
-
-      font-weight: bold;
-
-      letter-spacing: .22em;
-
-      text-transform: uppercase;
-
-      color: #9a7777;
-
-    }
-
-
-    .hero-title {
-
-      font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-      font-size:
-        clamp(60px, 9vw, 105px);
-
-      line-height: .95;
-
-      font-style: italic;
-
-      font-weight: 400;
-
-      color: #765657;
-
-      letter-spacing: -.04em;
-
-    }
-
-
-    .hero-line {
-
-      width: 55px;
-
-      height: 1px;
-
-      margin: 32px auto;
-
-      background: #b99696;
-
-      opacity: .75;
-
-    }
-
-
-    .hero-text {
-
-      max-width: 570px;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      font-size: 16px;
-
-      line-height: 1.9;
-
-      color: #706764;
-
-    }
-
-
-    .hero-text strong {
-
-      font-weight: normal;
-
-      color: #765f60;
-
-    }
-
-
-    .scroll-note {
-
-      margin-top: 55px;
+      margin-bottom: 22px;
 
       font-family:
         Arial,
@@ -310,11 +229,98 @@
 
       font-size: 9px;
 
-      letter-spacing: .18em;
+      font-weight: bold;
+
+      letter-spacing: .27em;
 
       text-transform: uppercase;
 
-      color: #a2918d;
+      color: #765657;
+
+    }
+
+
+    .hero-title {
+
+      font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(70px, 10vw, 125px);
+
+      line-height: .92;
+
+      font-style: italic;
+
+      font-weight: 400;
+
+      color: #292122;
+
+      letter-spacing: -.045em;
+
+    }
+
+
+    .hero-line {
+
+      width: 70px;
+
+      height: 1px;
+
+      margin: 38px auto;
+
+      background: #765657;
+
+      opacity: .7;
+
+    }
+
+
+    .hero-text {
+
+      max-width: 590px;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 16px;
+
+      line-height: 2;
+
+      color: #393432;
+
+    }
+
+
+    .hero-text strong {
+
+      font-weight: bold;
+
+      color: #3b292b;
+
+    }
+
+
+    .scroll-note {
+
+      margin-top: 60px;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      color: #786b67;
 
       animation:
         breathing 3s ease-in-out infinite;
@@ -326,7 +332,7 @@
 
       0%,
       100% {
-        opacity: .45;
+        opacity: .4;
       }
 
       50% {
@@ -337,27 +343,33 @@
 
 
     /* =========================
-       ÍNDICE EM CAIXAS
+       ÍNDICE
     ========================= */
 
     .index {
 
-      width: min(1100px, 90vw);
+      width: min(1100px, 88vw);
 
       margin: auto;
 
       padding:
-        70px 0
-        150px;
+        80px 0
+        160px;
+
+      border-top:
+        1px solid
+        rgba(70,55,53,0.12);
 
     }
 
 
     .index-header {
 
-      text-align: center;
+      text-align: left;
 
-      margin-bottom: 50px;
+      margin-bottom: 55px;
+
+      padding-left: 5px;
 
     }
 
@@ -371,17 +383,17 @@
         Helvetica,
         sans-serif;
 
-      font-size: 10px;
+      font-size: 9px;
 
       font-weight: bold;
 
-      letter-spacing: .18em;
+      letter-spacing: .22em;
 
       text-transform: uppercase;
 
-      color: #9a7777;
+      color: #765657;
 
-      margin-bottom: 12px;
+      margin-bottom: 16px;
 
     }
 
@@ -389,31 +401,35 @@
     .index-header h2 {
 
       font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+        "DM Serif Display",
+        Georgia,
+        serif;
 
-      font-size: 30px;
+      font-size: 42px;
 
-      font-weight: normal;
+      font-weight: 400;
 
-      color: #514948;
+      font-style: italic;
+
+      color: #292525;
+
+      line-height: 1.1;
 
     }
 
 
     .index-header p {
 
-      margin-top: 10px;
+      margin-top: 12px;
 
       font-family:
         Arial,
         Helvetica,
         sans-serif;
 
-      font-size: 14px;
+      font-size: 13px;
 
-      color: #817673;
+      color: #625956;
 
     }
 
@@ -429,7 +445,7 @@
       grid-template-columns:
         repeat(2, 1fr);
 
-      gap: 20px;
+      gap: 18px;
 
     }
 
@@ -438,22 +454,22 @@
 
       position: relative;
 
-      min-height: 190px;
+      min-height: 205px;
 
-      padding: 28px;
+      padding: 30px;
 
-      border-radius: 4px;
+      border-radius: 0;
 
       background:
-        rgba(255,255,255,0.56);
+        rgba(255,255,255,0.43);
 
       border:
         1px solid
-        rgba(160,130,125,0.20);
+        rgba(70,55,53,0.16);
 
       box-shadow:
-        0 12px 32px
-        rgba(92,70,67,0.06);
+        0 10px 30px
+        rgba(55,40,38,0.035);
 
       text-decoration: none;
 
@@ -468,7 +484,32 @@
       transition:
         transform .35s ease,
         box-shadow .35s ease,
-        background .35s ease;
+        background .35s ease,
+        border-color .35s ease;
+
+    }
+
+
+    /* detalhe lateral */
+
+    .index-box::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      top: 0;
+
+      width: 2px;
+
+      height: 0;
+
+      background: #765657;
+
+      transition:
+        height .4s ease;
 
     }
 
@@ -479,18 +520,18 @@
 
       position: absolute;
 
-      width: 120px;
+      width: 150px;
 
-      height: 120px;
+      height: 150px;
 
       border-radius: 50%;
 
       background:
-        rgba(183,143,144,0.09);
+        rgba(118,86,87,0.045);
 
-      right: -45px;
+      right: -70px;
 
-      top: -45px;
+      top: -70px;
 
       transition:
         transform .5s ease;
@@ -501,14 +542,24 @@
     .index-box:hover {
 
       transform:
-        translateY(-7px);
+        translateY(-5px);
 
       background:
-        rgba(255,255,255,0.82);
+        rgba(255,255,255,0.72);
+
+      border-color:
+        rgba(118,86,87,0.32);
 
       box-shadow:
-        0 18px 40px
-        rgba(92,70,67,0.11);
+        0 18px 38px
+        rgba(55,40,38,0.08);
+
+    }
+
+
+    .index-box:hover::after {
+
+      height: 100%;
 
     }
 
@@ -516,7 +567,7 @@
     .index-box:hover::before {
 
       transform:
-        scale(1.5);
+        scale(1.35);
 
     }
 
@@ -532,13 +583,13 @@
         Helvetica,
         sans-serif;
 
-      font-size: 11px;
+      font-size: 10px;
 
       font-weight: bold;
 
-      letter-spacing: .12em;
+      letter-spacing: .16em;
 
-      color: #a37f80;
+      color: #765657;
 
     }
 
@@ -551,22 +602,22 @@
 
       margin-top: auto;
 
-      margin-bottom: 12px;
+      margin-bottom: 14px;
 
       font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+        "DM Serif Display",
+        Georgia,
+        serif;
 
-      font-size: 25px;
+      font-size: 29px;
 
-      line-height: 1.25;
+      line-height: 1.2;
 
-      font-weight: normal;
+      font-weight: 400;
 
-      color: #514948;
+      color: #292525;
 
-      max-width: 80%;
+      max-width: 82%;
 
     }
 
@@ -582,13 +633,13 @@
         Helvetica,
         sans-serif;
 
-      font-size: 10px;
+      font-size: 9px;
 
       text-transform: uppercase;
 
-      letter-spacing: .14em;
+      letter-spacing: .17em;
 
-      color: #9b8d89;
+      color: #716662;
 
     }
 
@@ -597,9 +648,9 @@
 
       position: absolute;
 
-      right: 25px;
+      right: 27px;
 
-      bottom: 23px;
+      bottom: 25px;
 
       z-index: 2;
 
@@ -608,9 +659,9 @@
         Helvetica,
         sans-serif;
 
-      font-size: 20px;
+      font-size: 21px;
 
-      color: #a77e7f;
+      color: #765657;
 
       transition:
         transform .3s ease;
@@ -621,7 +672,7 @@
     .index-box:hover .box-arrow {
 
       transform:
-        translateX(5px);
+        translateX(6px);
 
     }
 
@@ -632,13 +683,13 @@
 
     footer {
 
-      width: min(1100px, 90vw);
+      width: min(1100px, 88vw);
 
       margin: auto;
 
       padding:
         0 0
-        45px;
+        50px;
 
       text-align: center;
 
@@ -647,13 +698,15 @@
 
     .footer-line {
 
-      width: 40px;
+      width: 55px;
 
       height: 1px;
 
-      margin: 0 auto 22px;
+      margin: 0 auto 25px;
 
-      background: #bda1a0;
+      background: #765657;
+
+      opacity: .55;
 
     }
 
@@ -667,9 +720,9 @@
 
       font-size: 11px;
 
-      line-height: 1.7;
+      line-height: 1.8;
 
-      color: #9a8d89;
+      color: #625956;
 
     }
 
@@ -681,15 +734,17 @@
         Georgia,
         serif;
 
+      font-size: 15px;
+
       font-style: italic;
 
-      color: #8d6869;
+      color: #3b292b;
 
     }
 
 
     /* =========================
-       ANIMAÇÕES DE ENTRADA
+       ANIMAÇÕES
     ========================= */
 
     .fade {
@@ -757,14 +812,16 @@
 
       .logo {
 
-        font-size: 22px;
+        font-size: 23px;
 
       }
 
 
       .header-note {
 
-        font-size: 8px;
+        font-size: 7px;
+
+        letter-spacing: .14em;
 
       }
 
@@ -773,11 +830,11 @@
 
         width: 88vw;
 
-        min-height: 65vh;
+        min-height: 68vh;
 
         padding:
-          60px 0
-          70px;
+          70px 0
+          80px;
 
       }
 
@@ -785,7 +842,7 @@
       .hero-title {
 
         font-size:
-          clamp(55px, 18vw, 82px);
+          clamp(62px, 19vw, 88px);
 
       }
 
@@ -794,7 +851,7 @@
 
         font-size: 14px;
 
-        line-height: 1.85;
+        line-height: 1.9;
 
       }
 
@@ -804,7 +861,7 @@
         width: 88vw;
 
         padding:
-          60px 0
+          65px 0
           100px;
 
       }
@@ -812,14 +869,14 @@
 
       .index-header {
 
-        margin-bottom: 35px;
+        margin-bottom: 38px;
 
       }
 
 
       .index-header h2 {
 
-        font-size: 26px;
+        font-size: 34px;
 
       }
 
@@ -833,16 +890,16 @@
 
       .index-box {
 
-        min-height: 160px;
+        min-height: 175px;
 
-        padding: 25px;
+        padding: 26px;
 
       }
 
 
       .box-title {
 
-        font-size: 23px;
+        font-size: 27px;
 
       }
 
@@ -1304,9 +1361,9 @@
 
           ctx.fillStyle =
             `rgba(
-              153,
-              119,
-              119,
+              118,
+              86,
+              87,
               ${particle.opacity}
             )`;
 
