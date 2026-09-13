@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -26,23 +26,34 @@ html {
 }
 
 body {
-    background:
-        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.08), transparent 35%),
-        radial-gradient(circle at 80% 70%, rgba(192, 132, 252, 0.05), transparent 35%),
-        #0b0a0d;
-
-    color: #e8e4ea;
-
-    font-family: "Inter", sans-serif;
 
     min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(91, 137, 166, 0.13),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(65, 103, 130, 0.10),
+            transparent 35%
+        ),
+        #0b141c;
+
+    color: #dce6ec;
+
+    font-family: "Inter", sans-serif;
 
     line-height: 1.8;
 }
 
-/* GRANULAÇÃO */
+
+/* TEXTURA SUTIL */
 
 body::before {
+
     content: "";
 
     position: fixed;
@@ -51,56 +62,64 @@ body::before {
 
     pointer-events: none;
 
-    opacity: 0.035;
+    opacity: 0.025;
 
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
 
     z-index: -1;
 }
 
-/* HEADER */
+
+/* CABEÇALHO */
 
 header {
+
+    width: 100%;
+
+    padding: 28px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid rgba(210, 225, 235, 0.06);
+
+    background: rgba(11, 20, 28, 0.78);
+
+    backdrop-filter: blur(14px);
+
     position: fixed;
 
     top: 0;
     left: 0;
 
-    width: 100%;
-
-    padding: 24px 7%;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    z-index: 100;
-
-    background: rgba(11, 10, 13, 0.72);
-
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    z-index: 10;
 }
 
+
 .logo {
-    color: #f1edf3;
+
+    color: #e8f0f4;
 
     text-decoration: none;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 22px;
+    font-size: 21px;
 
     letter-spacing: 5px;
 
     font-weight: 600;
+
 }
 
+
 .back {
-    color: #aaa4ae;
+
+    color: #8799a5;
 
     text-decoration: none;
 
@@ -111,242 +130,322 @@ header {
     transition: 0.3s ease;
 }
 
+
 .back:hover {
-    color: #c084fc;
+
+    color: #b9d1df;
+
 }
+
 
 /* CONTEÚDO */
 
 main {
-    max-width: 820px;
 
-    margin: 0 auto;
+    width: min(760px, calc(100% - 44px));
 
-    padding: 170px 30px 120px;
+    margin: auto;
+
+    padding: 170px 0 100px;
 }
 
-/* CABEÇALHO */
+
+/* CABEÇALHO DA PÁGINA */
 
 .fragments-header {
+
     text-align: center;
 
-    margin-bottom: 70px;
+    margin-bottom: 65px;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    animation: aparecer 1s ease forwards;
 }
+
 
 .moon {
+
     display: block;
 
-    font-size: 25px;
+    font-size: 24px;
 
-    color: #c084fc;
+    margin-bottom: 24px;
 
-    margin-bottom: 20px;
+    opacity: 0.8;
 
-    animation: flutuar 4s ease-in-out infinite;
+    animation: flutuar 5s ease-in-out infinite;
 }
 
+
 h1 {
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(52px, 9vw, 86px);
+    font-size: clamp(58px, 10vw, 92px);
 
     font-weight: 500;
 
-    line-height: 1;
+    line-height: 0.95;
 
-    color: #f4eff5;
+    color: #edf4f7;
 
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
+
 .subtitle {
-    color: #77717c;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 18px;
+    font-size: 20px;
 
     font-style: italic;
+
+    color: #8799a5;
 }
+
 
 /* LINHA */
 
 .divider {
-    width: 60px;
+
+    width: 45px;
 
     height: 1px;
 
-    background: #a855f7;
+    background: #8eafc0;
 
-    opacity: 0.5;
+    opacity: 0.6;
 
-    margin: 0 auto 55px;
+    margin: 0 auto 65px;
+
+    animation: aparecer 1s ease forwards;
+
+    animation-delay: 0.2s;
+
 }
+
 
 /* TEXTO */
 
 .fragments-text {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 24px;
-
-    font-weight: 400;
-
-    color: #d8d2da;
-
-    line-height: 1.9;
-}
-
-.fragments-text p {
-    margin-bottom: 30px;
-}
-
-/* FRASE FINAL */
-
-.quote {
-    margin-top: 60px;
-
-    padding: 35px 30px;
-
-    border-left: 1px solid rgba(168, 85, 247, 0.6);
-
-    background: rgba(255,255,255,0.015);
-
-    color: #f0eaf2;
 
     font-family: "Cormorant Garamond", serif;
 
     font-size: 25px;
 
-    font-style: italic;
+    color: #d4dee4;
 
-    line-height: 1.7;
-}
+    line-height: 1.85;
 
-/* NAVEGAÇÃO */
-
-.navigation {
-    margin-top: 100px;
-
-    padding-top: 35px;
-
-    border-top: 1px solid rgba(255,255,255,0.08);
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-}
-
-.navigation a {
-    color: #8f8992;
-
-    text-decoration: none;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-
-    transition: 0.3s ease;
-}
-
-.navigation a:hover {
-    color: #c084fc;
-}
-
-/* FOOTER */
-
-footer {
-    text-align: center;
-
-    padding: 30px;
-
-    color: #55515a;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-}
-
-/* ANIMAÇÃO */
-
-.fragments-header {
     opacity: 0;
 
-    transform: translateY(20px);
-
-    animation: aparecer 1s ease forwards;
-}
-
-.divider {
-    opacity: 0;
-
-    animation: aparecer 1s ease forwards;
-
-    animation-delay: 0.2s;
-}
-
-.fragments-text {
-    opacity: 0;
-
-    transform: translateY(20px);
+    transform: translateY(18px);
 
     animation: aparecer 1s ease forwards;
 
     animation-delay: 0.35s;
 }
 
+
+.fragments-text p {
+
+    margin-bottom: 28px;
+}
+
+
+/* PEQUENOS TRECHOS */
+
+.fragments-text p:nth-child(3),
+.fragments-text p:nth-child(4),
+.fragments-text p:nth-child(5) {
+
+    padding-left: 28px;
+
+    color: #aebfc9;
+
+}
+
+
+/* FRASE */
+
+.quote {
+
+    margin-top: 65px;
+
+    padding: 30px 34px;
+
+    border-left: 1px solid rgba(142, 175, 192, 0.55);
+
+    color: #e2ebef;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 26px;
+
+    font-style: italic;
+
+    line-height: 1.65;
+
+    background: rgba(255,255,255,0.018);
+}
+
+
+/* NAVEGAÇÃO */
+
+.navigation {
+
+    margin-top: 95px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(210, 225, 235, 0.08);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.navigation a {
+
+    color: #82939e;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+
+.navigation a:hover {
+
+    color: #c4d8e3;
+}
+
+
+/* RODAPÉ */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #4f5c65;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ANIMAÇÕES */
+
 @keyframes aparecer {
 
     to {
+
         opacity: 1;
 
         transform: translateY(0);
+
     }
 
 }
+
 
 @keyframes flutuar {
 
-    0%, 100% {
+    0%,
+    100% {
+
         transform: translateY(0);
+
     }
 
     50% {
-        transform: translateY(-6px);
+
+        transform: translateY(-5px);
+
     }
 
 }
+
 
 /* MOBILE */
 
 @media (max-width: 600px) {
 
     header {
-        padding: 20px;
+
+        padding: 21px;
+
     }
+
+
+    .logo {
+
+        font-size: 18px;
+
+        letter-spacing: 4px;
+
+    }
+
 
     main {
-        padding: 140px 22px 80px;
+
+        width: min(100% - 36px, 760px);
+
+        padding-top: 140px;
+
     }
+
 
     h1 {
-        font-size: 55px;
+
+        font-size: 58px;
+
     }
+
 
     .fragments-text {
-        font-size: 21px;
-    }
 
-    .quote {
         font-size: 22px;
 
-        padding: 28px 22px;
     }
 
+
+    .fragments-text p:nth-child(3),
+    .fragments-text p:nth-child(4),
+    .fragments-text p:nth-child(5) {
+
+        padding-left: 18px;
+
+    }
+
+
+    .quote {
+
+        font-size: 23px;
+
+        padding: 25px 22px;
+
+    }
+
+
     .navigation {
+
         gap: 20px;
+
     }
 
 }
@@ -355,7 +454,9 @@ footer {
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -371,6 +472,7 @@ ENTRELINHAS
 
 
 <main>
+
 
 <section class="fragments-header">
 
@@ -394,29 +496,36 @@ pequenos pedaços que ficaram
 
 <article class="fragments-text">
 
+
 <p>
 Nem todo sentimento precisa de um capítulo.
 </p>
+
 
 <p>
 Às vezes são apenas algumas palavras.
 </p>
 
+
 <p>
 Uma frase.
 </p>
+
 
 <p>
 Uma lembrança.
 </p>
 
+
 <p>
 Uma noite difícil.
 </p>
 
+
 <p>
 Uma coisa bonita que aconteceu durante o dia.
 </p>
+
 
 <p>
 Pequenos pedaços de mim que não precisam fazer parte de uma história maior.
@@ -424,8 +533,11 @@ Pequenos pedaços de mim que não precisam fazer parte de uma história maior.
 
 
 <div class="quote">
+
 Algumas coisas existem apenas para serem sentidas.
+
 </div>
+
 
 </article>
 
@@ -436,11 +548,13 @@ Algumas coisas existem apenas para serem sentidas.
 ← carta anterior
 </a>
 
+
 <a href="../index.html">
 Entrelinhas →
 </a>
 
 </nav>
+
 
 </main>
 
@@ -450,6 +564,7 @@ Entrelinhas →
 ENTRELINHAS · 2026
 
 </footer>
+
 
 </body>
 
