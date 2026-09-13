@@ -6,12 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>01 — O começo | Entrelinhas</title>
+<title>O começo | Entrelinhas</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -21,73 +21,47 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background:
-        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.08), transparent 35%),
-        radial-gradient(circle at 80% 70%, rgba(192, 132, 252, 0.05), transparent 35%),
-        #0b0a0d;
-
-    color: #e8e4ea;
-    font-family: "Inter", sans-serif;
 
     min-height: 100vh;
-    line-height: 1.8;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(91,137,166,0.12),
+            transparent 32%
+        ),
+        #0b141c;
+
+    color: #dce6ec;
+
+    font-family: "Inter", sans-serif;
+
+    line-height: 1.9;
 }
-
-/* GRANULAÇÃO */
-
-body::before {
-    content: "";
-
-    position: fixed;
-    inset: 0;
-
-    pointer-events: none;
-
-    opacity: 0.035;
-
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-
-    z-index: -1;
-}
-
-/* HEADER */
 
 header {
-    position: fixed;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    padding: 24px 7%;
+    padding: 28px 7%;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
-    z-index: 100;
-
-    background: rgba(11, 10, 13, 0.72);
-
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(210,225,235,0.06);
 }
 
 .logo {
-    color: #f1edf3;
+
+    color: #e8f0f4;
 
     text-decoration: none;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 22px;
+    font-size: 21px;
 
     letter-spacing: 5px;
 
@@ -95,7 +69,8 @@ header {
 }
 
 .back {
-    color: #aaa4ae;
+
+    color: #82939e;
 
     text-decoration: none;
 
@@ -107,31 +82,23 @@ header {
 }
 
 .back:hover {
-    color: #c084fc;
-}
 
-/* CONTEÚDO */
+    color: #c5d8e2;
+
+}
 
 main {
-    max-width: 820px;
 
-    margin: 0 auto;
+    width: min(720px, calc(100% - 44px));
 
-    padding: 170px 30px 120px;
-}
+    margin: auto;
 
-/* CABEÇALHO DO CAPÍTULO */
-
-.chapter-header {
-    text-align: center;
-
-    margin-bottom: 70px;
+    padding: 120px 0 100px;
 }
 
 .chapter-number {
-    display: block;
 
-    color: #a855f7;
+    color: #829cab;
 
     font-size: 11px;
 
@@ -143,83 +110,85 @@ main {
 }
 
 h1 {
+
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(48px, 8vw, 82px);
+    font-size: clamp(55px, 9vw, 82px);
 
     font-weight: 500;
 
     line-height: 1;
 
-    color: #f4eff5;
+    color: #edf4f7;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .date {
-    color: #77717c;
 
-    font-size: 12px;
+    font-family: "Cormorant Garamond", serif;
 
-    letter-spacing: 2px;
+    font-size: 18px;
+
+    font-style: italic;
+
+    color: #71828d;
+
+    margin-bottom: 55px;
 }
 
-/* LINHA */
-
 .divider {
-    width: 60px;
+
+    width: 45px;
 
     height: 1px;
 
-    background: #a855f7;
+    background: #91adbc;
 
-    opacity: 0.5;
+    opacity: 0.55;
 
-    margin: 0 auto 55px;
+    margin-bottom: 55px;
 }
 
-/* TEXTO */
+.text {
 
-.chapter-text {
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 23px;
+    font-size: 25px;
 
-    font-weight: 400;
-
-    color: #d8d2da;
+    color: #d2dde3;
 
     line-height: 1.9;
 }
 
-.chapter-text p {
+.text p {
+
     margin-bottom: 30px;
 }
 
-.chapter-text p:last-child {
-    color: #f0eaf2;
+.text p:first-child {
 
-    font-style: italic;
+    margin-top: 20px;
 }
 
-/* NAVEGAÇÃO */
-
 .navigation {
+
     margin-top: 100px;
 
-    padding-top: 35px;
+    padding-top: 30px;
 
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(210,225,235,0.08);
 
     display: flex;
 
     justify-content: space-between;
 
-    align-items: center;
+    gap: 20px;
 }
 
 .navigation a {
-    color: #8f8992;
+
+    color: #82939e;
 
     text-decoration: none;
 
@@ -231,76 +200,47 @@ h1 {
 }
 
 .navigation a:hover {
-    color: #c084fc;
-}
 
-.home {
-    color: #c084fc !important;
+    color: #c5d8e2;
 }
-
-/* FOOTER */
 
 footer {
+
     text-align: center;
 
     padding: 30px;
 
-    color: #55515a;
+    color: #4f5c65;
 
-    font-size: 11px;
+    font-size: 10px;
 
     letter-spacing: 2px;
 }
 
-/* ANIMAÇÃO */
-
-.fade {
-    opacity: 0;
-
-    transform: translateY(20px);
-
-    animation: aparecer 1s ease forwards;
-}
-
-.fade:nth-child(2) {
-    animation-delay: 0.15s;
-}
-
-.fade:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-@keyframes aparecer {
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-/* MOBILE */
-
 @media (max-width: 600px) {
 
     header {
-        padding: 20px;
+
+        padding: 22px;
+
     }
 
     main {
-        padding: 140px 22px 80px;
+
+        padding-top: 90px;
+
     }
 
-    h1 {
-        font-size: 52px;
-    }
+    .text {
 
-    .chapter-text {
-        font-size: 21px;
+        font-size: 22px;
+
     }
 
     .navigation {
-        gap: 20px;
+
+        flex-direction: column;
+
     }
 
 }
@@ -309,7 +249,9 @@ footer {
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -326,27 +268,26 @@ ENTRELINHAS
 
 <main>
 
-<section class="chapter-header">
 
-<span class="chapter-number fade">
-Capítulo 01
-</span>
+<div class="chapter-number">
+capítulo 01
+</div>
 
-<h1 class="fade">
+
+<h1>
 O começo
 </h1>
 
-<div class="date fade">
+
+<div class="date">
 13 de setembro de 2026
 </div>
-
-</section>
 
 
 <div class="divider"></div>
 
 
-<article class="chapter-text">
+<article class="text">
 
 <p>
 Talvez todo livro comece antes da primeira palavra.
@@ -394,14 +335,15 @@ Mas do lugar onde decidi começar a colocá-la em palavras.
 <nav class="navigation">
 
 <a href="../index.html">
-← Entrelinhas
+← início
 </a>
 
 <a href="../cartas/carta-para-mim-mesma.html">
-próximo →
+próxima leitura →
 </a>
 
 </nav>
+
 
 </main>
 
@@ -411,6 +353,7 @@ próximo →
 ENTRELINHAS · 2026
 
 </footer>
+
 
 </body>
 
