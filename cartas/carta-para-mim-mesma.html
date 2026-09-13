@@ -4,240 +4,296 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Carta para mim mesma | Entrelinhas</title>
+<title>Carta para mim mesma — Entrelinhas</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+rel="stylesheet"
+>
 
 <style>
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
 
-    min-height: 100vh;
+  min-height: 100vh;
 
-    background:
-        radial-gradient(
-            circle at 80% 15%,
-            rgba(91,137,166,0.12),
-            transparent 30%
-        ),
-        #0b141c;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-    color: #dce6ec;
+  background:
+    linear-gradient(
+      145deg,
+      #d9eef7,
+      #f2fafd,
+      #dceff8
+    );
 
-    font-family: "Inter", sans-serif;
+  color: #536f7d;
 
-    line-height: 1.9;
 }
 
-header {
 
-    padding: 28px 7%;
+/* TOPO */
 
-    display: flex;
+.top {
 
-    justify-content: space-between;
+  width: min(900px, 88vw);
 
-    align-items: center;
+  margin: auto;
 
-    border-bottom: 1px solid rgba(210,225,235,0.06);
+  padding: 32px 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
 }
 
 .logo {
 
-    color: #e8f0f4;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
 
-    text-decoration: none;
+  font-style: italic;
 
-    font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
 
-    font-size: 21px;
+  color: #477b95;
 
-    letter-spacing: 5px;
+  text-decoration: none;
 
-    font-weight: 600;
 }
 
 .back {
 
-    color: #82939e;
+  font-size: 10px;
 
-    text-decoration: none;
+  text-transform: uppercase;
 
-    font-size: 12px;
+  letter-spacing: .13em;
 
-    letter-spacing: 1px;
+  color: #7897a5;
+
+  text-decoration: none;
+
 }
 
-main {
 
-    width: min(700px, calc(100% - 44px));
+/* CARTA */
 
-    margin: auto;
+.letter-wrap {
 
-    padding: 120px 0 100px;
+  width: min(720px, 88vw);
+
+  margin:
+    80px auto
+    130px;
+
 }
 
-.label {
 
-    color: #829cab;
+/* ETIQUETA */
 
-    font-size: 10px;
+.letter-label {
 
-    letter-spacing: 4px;
+  text-align: center;
 
-    text-transform: uppercase;
+  font-size: 10px;
 
-    margin-bottom: 25px;
+  text-transform: uppercase;
+
+  letter-spacing: .2em;
+
+  color: #78a5b8;
+
+  margin-bottom: 25px;
+
 }
 
-h1 {
 
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: clamp(52px, 8vw, 76px);
-
-    font-weight: 500;
-
-    line-height: 1;
-
-    color: #edf4f7;
-
-    margin-bottom: 20px;
-}
-
-.subtitle {
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 19px;
-
-    font-style: italic;
-
-    color: #778995;
-
-    margin-bottom: 60px;
-}
-
-.divider {
-
-    width: 45px;
-
-    height: 1px;
-
-    background: #91adbc;
-
-    opacity: 0.5;
-
-    margin-bottom: 55px;
-}
+/* PAPEL */
 
 .letter {
 
-    font-family: "Cormorant Garamond", serif;
+  position: relative;
 
-    font-size: 25px;
+  background:
+    rgba(255,255,255,.78);
 
-    color: #d2dde3;
+  border:
+    1px solid
+    rgba(255,255,255,.9);
 
-    line-height: 1.9;
+  border-radius: 4px;
+
+  padding:
+    65px
+    70px
+    75px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(67,119,143,.12);
+
 }
 
-.letter p {
 
-    margin-bottom: 30px;
+.letter::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 45px;
+
+  right: 45px;
+
+  top: 40px;
+
+  bottom: 40px;
+
+  border:
+    1px solid
+    rgba(143,200,227,.18);
+
+  pointer-events: none;
+
 }
 
-.greeting {
 
-    margin-bottom: 40px;
+/* TÍTULO */
 
-    color: #e2ebef;
+h1 {
+
+  position: relative;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(38px, 5vw, 54px);
+
+  font-weight: 400;
+
+  font-style: italic;
+
+  color: #477b95;
+
+  margin-bottom: 55px;
+
 }
+
+
+/* TEXTO */
+
+.letter-text {
+
+  position: relative;
+
+  font-size: 16px;
+
+  line-height: 2;
+
+  color: #597582;
+
+}
+
+
+.letter-text p {
+
+  margin-bottom: 30px;
+
+}
+
+
+.separator {
+
+  width: 35px;
+
+  height: 1px;
+
+  background: #9ac9db;
+
+  margin: 45px 0;
+
+}
+
+
+/* ASSINATURA */
 
 .signature {
 
-    margin-top: 50px;
+  margin-top: 45px;
 
-    font-style: italic;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
 
-    color: #aebdc5;
+  font-size: 20px;
+
+  font-style: italic;
+
+  color: #668c9d;
+
 }
 
-.navigation {
 
-    margin-top: 100px;
-
-    padding-top: 30px;
-
-    border-top: 1px solid rgba(210,225,235,0.08);
-
-    display: flex;
-
-    justify-content: space-between;
-}
-
-.navigation a {
-
-    color: #82939e;
-
-    text-decoration: none;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-}
-
-footer {
-
-    text-align: center;
-
-    padding: 30px;
-
-    color: #4f5c65;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-}
+/* MOBILE */
 
 @media (max-width: 600px) {
 
-    header {
+  .letter-wrap {
+    margin-top: 55px;
+  }
 
-        padding: 22px;
+  .letter {
 
-    }
+    padding:
+      45px 30px
+      55px;
 
-    main {
+  }
 
-        padding-top: 90px;
+  .letter::before {
 
-    }
+    left: 20px;
+    right: 20px;
 
-    .letter {
+    top: 25px;
+    bottom: 25px;
 
-        font-size: 22px;
+  }
 
-    }
+  h1 {
+    font-size: 40px;
+  }
 
-    .navigation {
-
-        flex-direction: column;
-
-        gap: 20px;
-
-    }
+  .letter-text {
+    font-size: 15px;
+    line-height: 1.9;
+  }
 
 }
 
@@ -249,44 +305,38 @@ footer {
 <body>
 
 
-<header>
+<header class="top">
 
 <a href="../index.html" class="logo">
-ENTRELINHAS
+  Entrelinhas
 </a>
 
 <a href="../index.html" class="back">
-← voltar
+  ← voltar
 </a>
 
 </header>
 
 
-<main>
+<main class="letter-wrap">
 
 
-<div class="label">
-uma carta
+<div class="letter-label">
+  uma carta guardada
 </div>
-
-
-<h1>
-Carta para mim mesma
-</h1>
-
-
-<div class="subtitle">
-Uma carta que eu escrevo sem saber exatamente por quê.
-</div>
-
-
-<div class="divider"></div>
 
 
 <article class="letter">
 
 
-<p class="greeting">
+<h1>
+  Carta para mim mesma
+</h1>
+
+
+<div class="letter-text">
+
+<p>
 Querida eu,
 </p>
 
@@ -297,9 +347,9 @@ não sei muito bem por onde começar.
 
 
 <p>
-Talvez eu tenha passado tanto tempo tentando explicar
-o que sinto para outras pessoas que esqueci de tentar
-explicar para mim mesma.
+Talvez eu tenha passado tanto tempo tentando
+explicar o que sinto para outras pessoas que
+esqueci de tentar explicar para mim mesma.
 </p>
 
 
@@ -323,38 +373,30 @@ Sem precisar saber como tudo vai terminar.
 </p>
 
 
-<p class="signature">
+<div class="separator"></div>
+
+
+<p>
+Talvez isso já seja suficiente por enquanto.
+</p>
+
+
+<div class="signature">
 
 Com carinho,<br>
+
 eu.
 
-</p>
+</div>
+
+
+</div>
 
 
 </article>
 
 
-<nav class="navigation">
-
-<a href="../capitulos/01-o-comeco.html">
-← capítulo anterior
-</a>
-
-<a href="../cartas/carta-que-nunca-enviei.html">
-próxima carta →
-</a>
-
-</nav>
-
-
 </main>
-
-
-<footer>
-
-ENTRELINHAS · 2026
-
-</footer>
 
 
 </body>
