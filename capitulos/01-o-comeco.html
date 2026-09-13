@@ -4,244 +4,290 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>O começo | Entrelinhas</title>
+<title>O começo — Entrelinhas</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+rel="stylesheet"
+>
 
 <style>
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
 
-    min-height: 100vh;
+  min-height: 100vh;
 
-    background:
-        radial-gradient(
-            circle at 15% 10%,
-            rgba(91,137,166,0.12),
-            transparent 32%
-        ),
-        #0b141c;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-    color: #dce6ec;
+  background:
+    linear-gradient(
+      135deg,
+      #dceff8,
+      #edf8fc,
+      #d9eef7
+    );
 
-    font-family: "Inter", sans-serif;
+  color: #4f6f7e;
 
-    line-height: 1.9;
+  overflow-x: hidden;
 }
 
-header {
 
-    padding: 28px 7%;
+/* PARTÍCULAS */
 
-    display: flex;
+#particles {
 
-    justify-content: space-between;
+  position: fixed;
 
-    align-items: center;
+  inset: 0;
 
-    border-bottom: 1px solid rgba(210,225,235,0.06);
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* PÁGINA */
+
+.page {
+
+  position: relative;
+
+  z-index: 1;
+
+  min-height: 100vh;
+
+}
+
+
+/* TOPO */
+
+.top {
+
+  width: min(900px, 88vw);
+
+  margin: auto;
+
+  padding: 35px 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
 }
 
 .logo {
 
-    color: #e8f0f4;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
 
-    text-decoration: none;
+  font-style: italic;
 
-    font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
 
-    font-size: 21px;
+  color: #477b95;
 
-    letter-spacing: 5px;
+  text-decoration: none;
 
-    font-weight: 600;
 }
 
 .back {
 
-    color: #82939e;
+  font-size: 10px;
 
-    text-decoration: none;
+  letter-spacing: .13em;
 
-    font-size: 12px;
+  text-transform: uppercase;
 
-    letter-spacing: 1px;
+  color: #7295a5;
 
-    transition: 0.3s ease;
+  text-decoration: none;
+
+  transition: .3s ease;
+
 }
 
 .back:hover {
+  color: #477b95;
+}
 
-    color: #c5d8e2;
+
+/* CAPÍTULO */
+
+.chapter {
+
+  width: min(760px, 88vw);
+
+  margin: auto;
+
+  padding:
+    100px 0
+    140px;
 
 }
 
-main {
 
-    width: min(720px, calc(100% - 44px));
-
-    margin: auto;
-
-    padding: 120px 0 100px;
-}
+/* NÚMERO */
 
 .chapter-number {
 
-    color: #829cab;
+  font-size: 10px;
 
-    font-size: 11px;
+  letter-spacing: .2em;
 
-    letter-spacing: 4px;
+  text-transform: uppercase;
 
-    text-transform: uppercase;
+  color: #79a8bb;
 
-    margin-bottom: 22px;
+  margin-bottom: 22px;
+
 }
+
+
+/* TÍTULO */
 
 h1 {
 
-    font-family: "Cormorant Garamond", serif;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
 
-    font-size: clamp(55px, 9vw, 82px);
+  font-size:
+    clamp(48px, 7vw, 76px);
 
-    font-weight: 500;
+  font-weight: 400;
 
-    line-height: 1;
+  font-style: italic;
 
-    color: #edf4f7;
+  color: #477b95;
 
-    margin-bottom: 20px;
+  line-height: 1.05;
+
+  margin-bottom: 20px;
+
 }
+
+
+/* DATA */
 
 .date {
 
-    font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
 
-    font-size: 18px;
+  color: #8aa4af;
 
-    font-style: italic;
+  letter-spacing: .05em;
 
-    color: #71828d;
-
-    margin-bottom: 55px;
 }
+
+
+/* LINHA */
 
 .divider {
 
-    width: 45px;
+  width: 55px;
 
-    height: 1px;
+  height: 1px;
 
-    background: #91adbc;
+  background: #91c6dc;
 
-    opacity: 0.55;
+  margin: 55px 0;
 
-    margin-bottom: 55px;
 }
+
+
+/* TEXTO */
 
 .text {
 
-    font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
 
-    font-size: 25px;
+  line-height: 2;
 
-    color: #d2dde3;
+  color: #577583;
 
-    line-height: 1.9;
 }
+
 
 .text p {
 
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+
 }
 
-.text p:first-child {
 
-    margin-top: 20px;
+.text p:last-child {
+  margin-bottom: 0;
 }
 
-.navigation {
 
-    margin-top: 100px;
+/* FRASE FINAL */
 
-    padding-top: 30px;
+.final {
 
-    border-top: 1px solid rgba(210,225,235,0.08);
+  margin-top: 70px;
 
-    display: flex;
+  padding-left: 25px;
 
-    justify-content: space-between;
+  border-left: 1px solid #9bcadd;
 
-    gap: 20px;
+  font-style: italic;
+
+  color: #688c9c;
+
 }
 
-.navigation a {
 
-    color: #82939e;
-
-    text-decoration: none;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-
-    transition: 0.3s ease;
-}
-
-.navigation a:hover {
-
-    color: #c5d8e2;
-}
-
-footer {
-
-    text-align: center;
-
-    padding: 30px;
-
-    color: #4f5c65;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-}
+/* MOBILE */
 
 @media (max-width: 600px) {
 
-    header {
+  .top {
+    padding: 25px 0;
+  }
 
-        padding: 22px;
+  .chapter {
+    padding:
+      70px 0
+      100px;
+  }
 
-    }
+  h1 {
+    font-size: 48px;
+  }
 
-    main {
-
-        padding-top: 90px;
-
-    }
-
-    .text {
-
-        font-size: 22px;
-
-    }
-
-    .navigation {
-
-        flex-direction: column;
-
-    }
+  .text {
+    font-size: 16px;
+    line-height: 1.9;
+  }
 
 }
 
@@ -252,42 +298,46 @@ footer {
 
 <body>
 
+<canvas id="particles"></canvas>
 
-<header>
+
+<div class="page">
+
+
+<header class="top">
 
 <a href="../index.html" class="logo">
-ENTRELINHAS
+  Entrelinhas
 </a>
 
 <a href="../index.html" class="back">
-← voltar
+  ← voltar
 </a>
 
 </header>
 
 
-<main>
-
+<main class="chapter">
 
 <div class="chapter-number">
-capítulo 01
+  Capítulo 01
 </div>
 
 
 <h1>
-O começo
+  O começo
 </h1>
 
 
 <div class="date">
-13 de setembro de 2026
+  13 de setembro de 2026
 </div>
 
 
 <div class="divider"></div>
 
 
-<article class="text">
+<div class="text">
 
 <p>
 Talvez todo livro comece antes da primeira palavra.
@@ -298,11 +348,13 @@ Talvez este também.
 </p>
 
 <p>
-Não sei exatamente onde essa história começa, nem onde ela vai terminar.
+Não sei exatamente onde essa história começa,
+nem onde ela vai terminar.
 </p>
 
 <p>
-Só sei que, em algum momento, senti vontade de escrever.
+Só sei que, em algum momento,
+senti vontade de escrever.
 </p>
 
 <p>
@@ -314,46 +366,124 @@ Sem precisar encontrar as palavras certas.
 </p>
 
 <p>
-Sem precisar fingir que está tudo bem quando não estiver.
+Sem precisar fingir que está tudo bem
+quando não estiver.
 </p>
 
-<p>
+<p class="final">
 Então este é o começo.
-</p>
-
-<p>
+<br><br>
 Não necessariamente da minha história.
+<br><br>
+Mas do lugar onde decidi começar
+a colocá-la em palavras.
 </p>
 
-<p>
-Mas do lugar onde decidi começar a colocá-la em palavras.
-</p>
-
-</article>
-
-
-<nav class="navigation">
-
-<a href="../index.html">
-← início
-</a>
-
-<a href="../cartas/carta-para-mim-mesma.html">
-próxima leitura →
-</a>
-
-</nav>
-
+</div>
 
 </main>
 
 
-<footer>
+</div>
 
-ENTRELINHAS · 2026
 
-</footer>
+<script>
 
+const canvas =
+document.getElementById("particles");
+
+const ctx =
+canvas.getContext("2d");
+
+let particles = [];
+
+function resize() {
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
+
+}
+
+resize();
+
+window.addEventListener(
+"resize",
+resize
+);
+
+
+for (
+let i = 0;
+i < 45;
+i++
+) {
+
+particles.push({
+
+x: Math.random() * innerWidth,
+
+y: Math.random() * innerHeight,
+
+r: Math.random() * 1.5 + .4,
+
+vx: (Math.random() - .5) * .15,
+
+vy: (Math.random() - .5) * .15,
+
+o: Math.random() * .25 + .05
+
+});
+
+}
+
+
+function animate() {
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+particles.forEach(p => {
+
+p.x += p.vx;
+p.y += p.vy;
+
+if (p.x < 0) p.x = canvas.width;
+if (p.x > canvas.width) p.x = 0;
+
+if (p.y < 0) p.y = canvas.height;
+if (p.y > canvas.height) p.y = 0;
+
+ctx.beginPath();
+
+ctx.arc(
+p.x,
+p.y,
+p.r,
+0,
+Math.PI * 2
+);
+
+ctx.fillStyle =
+`rgba(112,178,207,${p.o})`;
+
+ctx.fill();
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
 
 </body>
 
