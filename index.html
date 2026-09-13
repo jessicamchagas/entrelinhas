@@ -6,31 +6,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Entrelinhas</title>
+<title>Fragmentos — Entrelinhas</title>
 
 <meta
   name="description"
-  content="Um livro feito de pensamentos, sentimentos, memórias e palavras que ficaram por dizer."
+  content="Pequenos pedaços de pensamentos, sentimentos e memórias."
 >
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
   rel="stylesheet"
 >
 
+
 <style>
 
+/* =========================================================
+   CONFIGURAÇÕES
+========================================================= */
+
 :root {
-  --bg: #0b1118;
-  --bg-soft: #101923;
-  --text: #e7ebef;
-  --muted: #8d9aa7;
-  --line: rgba(231, 235, 239, 0.12);
-  --accent: #a9bbca;
+
+  --blue-bg: #dceff8;
+  --blue-soft: #eaf7fc;
+  --blue-light: #f4fbfe;
+
+  --blue: #8fc8e3;
+  --blue-medium: #72b8d8;
+  --blue-dark: #4f94b8;
+
+  --text: #3f5663;
+  --text-soft: #6d8795;
+
+  --white: rgba(255, 255, 255, 0.72);
+
+  --shadow:
+    0 10px 30px rgba(79, 148, 184, 0.10);
+
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
   margin: 0;
@@ -38,495 +59,668 @@
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
 
+
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: "DM Sans", sans-serif;
-  font-weight: 400;
+
   min-height: 100vh;
-}
-
-/* =========================
-   FUNDO
-========================= */
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
 
   background:
-    radial-gradient(
-      circle at 75% 20%,
-      rgba(119, 145, 166, 0.08),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 20% 80%,
-      rgba(80, 105, 125, 0.05),
-      transparent 30%
+    linear-gradient(
+      135deg,
+      #d9edf7 0%,
+      #eaf7fc 45%,
+      #d5ebf6 100%
     );
 
-  z-index: -1;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  padding: 34px 7vw;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  z-index: 10;
-}
-
-.logo {
-  font-family: "DM Sans", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-
-  color: var(--muted);
-}
-
-.header-note {
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-
-  color: #657381;
-}
-
-/* =========================
-   CAPA
-========================= */
-
-.cover {
-  min-height: 100vh;
-
-  padding: 150px 7vw 90px;
-
-  display: flex;
-  align-items: center;
-}
-
-.cover-inner {
-  width: min(100%, 1080px);
-  margin: auto;
-
-  display: grid;
-  grid-template-columns: 1fr 0.55fr;
-
-  gap: 80px;
-  align-items: end;
-}
-
-/* número */
-
-.book-number {
-  font-family: "Playfair Display", serif;
-
-  font-size: 15px;
-  font-style: italic;
-
-  color: var(--muted);
-
-  margin-bottom: 30px;
-}
-
-/* título */
-
-.title {
-  font-family: "Playfair Display", serif;
-
-  font-size: clamp(70px, 10vw, 150px);
-
-  font-weight: 400;
-  line-height: 0.9;
-
-  letter-spacing: -0.055em;
-
-  margin-left: -7px;
-}
-
-.title span {
-  display: block;
-}
-
-.title .italic {
-  font-style: italic;
-  margin-left: 0.28em;
-}
-
-/* linha */
-
-.cover-line {
-  width: 100%;
-  max-width: 520px;
-
-  height: 1px;
-
-  background: var(--line);
-
-  margin: 48px 0 25px;
-}
-
-/* descrição */
-
-.description {
-  max-width: 440px;
-
-  font-family: "Playfair Display", serif;
-
-  font-size: 18px;
-  line-height: 1.75;
-
-  color: #aeb8c1;
-}
-
-/* lateral */
-
-.cover-side {
-  padding-bottom: 10px;
-}
-
-.side-label {
-  font-size: 10px;
-
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-
-  color: #657381;
-
-  margin-bottom: 18px;
-}
-
-.side-text {
-  font-family: "Playfair Display", serif;
-
-  font-size: 21px;
-  line-height: 1.65;
-
-  color: #c6cdd3;
-}
-
-.side-text em {
-  color: var(--accent);
-}
-
-/* botão */
-
-.enter {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-
-  margin-top: 38px;
-
   color: var(--text);
 
-  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  overflow-x: hidden;
 
-  transition: gap 0.4s ease;
 }
 
-.enter::after {
-  content: "→";
 
-  font-size: 18px;
-  font-family: "Playfair Display", serif;
+/* =========================================================
+   PARTÍCULAS
+========================================================= */
 
-  transition: transform 0.4s ease;
+#particles {
+
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  z-index: 0;
+
 }
 
-.enter:hover {
-  gap: 26px;
-}
 
-.enter:hover::after {
-  transform: translateX(4px);
-}
+/* =========================================================
+   CONTEÚDO
+========================================================= */
 
-/* =========================
-   ÍNDICE
-========================= */
+.page {
 
-.index {
-  width: min(100%, 1080px);
-
-  margin: auto;
-
-  padding: 120px 7vw 150px;
-}
-
-.section-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-
-  padding-bottom: 22px;
-
-  border-bottom: 1px solid var(--line);
-
-  margin-bottom: 20px;
-}
-
-.section-title {
-  font-family: "Playfair Display", serif;
-
-  font-size: 32px;
-  font-weight: 400;
-}
-
-.section-number {
-  font-size: 10px;
-
-  letter-spacing: 0.2em;
-
-  color: #657381;
-}
-
-/* itens */
-
-.entry {
   position: relative;
 
-  display: grid;
+  z-index: 2;
 
-  grid-template-columns: 70px 1fr 35px;
+  min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+header {
+
+  width: 100%;
+
+  padding: 28px 6vw;
+
+  display: flex;
+
+  justify-content: space-between;
 
   align-items: center;
 
-  padding: 28px 0;
+  position: relative;
 
-  border-bottom: 1px solid var(--line);
+  z-index: 20;
+
+}
+
+
+.logo {
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 22px;
+
+  font-style: italic;
+
+  color: #477b95;
+
+}
+
+
+.back {
 
   text-decoration: none;
 
-  color: var(--text);
+  color: var(--text-soft);
 
-  transition: padding 0.35s ease;
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  letter-spacing: 0.05em;
+
+  padding: 10px 16px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.45);
+
+  border: 1px solid rgba(255,255,255,0.7);
+
+  transition:
+    0.3s ease;
+
 }
 
-.entry:hover {
-  padding-left: 12px;
+
+.back:hover {
+
+  background: white;
+
+  color: var(--blue-dark);
+
+  transform: translateY(-2px);
+
 }
 
-.entry-number {
-  font-family: "Playfair Display", serif;
 
-  font-size: 14px;
-  font-style: italic;
+/* =========================================================
+   INTRODUÇÃO
+========================================================= */
 
-  color: #697784;
+.intro {
+
+  text-align: center;
+
+  padding:
+
+    45px
+
+    20px
+
+    30px;
+
+  transition:
+
+    opacity 1s ease,
+
+    transform 1s ease;
+
 }
 
-.entry-name {
-  font-family: "Playfair Display", serif;
 
-  font-size: 25px;
+.intro.hidden {
 
-  transition: color 0.3s ease;
+  opacity: 0;
+
+  transform: translateY(-15px);
+
 }
 
-.entry:hover .entry-name {
-  color: #cbd7df;
-}
 
-.entry-type {
-  font-size: 9px;
+.eyebrow {
 
-  letter-spacing: 0.15em;
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: bold;
 
   text-transform: uppercase;
 
-  color: #62707d;
+  letter-spacing: 0.15em;
 
-  text-align: right;
+  color: #6e9caf;
+
+  margin-bottom: 15px;
+
 }
 
-/* =========================
-   FRASE
-========================= */
 
-.quote {
-  min-height: 70vh;
+h1 {
+
+  font-family: "Playfair Display", serif;
+
+  font-weight: 400;
+
+  font-size: clamp(55px, 8vw, 95px);
+
+  font-style: italic;
+
+  color: #477b95;
+
+  line-height: 1;
+
+}
+
+
+.subtitle {
+
+  margin-top: 15px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 14px;
+
+  color: var(--text-soft);
+
+}
+
+
+/* =========================================================
+   ÁREA DOS FRAGMENTOS
+========================================================= */
+
+.fragment-area {
+
+  width: min(1050px, 92vw);
+
+  min-height: 540px;
+
+  margin: 20px auto 0;
+
+  padding: 45px;
 
   display: flex;
+
   align-items: center;
 
-  padding: 100px 7vw;
+  justify-content: center;
+
 }
 
-.quote-inner {
-  width: min(800px, 100%);
 
-  margin: auto;
+/* =========================================================
+   CONTAINER DAS CAIXAS
+========================================================= */
 
-  text-align: center;
+.fragments {
+
+  width: 100%;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 13px;
+
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  transition:
+
+    opacity 1s ease,
+
+    transform 1s ease;
+
 }
 
-.quote-mark {
-  font-family: "Playfair Display", serif;
 
-  font-size: 70px;
+.fragments.visible {
 
-  color: #536473;
+  opacity: 1;
 
-  line-height: 0.5;
+  transform: translateY(0);
 
-  margin-bottom: 30px;
 }
 
-.quote-text {
-  font-family: "Playfair Display", serif;
 
-  font-size: clamp(28px, 4vw, 48px);
+/* =========================================================
+   CADA FRAGMENTO
+========================================================= */
+
+.fragment {
+
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 11px 17px;
+
+  border-radius: 12px;
+
+  background: var(--white);
+
+  border: 1px solid rgba(255,255,255,0.85);
+
+  box-shadow: var(--shadow);
+
+  color: var(--text);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 16px;
 
   line-height: 1.35;
 
-  font-style: italic;
+  cursor: pointer;
 
-  color: #cbd2d8;
-}
+  user-select: none;
 
-/* =========================
-   FOOTER
-========================= */
+  opacity: 0;
 
-footer {
-  padding: 35px 7vw;
+  filter: blur(5px);
 
-  border-top: 1px solid var(--line);
+  transform:
 
-  display: flex;
-  justify-content: space-between;
+    translate(
 
-  color: #596773;
+      var(--x),
 
-  font-size: 10px;
+      var(--y)
 
-  letter-spacing: 0.12em;
+    )
 
-  text-transform: uppercase;
-}
+    rotate(var(--rotate))
 
-/* =========================
-   ANIMAÇÃO
-========================= */
+    scale(.75);
 
-.cover-inner > * {
-  animation: appear 1.2s ease both;
-}
+  transition:
 
-.cover-side {
-  animation-delay: 0.25s !important;
-}
+    transform 1.3s cubic-bezier(.22,1,.36,1),
 
-@keyframes appear {
+    opacity .8s ease,
 
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+    filter 1s ease,
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    background .3s ease,
+
+    color .3s ease,
+
+    box-shadow .3s ease,
+
+    border-color .3s ease;
+
+  transition-delay: var(--delay);
 
 }
 
-/* =========================
+
+/* palavra chegando ao lugar */
+
+.fragment.join {
+
+  opacity: 1;
+
+  filter: blur(0);
+
+  transform:
+
+    translate(0,0)
+
+    rotate(0)
+
+    scale(1);
+
+}
+
+
+/* =========================================================
+   FRAGMENTO SELECIONADO
+========================================================= */
+
+.fragment.selected {
+
+  background: #ffffff;
+
+  color: var(--blue-dark);
+
+  border-color: var(--blue);
+
+  box-shadow:
+
+    0 8px 28px rgba(79,148,184,.20),
+
+    0 0 0 3px rgba(143,200,227,.18);
+
+  transform:
+
+    translateY(-5px)
+
+    scale(1.04);
+
+}
+
+
+/* =========================================================
+   EFEITO HOVER
+========================================================= */
+
+.fragment:hover {
+
+  background: rgba(255,255,255,.95);
+
+  color: var(--blue-dark);
+
+  box-shadow:
+
+    0 8px 25px rgba(79,148,184,.16);
+
+}
+
+
+/* =========================================================
+   FRASE FINAL
+========================================================= */
+
+.final-message {
+
+  width: min(650px, 88vw);
+
+  margin: 20px auto 0;
+
+  padding: 25px 20px;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(79,148,184,.15);
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  transition:
+
+    opacity 1.2s ease,
+
+    transform 1.2s ease;
+
+}
+
+
+.final-message.visible {
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+}
+
+
+.final-message p {
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: var(--text-soft);
+
+}
+
+
+/* =========================================================
+   BOTÃO INÍCIO
+========================================================= */
+
+.home-button {
+
+  display: block;
+
+  width: fit-content;
+
+  margin: 30px auto 70px;
+
+  padding: 13px 25px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  color: white;
+
+  background: var(--blue-medium);
+
+  box-shadow:
+
+    0 8px 22px rgba(79,148,184,.18);
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  transition:
+
+    opacity 1s ease,
+
+    transform 1s ease,
+
+    background .3s ease,
+
+    box-shadow .3s ease;
+
+}
+
+
+.home-button.visible {
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+}
+
+
+.home-button:hover {
+
+  background: var(--blue-dark);
+
+  box-shadow:
+
+    0 10px 28px rgba(79,148,184,.25);
+
+}
+
+
+/* =========================================================
+   PEQUENOS DETALHES
+========================================================= */
+
+.info {
+
+  text-align: center;
+
+  margin-top: -30px;
+
+  margin-bottom: 50px;
+
+  color: #86a6b5;
+
+  font-size: 11px;
+
+}
+
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
-@media (max-width: 760px) {
+@media (max-width: 700px) {
 
   header {
-    padding: 25px 24px;
+
+    padding: 22px 20px;
+
   }
 
-  .header-note {
-    display: none;
+
+  .logo {
+
+    font-size: 20px;
+
   }
 
-  .cover {
-    padding: 125px 24px 80px;
 
-    min-height: auto;
+  .intro {
+
+    padding-top: 35px;
+
   }
 
-  .cover-inner {
-    display: block;
+
+  h1 {
+
+    font-size: 60px;
+
   }
 
-  .title {
-    font-size: clamp(65px, 20vw, 105px);
+
+  .fragment-area {
+
+    width: 94vw;
+
+    padding: 20px 5px;
+
+    min-height: 480px;
+
   }
 
-  .description {
-    font-size: 17px;
+
+  .fragments {
+
+    gap: 9px;
+
   }
 
-  .cover-side {
-    margin-top: 80px;
 
-    max-width: 380px;
+  .fragment {
+
+    min-height: 42px;
+
+    padding: 9px 12px;
+
+    font-size: 14px;
+
+    border-radius: 10px;
+
   }
 
-  .index {
-    padding: 80px 24px 110px;
+
+  .final-message {
+
+    margin-top: 10px;
+
   }
 
-  .entry {
-    grid-template-columns: 48px 1fr 20px;
+
+  .home-button {
+
+    margin-bottom: 45px;
+
   }
 
-  .entry-name {
-    font-size: 21px;
+}
+
+
+/* =========================================================
+   REDUZIR ANIMAÇÕES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .fragment {
+
+    transition: none;
+
   }
 
-  .entry-type {
-    font-size: 8px;
-  }
+  .intro,
+  .fragments,
+  .final-message,
+  .home-button {
 
-  .quote {
-    min-height: 60vh;
+    transition: none;
 
-    padding: 80px 24px;
-  }
-
-  .quote-text {
-    font-size: 30px;
-  }
-
-  footer {
-    padding: 28px 24px;
-
-    flex-direction: column;
-
-    gap: 10px;
   }
 
 }
@@ -538,209 +732,739 @@ footer {
 
 <body>
 
+
+<!-- =====================================================
+     PARTÍCULAS
+====================================================== -->
+
+<canvas id="particles"></canvas>
+
+
+<div class="page">
+
+
+<!-- =====================================================
+     CABEÇALHO
+====================================================== -->
+
 <header>
 
   <div class="logo">
     Entrelinhas
   </div>
 
-  <div class="header-note">
-    um livro sem pressa
-  </div>
+
+  <a
+    href="../index.html"
+    class="back"
+  >
+    ← voltar
+  </a>
 
 </header>
 
 
-<main>
 
-  <!-- CAPA -->
+<!-- =====================================================
+     INTRODUÇÃO
+====================================================== -->
 
-  <section class="cover">
+<section class="intro" id="intro">
 
-    <div class="cover-inner">
-
-      <div>
-
-        <div class="book-number">
-          volume I · 2026
-        </div>
-
-        <h1 class="title">
-          Entre
-          <span class="italic">linhas.</span>
-        </h1>
-
-        <div class="cover-line"></div>
-
-        <p class="description">
-          Um lugar para colocar em palavras aquilo
-          que às vezes não encontra espaço em nenhum outro lugar.
-        </p>
-
-        <a href="#indice" class="enter">
-          começar a ler
-        </a>
-
-      </div>
+  <div class="eyebrow">
+    entrelinhas · 04
+  </div>
 
 
-      <div class="cover-side">
-
-        <div class="side-label">
-          uma coleção de coisas
-        </div>
-
-        <p class="side-text">
-          Pensamentos que ficaram.
-          <br>
-          Memórias que voltam.
-          <br>
-          Cartas que nunca chegaram.
-          <br><br>
-          E algumas palavras que
-          <em>precisavam existir.</em>
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
+  <h1>
+    Fragmentos
+  </h1>
 
 
-  <!-- ÍNDICE -->
+  <div class="subtitle">
+    pequenos pedaços que ficaram
+  </div>
 
-  <section class="index" id="indice">
-
-    <div class="section-top">
-
-      <h2 class="section-title">
-        Índice
-      </h2>
-
-      <span class="section-number">
-        conteúdo
-      </span>
-
-    </div>
+</section>
 
 
-    <a
-      href="capitulos/01-o-comeco.html"
-      class="entry"
-    >
 
-      <span class="entry-number">
-        01
-      </span>
+<!-- =====================================================
+     FRAGMENTOS
+====================================================== -->
 
-      <span class="entry-name">
-        O começo
-      </span>
-
-      <span class="entry-type">
-        capítulo
-      </span>
-
-    </a>
+<section class="fragment-area">
 
 
-    <a
-      href="cartas/carta-para-mim-mesma.html"
-      class="entry"
-    >
-
-      <span class="entry-number">
-        02
-      </span>
-
-      <span class="entry-name">
-        Carta para mim mesma
-      </span>
-
-      <span class="entry-type">
-        carta
-      </span>
-
-    </a>
+<div
+  class="fragments"
+  id="fragments"
+>
 
 
-    <a
-      href="cartas/carta-que-nunca-enviei.html"
-      class="entry"
-    >
-
-      <span class="entry-number">
-        03
-      </span>
-
-      <span class="entry-name">
-        A carta que nunca enviei
-      </span>
-
-      <span class="entry-type">
-        carta
-      </span>
-
-    </a>
-
-
-    <a
-      href="fragmentos/fragmentos.html"
-      class="entry"
-    >
-
-      <span class="entry-number">
-        04
-      </span>
-
-      <span class="entry-name">
-        Fragmentos
-      </span>
-
-      <span class="entry-type">
-        fragmentos
-      </span>
-
-    </a>
-
-  </section>
-
-
-  <!-- FRASE -->
-
-  <section class="quote">
-
-    <div class="quote-inner">
-
-      <div class="quote-mark">
-        “
-      </div>
-
-      <p class="quote-text">
-        Talvez algumas coisas só precisem
-        ser escritas para finalmente
-        deixarem de pesar.
-      </p>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer>
-
-  <span>
-    Entrelinhas
+  <span
+    class="fragment"
+    style="--x:-35vw;--y:-30vh;--rotate:-12deg;--delay:.1s;"
+  >
+    Nem
   </span>
 
-  <span>
-    escrito aos poucos
+
+  <span
+    class="fragment"
+    style="--x:32vw;--y:-25vh;--rotate:10deg;--delay:.18s;"
+  >
+    todo
   </span>
 
-</footer>
+
+  <span
+    class="fragment"
+    style="--x:-28vw;--y:25vh;--rotate:7deg;--delay:.26s;"
+  >
+    sentimento
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:30vw;--y:20vh;--rotate:-8deg;--delay:.34s;"
+  >
+    precisa
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-20vw;--y:-35vh;--rotate:13deg;--delay:.42s;"
+  >
+    de
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:25vw;--y:30vh;--rotate:-13deg;--delay:.50s;"
+  >
+    um
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-36vw;--y:-5vh;--rotate:8deg;--delay:.58s;"
+  >
+    capítulo.
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:30vw;--y:-20vh;--rotate:-10deg;--delay:.66s;"
+  >
+    Às
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-32vw;--y:28vh;--rotate:12deg;--delay:.74s;"
+  >
+    vezes
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:35vw;--y:3vh;--rotate:-7deg;--delay:.82s;"
+  >
+    são
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-28vw;--y:-25vh;--rotate:11deg;--delay:.90s;"
+  >
+    apenas
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:22vw;--y:27vh;--rotate:-13deg;--delay:.98s;"
+  >
+    algumas
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-37vw;--y:7vh;--rotate:9deg;--delay:1.06s;"
+  >
+    palavras.
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:34vw;--y:-32vh;--rotate:12deg;--delay:1.14s;"
+  >
+    Uma
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-25vw;--y:31vh;--rotate:-12deg;--delay:1.22s;"
+  >
+    frase.
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-35vw;--y:-17vh;--rotate:10deg;--delay:1.30s;"
+  >
+    Uma
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:32vw;--y:24vh;--rotate:-10deg;--delay:1.38s;"
+  >
+    lembrança.
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:25vw;--y:-27vh;--rotate:13deg;--delay:1.46s;"
+  >
+    Uma
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-30vw;--y:32vh;--rotate:-14deg;--delay:1.54s;"
+  >
+    noite
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:36vw;--y:-7vh;--rotate:9deg;--delay:1.62s;"
+  >
+    difícil.
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-22vw;--y:-32vh;--rotate:-13deg;--delay:1.70s;"
+  >
+    Uma
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:28vw;--y:32vh;--rotate:11deg;--delay:1.78s;"
+  >
+    coisa
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-37vw;--y:-2vh;--rotate:-8deg;--delay:1.86s;"
+  >
+    bonita
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:34vw;--y:-23vh;--rotate:13deg;--delay:1.94s;"
+  >
+    que
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-27vw;--y:26vh;--rotate:-11deg;--delay:2.02s;"
+  >
+    aconteceu
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:21vw;--y:-35vh;--rotate:8deg;--delay:2.10s;"
+  >
+    durante
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-34vw;--y:12vh;--rotate:-14deg;--delay:2.18s;"
+  >
+    o
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:36vw;--y:14vh;--rotate:12deg;--delay:2.26s;"
+  >
+    dia.
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-32vw;--y:-28vh;--rotate:10deg;--delay:2.34s;"
+  >
+    Pequenos
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:29vw;--y:21vh;--rotate:-12deg;--delay:2.42s;"
+  >
+    pedaços
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-23vw;--y:34vh;--rotate:8deg;--delay:2.50s;"
+  >
+    de
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:37vw;--y:-15vh;--rotate:-15deg;--delay:2.58s;"
+  >
+    mim
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-36vw;--y:-6vh;--rotate:13deg;--delay:2.66s;"
+  >
+    que
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:24vw;--y:-31vh;--rotate:-8deg;--delay:2.74s;"
+  >
+    não
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-29vw;--y:16vh;--rotate:14deg;--delay:2.82s;"
+  >
+    precisam
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:33vw;--y:30vh;--rotate:-10deg;--delay:2.90s;"
+  >
+    fazer
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-20vw;--y:-20vh;--rotate:9deg;--delay:2.98s;"
+  >
+    parte
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:38vw;--y:5vh;--rotate:-13deg;--delay:3.06s;"
+  >
+    de
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-33vw;--y:35vh;--rotate:7deg;--delay:3.14s;"
+  >
+    uma
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:22vw;--y:17vh;--rotate:-9deg;--delay:3.22s;"
+  >
+    história
+  </span>
+
+
+  <span
+    class="fragment"
+    style="--x:-37vw;--y:-22vh;--rotate:12deg;--delay:3.30s;"
+  >
+    maior.
+  </span>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MENSAGEM FINAL
+====================================================== -->
+
+<section
+  class="final-message"
+  id="finalMessage"
+>
+
+  <p>
+    Algumas coisas existem apenas
+    para serem sentidas.
+  </p>
+
+</section>
+
+
+
+<div
+  class="info"
+  id="info"
+>
+  selecione os fragmentos que quiser guardar
+</div>
+
+
+
+<!-- =====================================================
+     BOTÃO
+====================================================== -->
+
+<a
+  href="../index.html"
+  class="home-button"
+  id="homeButton"
+>
+  ← Voltar ao início
+</a>
+
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   FRAGMENTOS
+========================================================= */
+
+const fragments =
+  document.querySelectorAll(".fragment");
+
+const fragmentContainer =
+  document.getElementById("fragments");
+
+const intro =
+  document.getElementById("intro");
+
+const finalMessage =
+  document.getElementById("finalMessage");
+
+const homeButton =
+  document.getElementById("homeButton");
+
+
+/* =========================================================
+   ENTRADA
+========================================================= */
+
+window.addEventListener("load", () => {
+
+
+  setTimeout(() => {
+
+    fragmentContainer.classList.add("visible");
+
+  }, 500);
+
+
+  setTimeout(() => {
+
+    fragments.forEach(fragment => {
+
+      fragment.classList.add("join");
+
+    });
+
+  }, 750);
+
+
+  setTimeout(() => {
+
+    intro.classList.add("hidden");
+
+  }, 4700);
+
+
+  setTimeout(() => {
+
+    finalMessage.classList.add("visible");
+
+  }, 5200);
+
+
+  setTimeout(() => {
+
+    homeButton.classList.add("visible");
+
+  }, 5600);
+
+});
+
+
+
+/* =========================================================
+   SELECIONAR FRAGMENTOS
+========================================================= */
+
+fragments.forEach(fragment => {
+
+  fragment.addEventListener("click", () => {
+
+    fragment.classList.toggle("selected");
+
+  });
+
+});
+
+
+
+/* =========================================================
+   PARTÍCULAS
+========================================================= */
+
+const canvas =
+  document.getElementById("particles");
+
+const ctx =
+  canvas.getContext("2d");
+
+
+let particles = [];
+
+
+
+function resizeCanvas() {
+
+  canvas.width =
+    window.innerWidth *
+    window.devicePixelRatio;
+
+  canvas.height =
+    window.innerHeight *
+    window.devicePixelRatio;
+
+  canvas.style.width =
+    window.innerWidth + "px";
+
+  canvas.style.height =
+    window.innerHeight + "px";
+
+  ctx.scale(
+    window.devicePixelRatio,
+    window.devicePixelRatio
+  );
+
+}
+
+
+resizeCanvas();
+
+
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    resizeCanvas();
+
+    createParticles();
+
+  }
+);
+
+
+
+function createParticles() {
+
+  particles = [];
+
+  const amount =
+    Math.min(
+      75,
+      Math.floor(
+        window.innerWidth / 18
+      )
+    );
+
+
+  for (
+    let i = 0;
+    i < amount;
+    i++
+  ) {
+
+    particles.push({
+
+      x:
+        Math.random() *
+        window.innerWidth,
+
+      y:
+        Math.random() *
+        window.innerHeight,
+
+      size:
+        Math.random() *
+        2.2 + 0.5,
+
+      speed:
+        Math.random() *
+        0.25 + 0.08,
+
+      drift:
+        Math.random() *
+        0.5 - 0.25,
+
+      opacity:
+        Math.random() *
+        0.35 + 0.08
+
+    });
+
+  }
+
+}
+
+
+createParticles();
+
+
+
+function animateParticles() {
+
+  ctx.clearRect(
+    0,
+    0,
+    window.innerWidth,
+    window.innerHeight
+  );
+
+
+  particles.forEach(particle => {
+
+
+    particle.y -=
+      particle.speed;
+
+
+    particle.x +=
+      particle.drift;
+
+
+    if (
+      particle.y < -10
+    ) {
+
+      particle.y =
+        window.innerHeight + 10;
+
+      particle.x =
+        Math.random() *
+        window.innerWidth;
+
+    }
+
+
+    if (
+      particle.x < -10
+    ) {
+
+      particle.x =
+        window.innerWidth + 10;
+
+    }
+
+
+    if (
+      particle.x >
+      window.innerWidth + 10
+    ) {
+
+      particle.x = -10;
+
+    }
+
+
+    ctx.beginPath();
+
+
+    ctx.arc(
+      particle.x,
+      particle.y,
+      particle.size,
+      0,
+      Math.PI * 2
+    );
+
+
+    ctx.fillStyle =
+      `rgba(90, 157, 187, ${particle.opacity})`;
+
+
+    ctx.fill();
+
+  });
+
+
+  requestAnimationFrame(
+    animateParticles
+  );
+
+}
+
+
+animateParticles();
+
+</script>
 
 
 </body>
